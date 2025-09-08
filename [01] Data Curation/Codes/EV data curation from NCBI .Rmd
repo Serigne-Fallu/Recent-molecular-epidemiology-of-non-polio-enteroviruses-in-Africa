@@ -1,0 +1,78 @@
+---
+title: "BVB-RC to NCBI"
+author: "Serigne Fallou Mbacke NGOM"
+date: "2024-05-14"
+output: html_document
+---
+
+```{r}
+accessions <- read.csv2("NPEV_A.csv", header = FALSE)
+All_accessions = accessions$V1
+```
+
+
+```{r, include=FALSE}
+library(rentrez)
+library(dplyr)
+library(stringr)
+
+metadata_list <- list()
+for (id in All_accessions) {
+  entrez_record <- entrez_fetch(db = "nucleotide", id = id, rettype = "gb", timeout = 60, retmax=50000 )
+  metadata_list[[id]] <- entrez_record
+}
+```
+
+```{r}
+metadata_df <- data.frame(ID = All_accessions, Metadata = unlist(metadata_list))
+metadata_df <- metadata_df %>%
+  mutate(
+    ACCESSION = str_extract(Metadata, "ACCESSION\\s+(.*?)\n"),
+    DEFINITION = str_extract(Metadata, "DEFINITION\\s+(.*?)\n"),
+    VERSION   = str_extract(Metadata, "VERSION\\s+(.*?)\n"),
+    REFERENCE = str_extract(Metadata, "REFERENCE\\s+(.*?)\n"),
+    ORGANISM = str_extract(Metadata, "ORGANISM\\s+(.*?)\n"),
+    AUTHORS = str_extract(Metadata, "AUTHORS\\s+(.*?)\n"),
+    TITLE = str_extract(Metadata, "TITLE\\s+(.*?)\n"),
+    'Assembly Method' = str_extract(Metadata, "Assembly Method\\s+(.*?)\n"),
+    "Sequencing Technology" = str_extract(Metadata, "Sequencing Technology\\s+(.*?)\n"),
+    "Location/Qualifiers" = str_extract(Metadata, "Location/Qualifiers\\s+(.*?)\n"),
+    mol_type = str_extract(Metadata, "mol_type=\"(.*?)\""),
+    strain = str_extract(Metadata, "strain=\"(.*?)\""),
+    host = str_extract(Metadata, "host=\"(.*?)\""),
+    geo_loc_name = str_extract(Metadata, "geo_loc_name=\"(.*?)\""),
+    collection_date = str_extract(Metadata, "collection_date=\"(.*?)\"")
+  )
+
+metadata_df <- metadata_df[, -2]
+```
+
+```{r}
+colonnes_metas <- c("ACCESSION","VERSION","DEFINITION", "REFERENCE", "ORGANISM", "AUTHORS", "TITLE", "Assembly Method", "Sequencing Technology", "Location/Qualifiers")
+for (colonne in colonnes_metas) {
+  metadata_df[[colonne]] <- sub(paste0("^", colonne, "\\s+"), "", metadata_df[[colonne]])
+}
+```
+
+```{r}
+metadata_df[,'Assembly Method'] <- sub(':: ', '', metadata_df[,'Assembly Method'])
+metadata_df[,"Sequencing Technology"] <- sub(':: ', '', metadata_df[,"Sequencing Technology"])
+metadata_df[,"Location/Qualifiers"] <- sub('source ', '', metadata_df[,"Location/Qualifiers"])
+```
+
+```{r}
+columns_to_process <- c("mol_type", "collection_date", "host", "geo_loc_name", "strain")
+for (col in columns_to_process) {
+  metadata_df[[col]] <- sub(paste0(col, '='), '', metadata_df[[col]])
+}
+```
+
+```{r}
+# ADD SOUMISSION DATE IN NCBI:
+dates_soumission = str_extract(metadata_list, "VRL\\s+(.*?)\n")
+metadata_df[,'Date_Soumission'] <- sub('VRL ', '', dates_soumission)
+```
+
+```{r}
+write.csv2(metadata_df, "NPEV_A_metadata.csv", row.names = FALSE)
+```

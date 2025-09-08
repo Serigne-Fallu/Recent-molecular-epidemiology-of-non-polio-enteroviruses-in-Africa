@@ -1,0 +1,90 @@
+---
+title: "DATA CLEANING AND REORGANISATION"
+author: "Serigne Fallou Mbacke NGOM"
+date: "2024-07-21"
+output: html_document
+---
+
+### Import and fusion of datasets:
+```{r, include=FALSE,  warning=FALSE}
+library(dplyr)
+library(tidyverse)
+library(stringr)
+library(knitr)
+library(kableExtra)
+```
+
+```{r}
+NPEV_A = read.csv2("NPEV_A_metadata.csv") ; NPEV_A$Species = "Enterovirus A" 
+NPEV_B = read.csv2("NPEV_B_metadata.csv") ; NPEV_B$Species = "Enterovirus B" 
+NPEV_C = read.csv2("NPEV_C_metadata.csv") ; NPEV_C$Species = "Enterovirus C"
+NPEV_D = read.csv2("NPEV_D_metadata.csv") ; NPEV_D$Species = "Enterovirus D" 
+
+metadata_df = rbind(NPEV_A, NPEV_B, NPEV_C, NPEV_D)
+```
+
+### Data cleaning:
+```{r, echo=FALSE}
+NPEV_Metadata_NCBI = metadata_df
+for (i in c("geo_loc_name", "collection_date", "strain", "mol_type", "host")) {
+ NPEV_Metadata_NCBI[, i] = gsub('"', "", NPEV_Metadata_NCBI[, i])
+}
+
+NPEV_Metadata_NCBI$collection_date <- gsub(".*[^0-9](\\d{4})[^0-9]*", "\\1", NPEV_Metadata_NCBI$collection_date)
+
+NPEV_Metadata_NCBI$collection_date <- substr(NPEV_Metadata_NCBI$collection_date, 1, 4)
+```
+
+- add sequences lenght metada: "Sequence_Length":
+```{r, echo=FALSE}
+NPEV_Metadata_NCBI$Sequence_Length <- substr(NPEV_Metadata_NCBI$Location.Qualifiers, nchar(NPEV_Metadata_NCBI$Location.Qualifiers) - 3, nchar(NPEV_Metadata_NCBI$Location.Qualifiers))
+```
+
+- Delete sequences with unknown regions and/or unknown dates:
+```{r, echo=FALSE}
+length(which(is.na(NPEV_Metadata_NCBI$country)))
+```
+
+```{r, echo=FALSE}
+length(which(is.na(NPEV_Metadata_NCBI$collection_date)))
+```
+
+## Deduplication:
+
+```{r, warning=FALSE}
+library(dplyr)
+
+dedup_data <- NPEV_Metadata_NCBI %>% distinct(ACCESSION, .keep_all = TRUE)
+dim(dedup_data)
+```
+
+
+```{r}
+NPEV_Metadata_NCBI$geo_loc_name  = str_extract(metadata_df$geo_loc_name, "^[^:]+")
+NPEV_Metadata_NCBI$host <- gsub(".*Homo sapiens.*", "Homo sapiens", metadata_df$host, ignore.case = TRUE)
+```
+
+```{r}
+write.csv2(NPEV_VP1_cl, "NPEV_Metadata_VP1.csv", row.names = FALSE)
+```
+
+```{r}
+summary(factor(NPEV_Metadata_NCBI$Species))
+```
+
+```{r}
+NPEV_VP1 = read.csv2("NPEV_Metadata_VP1.csv") 
+```
+```{r}
+NPEV_VP1$DEFINITION = gsub(".*VP1.*", "VP1", NPEV_VP1$DEFINITION, ignore.case = TRUE)
+```
+
+```{r}
+NPEV_VP1_cl= NPEV_VP1[which(NPEV_VP1$DEFINITION == "VP1"), ]
+summary(factor(NPEV_VP1_cl$Location.Qualifiers))
+```
+
+
+
+
+
