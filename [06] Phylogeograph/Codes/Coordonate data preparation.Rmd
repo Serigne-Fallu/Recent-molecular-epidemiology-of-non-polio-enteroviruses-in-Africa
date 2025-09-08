@@ -1,0 +1,20 @@
+---
+title: "Coordonate data preparation"
+author: "Serigne Fallou Mbacke NGOM"
+date: "2024-08-14"
+output: html_document
+---
+
+```{r}
+# Créer un data frame avec les coordonnées
+country_coords <- data.frame(
+  Country = c("Senegal", "Guinea", "CAR", "Niger", "Japan", "China", "Madagascar", "Nigeria", "BFA"),
+  Latitude = c(14.499454, 9.934887, 6.614042, 17.611001, 35.652832, 35.86166, -18.777192, 9.084576, 12.241851),
+  Longitude = c(-14.445561, -11.283845, 20.941759, 8.080946, 139.839478, 104.195397, 46.854328, 8.674252, -1.55676)
+)
+
+# Sauvegarder les données dans un fichier TSV
+write.table(country_coords, file = "country_coordinates.tsv", sep = "\t", row.names = FALSE, quote = FALSE)
+
+```
+
