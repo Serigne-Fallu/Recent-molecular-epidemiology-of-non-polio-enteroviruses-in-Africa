@@ -1,0 +1,417 @@
+---
+title: "Data filtering - Focus on last five years"
+author: "Serigne Fallou Mbacke NGOM"
+date: "2024-06-10"
+output: html_document
+---
+
+
+```{r, include=FALSE,  warning=FALSE}
+library(dplyr)
+library(plotly)
+library(tidyverse)
+library(stringr)
+library(kableExtra)
+```
+
+
+```{r}
+NPEV_A_B_C_D = read.csv2("C:/STAGE DIC3 IPD_DAKAR/1_Data Curation/Medata/NPEV_ABCD_VP1_Metadata_clean.csv")
+NPEV_A_B_C_D = data.frame(NPEV_A_B_C_D)
+dim(NPEV_A_B_C_D)
+```
+
+
+```{r}
+NPEV_A_B_C_D_20years = NPEV_A_B_C_D[-which(NPEV_A_B_C_D$collection_date < 2004), ]
+dim(NPEV_A_B_C_D_20years)
+```
+
+```{r, fig.width=12, fig.height=6}
+sequence_counts <- NPEV_A_B_C_D_20years %>%
+  group_by(collection_date) %>%
+  summarise(SequenceCount = n())
+
+ggplot(sequence_counts, aes(x = collection_date, y = SequenceCount)) +
+  geom_line() +
+  geom_point() +
+  labs(title = " Number of NPEV A-B-C-D VP1 sequences in the last twenty years",
+       x = "Years",
+       y = "Number of VP1 NPEV sequences") +
+  theme_minimal() +
+    scale_x_continuous(breaks = seq(min(sequence_counts$collection_date), max(sequence_counts$collection_date), by = 3))+
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1,  size = 11)
+  )
+```
+
+```{r, warning=FALSE}
+sequence_counts <- NPEV_A_B_C_D_20years %>%
+  group_by(collection_date) %>%
+  summarise(SequenceCount = n())
+
+p <- ggplot(sequence_counts, aes(x = collection_date, y = SequenceCount)) +
+  geom_line() +
+  geom_point() +
+  labs(title = " Number of NPEV A-B-C-D VP1 sequences in the last twenty years",
+       x = "Years",
+       y = "Number of VP1 NPEV sequences") +
+  theme_minimal() +
+  scale_x_continuous(breaks = seq(min(sequence_counts$collection_date), max(sequence_counts$collection_date), by = 3)) +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 11)
+  )
+
+ggplotly(p)
+```
+
+```{r, warning=FALSE}
+NPEV_A_B_C_D_20years %>%
+  group_by(ORGANISM) %>%
+  summarise(Count = n()) %>%
+  plot_ly(x = ~ORGANISM, y = ~Count, type = "bar", color = "Yellow", text = ~Count, textposition = "outside") %>%
+  layout(title = "NPEV A-B-C-D VP1 sequences distribution by Species in the last twenty years", showlegend = FALSE)
+```
+
+```{r,  fig.width=14, fig.height=12}
+all_country_data <- NPEV_A_B_C_D_20years %>%
+  group_by(country) %>%
+  summarise(Count = n())
+
+all_country_data <- all_country_data %>%
+  mutate(country = fct_reorder(country, Count, .desc = TRUE))
+
+ggplot(all_country_data, aes(x = country, y = Count, fill = Count)) +
+  geom_bar(stat = "identity", color = "black") +
+  labs(title = "B) NPEV A-B-C-D VP1 sequences distribution around the world in the last twenty years", x = "Country", y = "Count") +
+  theme_minimal()+
+  theme(
+    axis.text.x = element_text(angle = 90, hjust = 1,  size = 10)
+  )
+```
+
+
+```{r, echo=FALSE}
+african_countries <- c("Algeria", "Angola", "Benin", "Botswana", "Burkina Faso", "Burundi", "Cabo Verde", "Cameroon", "Central African Republic", "Chad", "Comoros", "Congo (Brazzaville)", "Congo (Kinshasa)", "Democratic Republic of the Congo", "Djibouti", "Egypt", "Equatorial Guinea", "Eritrea", "Eswatini", "Ethiopia", "Gabon", "Gambia", "Ghana", "Guinea", "Guinea-Bissau", "Ivory Coast", "Kenya", "Lesotho", "Liberia", "Libya", "Madagascar", "Malawi", "Mali", "Mauritania", "Mauritius", "Morocco", "Mozambique", "Namibia", "Niger", "Nigeria", "Rwanda", "Sao Tome and Principe", "Senegal", "Seychelles", "Sierra Leone", "Somalia", "South Africa", "South Sudan", "Sudan", "Tanzania", "Togo", "Tunisia", "Uganda", "Zambia", "Zimbabwe")
+
+african_country_data <- NPEV_A_B_C_D_20years %>%
+  filter(country %in% african_countries) %>%
+  group_by(country) %>%
+  summarise(Count = n())
+
+
+plot_geo(
+  african_country_data,
+  locations = ~country,
+  z = ~Count,
+  locationmode = "country names"
+) %>%
+  layout(
+    title = "A) NPEV A-B-C-D VP1 sequences distribution in Africa during last twenty years",
+    geo = list(projection = list(type = "orthographic")),
+    showlegend = FALSE, 
+    margin = list(l = 0, r = 0, t = 40, b = 0)  
+      )
+```
+
+```{r,  fig.width=10, fig.height=6}
+library(ggplot2)
+library(forcats)
+
+african_country_data <- african_country_data %>%
+  mutate(country = fct_reorder(country, Count, .desc = TRUE))
+
+ggplot(african_country_data, aes(x = country, y = Count, fill = Count)) +
+  geom_bar(stat = "identity", color = "black") +
+  labs(title = "NPEV A-B-C-D VP1 sequences distribution in Africa during the last twenty years", x = "Country", y = "Count") +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 12)
+  )
+
+```
+```{r}
+sequence_counts <- NPEV_A_B_C_D_20years %>%
+   filter(country %in% african_countries) %>%
+  group_by(collection_date) %>%
+  summarise(SequenceCount = n())
+
+ggplot(sequence_counts, aes(x = collection_date, y = SequenceCount)) +
+  geom_line() +
+  geom_point() +
+  labs(title = "Number of NPEV A-B-C-D VP1 sequences in Africa during last twenty years",
+       x = "Years",
+       y = "Number of VP1 NPEV sequences") +
+  theme_minimal() +
+    scale_x_continuous(breaks = seq(min(sequence_counts$collection_date), max(sequence_counts$collection_date), by = 2))+
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1,  size = 11)
+  )
+```
+
+```{r, fig.width=10, fig.height=6, fig.align='center', out.width='80%', warning=FALSE}
+# Définir une palette de couleurs personnalisée
+my_colors <- c("#E41A1C", "#377EB8", "#4DAF4A", "#FF7F00", "#984EA3", "#FFD92F", "#A65628", "#F781BF", "#999999", "#8dd3c7", "#bebada", "#fb8072", "#80b1d3", "#fdb462", "#b3de69", "#fccde5", "#d9d9d9", "#bc80bd", "#ccebc5", "#ffed6f")
+NPEV_A_B_C_D_20years$host <- gsub(".*Homo sapiens.*", "Homo sapiens", NPEV_A_B_C_D_20years$host, ignore.case = TRUE)
+
+NPEV_A_B_C_D_20years %>%
+  filter(country %in% african_countries) %>%
+  ggplot(
+    mapping = aes(x = country, fill = ORGANISM )
+  ) + 
+  geom_bar(position = "fill", col = "black", width = 1) + 
+  scale_fill_manual(values = my_colors) +  
+  theme_classic() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1,  size = 10.5) 
+  ) +
+  labs(
+    x = "african country",
+    y = "Species (proportion)",
+    title = "Distribution of NPEV A-B-C-D Species in Africa during last twenty years"
+  )
+```
+```{r, warning=FALSE}
+NPEV_A_B_C_D_20years[-which(is.na(NPEV_A_B_C_D_20years$host)), ] %>%
+    filter(country %in% african_countries) %>%
+  group_by(host) %>%
+  summarise(Count = n()) %>%
+  plot_ly(x = ~host, y = ~Count, type = "bar", color = "Yellow", text = ~Count, textposition = "outside") %>%
+  layout(title = "NPEV A-B-C-D VP1 sequences distribution by host in africa during last twenty years")
+```
+
+```{r}
+african_country_data <- NPEV_A_B_C_D_20years %>%
+    filter(country %in% african_countries) %>%
+  group_by(country) %>%
+  summarise(Count = n()) 
+sum(african_country_data$Count)
+length(african_country_data$country)
+```
+
+
+```{r}
+y_colors <- c("#E41A1C", "#377EB8", "#4DAF4A", "#FF7F00", "#984EA3", "#FFD92F", "#A65628", "#F781BF", "#999999", "#8dd3c7", "#bebada", "#fb8072", "#80b1d3", "#fdb462", "#b3de69", "#fccde5", "#d9d9d9", "#bc80bd", "#ccebc5", "#ffed6f")
+NPEV_A_B_C_D_20years$host <- gsub(".*Homo sapiens.*", "Homo sapiens", NPEV_A_B_C_D_20years$host, ignore.case = TRUE)
+
+NPEV_A_B_C_D_20years[-which(is.na(NPEV_A_B_C_D_20years$host)), ] %>%
+    filter(country %in% african_countries) %>%
+  ggplot(
+    mapping = aes(x = host, fill = ORGANISM )
+  ) + 
+  geom_bar(position = "fill", col = "black", width = 1) +  
+  scale_fill_manual(values = my_colors) +  
+  theme_classic() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1,  size = 11)  
+  ) +
+  labs(
+    x = "Host",
+    y = "Species (proportion)",
+    title = "Distribution of NPEV A-B-C-D Species by Hosts in africa during last twenty years"
+  )
+```
+
+
+```{r, fig.width=12, fig.height=6 }
+library(ggplot2)
+library(cowplot)
+library(maps)
+
+# Graphique A
+sequence_counts <- NPEV_A_B_C_D_20years %>%
+  filter(country %in% african_countries) %>%
+  group_by(collection_date) %>%
+  summarise(SequenceCount = n())
+
+plot_A <- ggplot(sequence_counts, aes(x = collection_date, y = SequenceCount)) +
+  geom_line() +
+  geom_point() +
+  labs(title = "Number of NPEV A-B-C-D VP1 sequences per year in Africa",
+       x = "Years",
+       y = "Number of VP1 NPEV sequences") +
+  theme_minimal() +
+  scale_x_continuous(breaks = seq(min(sequence_counts$collection_date), max(sequence_counts$collection_date), by = 2)) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 10))
+
+# Graphique B
+african_country_data <- african_country_data %>%
+  mutate(country = fct_reorder(country, Count, .desc = TRUE))
+plot_B = ggplot(african_country_data, aes(x = country, y = Count, fill = Count)) +
+  geom_bar(stat = "identity", color = "black") +
+  labs(title = "NPEV A-B-C-D VP1 distribution in Africa during last twenty years", x = "Country", y = "Count") +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 10)
+  )
+
+# Combine les graphiques
+combined_plot <- plot_grid(
+  plot_B ,
+  plot_A  ,
+     labels = c("A)", "B)"),
+  ncol = 2, nrow = 1,
+  align = "v"
+)
+
+combined_plot
+```
+
+
+```{r, fig.width=14, fig.height=12}
+library(dplyr)
+library(ggplot2)
+library(cowplot)
+library(maps)
+
+# Graphique A
+species_counts <- NPEV_A_B_C_D_20years %>%
+  filter(country %in% african_countries) %>%
+  group_by(ORGANISM) %>%
+  summarise(Count = n()) %>%
+  arrange(desc(Count))
+
+species_counts$ORGANISM <- factor(species_counts$ORGANISM, levels = species_counts$ORGANISM)
+
+plot_A <- ggplot(species_counts, aes(x = ORGANISM, y = Count, fill = Count)) +
+  geom_bar(stat = "identity", color = "black") +
+  labs(
+    title = "NPEV A-B-C-D Species distribution in Africa during last twenty years",
+    x = "Species",
+    y = "Count"
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 11)
+  )
+
+# Graphique B
+# Définir une palette de couleurs personnalisée
+my_colors <- c("#4B4B4B",  "#8B4513", "#2F4F4F", "#556B2F" )
+
+NPEV_A_B_C_D$host <- gsub(".*Homo sapiens.*", "Homo sapiens", NPEV_A_B_C_D$host, ignore.case = TRUE)
+
+# Filtrer les données pour les pays africains
+african_data <- NPEV_A_B_C_D_20years %>%
+  filter(country %in% african_countries)
+
+# Créer le graphique à barres empilées proportionnelles
+plot_B <- ggplot(african_data, aes(x = country, fill = ORGANISM)) + 
+  geom_bar(position = "fill", color = "black", width = 1) + 
+  scale_fill_manual(values = my_colors) +  
+  theme_classic() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 9)
+  ) +
+  labs(
+    x = "African Country",
+    y = "Species (Proportion)",
+    title = "Distribution of NPEV A-B-C-D in African countries during last twenty years"
+  )
+
+# Graphique C
+host_counts <- NPEV_A_B_C_D_20years %>%
+  filter(!is.na(host)) %>%
+  filter(country %in% african_countries) %>%
+  group_by(host) %>%
+  summarise(Count = n()) %>%
+  arrange(desc(Count))
+
+host_counts <- host_counts %>%
+  mutate(Percentage = Count / sum(Count) * 100)
+
+plot_C <- ggplot(host_counts, aes(x = "", y = Count, fill = host)) +
+  geom_bar(width = 1, stat = "identity", color = "black") +
+  coord_polar("y", start = 0) +
+  geom_text(aes(label = Count), position = position_stack(vjust = 0.5)) +
+  labs(
+    title = "NPEV A-B-C-D hosts in Africa during last twenty years",
+    x = "",
+    y = ""
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_blank(),
+    axis.text.y = element_blank(),
+    axis.ticks = element_blank(),
+    panel.grid = element_blank(),
+    plot.title = element_text(hjust = 0.5, size = 12)
+  )
+
+# Graphique D
+plot_D <- ggplot(african_data[-which(is.na(african_data$host)), ], aes(x = host, fill = ORGANISM)) + 
+  geom_bar(position = "fill", color = "black", width = 1) + 
+  scale_fill_manual(values = my_colors) +  
+  theme_classic() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 11)
+  ) +
+  labs(
+    x = "host",
+    y = "Species (Proportion)",
+    title = "Distribution of NPEV A-B-C-D Species in hosts in Africa during last twenty years"
+  )
+
+# Combine les graphiques
+combined_plot <- plot_grid(
+  plot_A, plot_B, plot_C, plot_D,
+  labels = c("A)", "B)", "C)", "D)"),
+  ncol = 2, nrow = 2,
+  align = "v"
+)
+
+# Afficher le graphique combiné
+print(combined_plot)
+```
+
+
+
+```{r}
+write.csv2(NPEV_A_B_C_D_20years, "C:/STAGE DIC3 IPD_DAKAR/3_Data filtering/Last 20 years/NPEV_A_B_C_D_20years.csv", row.names = FALSE)
+```
+
+```{r}
+write.csv2(NPEV_A_B_C_D_20years %>%
+  filter(country %in% african_countries), "C:/STAGE DIC3 IPD_DAKAR/3_Data filtering/Last 20 years/NPEV_A_B_C_D_Africa_20years.csv", row.names = FALSE)
+```
+
+
+```{r}
+datedYYYMMDD  <- read.csv2("C:/STAGE DIC3 IPD_DAKAR/4_Genomic data formatting/NPEV_ABCD_clean_datedYYYMMDD.csv")
+
+if("ACCESSION" %in% colnames(NPEV_A_B_C_D_20years) && "ACCESSION" %in% colnames(datedYYYMMDD)) {
+  
+  matched_indices <- match(NPEV_A_B_C_D_20years$ACCESSION, datedYYYMMDD$ACCESSION)
+  NPEV_A_B_C_D_20years$standardized_date <- datedYYYMMDD$standardized_date[matched_indices]
+}
+
+head(NPEV_A_B_C_D_20years)
+dim(NPEV_A_B_C_D_20years)
+```
+
+```{r}
+write.csv2(NPEV_A_B_C_D_20years, "C:/STAGE DIC3 IPD_DAKAR/3_Data filtering/Last 20 years/NPEV_A_B_C_D_20years_yyymmdd.csv", row.names = FALSE)
+```
+
+
+```{r}
+library(Biostrings)
+
+fasta_file <- "C:/STAGE DIC3 IPD_DAKAR/1_Data Curation/Genomic Data - Sequences fasta/NPEV_D_VP1_seq.fasta"
+all_sequences <- readDNAStringSet(fasta_file)
+
+#NPEV_A_B_C_D_20years = read.csv2("C:/STAGE DIC3 IPD_DAKAR/3_Data filtering/Last 10 years/NPEV_A_B_C_D_20years_yyymmdd.csv"); NPEV_A_B_C_D_20years = data.frame(NPEV_A_B_C_D_20years)
+
+accession_ids <- NPEV_A_B_C_D_20years$ACCESSION
+filtered_sequencesD <- all_sequences[substr(names(all_sequences), 1, 8) %in% substr(accession_ids, 1,8)]
+
+output_fasta_file <- "./Last 20 years/NPEV_D_VP1_seq_20years.fasta"
+writeXStringSet(filtered_sequencesD, filepath = output_fasta_file)
+```
+
+```{r}
+all_seqs_filtered = c(filtered_sequencesA, filtered_sequencesB, filtered_sequencesD, filtered_sequencesC)
+
+writeXStringSet(all_seqs_filtered, "./Last 20 years/NPEV_ABCD_VP1_seq_20years.fasta")
+```
+

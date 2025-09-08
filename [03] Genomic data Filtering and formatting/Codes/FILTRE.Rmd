@@ -1,0 +1,145 @@
+---
+title: "Untitled"
+author: "Serigne Fallou Mbacke NGOM"
+date: "2024-05-25"
+output: html_document
+---
+
+
+```{r}
+csv_data = read.csv2("NPEV_Metadata_VP1.csv")
+```
+
+
+```{r}
+coord_pays = read.csv("countries_coordinates.csv")
+
+csv_data <- merge(csv_data, coord_pays, by.x = "country", by.y = "Country", all.x = TRUE)
+
+if ("Latitude.x" %in% colnames(csv_data)) {
+  csv_data$Latitude <- csv_data$Latitude.x
+  csv_data$Longitude <- csv_data$Longitude.x
+  csv_data$X3lett_Code <- csv_data$X3lett_Code.x
+  csv_data <- csv_data[, !(colnames(csv_data) %in% c("Latitude.x", "Longitude.x", "ISO_Code.x", "Latitude.y", "Longitude.y", "ISO_Code.y"))]
+}
+```
+
+```{r}
+library(Biostrings)
+
+fasta_file <- "C:/STAGE DIC3 IPD_DAKAR/Molecular epidemiology of non-polio enteroviruses/1_Data Curation/NPEV_C.fasta"
+all_sequences <- readDNAStringSet(fasta_file)
+accession_ids <- csv_data$ACCESSION
+
+filtered_sequencesD <- all_sequences[!(substr(names(all_sequences), 1, 8) %in% substr(accession_ids, 1, 8))]
+
+output_fasta_file <- "NPEV_VP1_C.fasta"
+writeXStringSet(filtered_sequencesD, filepath = output_fasta_file)
+```
+
+
+```{r}
+library(Biostrings)
+library(dplyr)
+
+fasta <- readLines("NPEV_VP1_B.fasta")
+
+final_sequences <- character()
+
+current_header <- ""
+current_sequence <- ""
+
+# Liste des codes de pays africains (ISO 3166 Alpha-3)
+african_countries <- c("ZAF", "EGY", "NGA", "KEN", "ETH", "TUN", "MAR", "CMR", "UGA", "GHA", 
+                      "SEN", "SLE", "GMB", "MRT", "BFA", "MLI", "NER", "DZA", "LSO", "SWZ", 
+                      "MDG", "REU", "MAU", "DJI", "STP", "GNB", "TGO", "RWA", "BDI", "CIV", 
+                      "GAB", "CON", "GNB", "CAF", "BWA", "ZMB", "MWI", "ZWE", "NAM", "SYC")
+
+for (line in fasta) {
+  if (startsWith(line, ">")) {
+    if (nchar(current_sequence) >= 900 || any(grepl(paste(african_countries, collapse="|"), current_header))) {
+      final_sequences <- c(final_sequences, paste(current_header, current_sequence, sep = "\n"))
+    }
+    current_header <- line
+    current_sequence <- ""
+  } else {
+    current_sequence <- paste(current_sequence, line, sep = "")
+  }
+}
+
+# Ajouter la dernière séquence (si applicable)
+if (nchar(current_sequence) >= 900 || any(grepl(paste(african_countries, collapse="|"), current_header))) {
+  final_sequences <- c(final_sequences, paste(current_header, current_sequence, sep = "\n"))
+}
+
+# Écrire toutes les séquences filtrées dans un fichier FASTA final
+writeLines(final_sequences, "NPEV_B900.fasta")
+
+```
+
+
+
+```{r}
+library(Biostrings)
+library(dplyr)
+
+fasta_path <- "NPEV_B900.fasta"
+fasta_sequences <- readDNAStringSet(fasta_path)
+
+for (i in 1:length(csv_data$ACCESSION)) {
+  accession <- csv_data$ACCESSION[i]
+  country <- csv_data$ISO_Code[i]
+  year = csv_data$collection_date[i]
+
+  index <- which(substr(names(fasta_sequences), 1, 8) == (substr(accession, 1, 8)))
+  
+  if (length(index) > 0) {
+    new_name <- paste0(substr(accession, 1, 8),"_", paste0(country),"_", paste0(year), sep = "")
+    names(fasta_sequences)[index] <- new_name
+  }
+}
+
+writeXStringSet(fasta_sequences, "NPEV_B900.fasta")
+```
+
+
+```{r}
+library(Biostrings)
+library(dplyr)
+
+# Charger le fichier FASTA
+fasta_file <- "C:Users/Ousmane KEBE/Desktop/SFMN_Bioinformatic_Workspace/Phylodynamics of Hepatite E virus accross Africa and risk factors (confidentiel!)/1/Human_HEV_g1_trim.fas"
+sequences <- readDNAStringSet(fasta_file)
+headers <- names(sequences)
+
+# Supposons que les en-têtes sont de la forme "AN_Pays_Annee"
+header_info <- strsplit(headers, "_")
+header_df <- data.frame(
+    AN = sapply(header_info, "[", 1),
+    Pays = sapply(header_info, "[", 2),
+    Annee = sapply(header_info, "[", 3),
+    stringsAsFactors = FALSE
+)
+header_df$sequence <- as.character(sequences)
+
+# Filtrer les données
+filtered_df <- header_df %>%
+    # Conserver toutes les séquences africaines
+    filter(Pays %in% african_countries) %>%
+    # Conserver 2 séquences pour les autres pays par année
+    bind_rows(
+        header_df %>%
+        filter(!Pays %in% african_countries) %>%
+        group_by(Pays, Annee) %>%
+        slice_head(n = 1) %>%
+        ungroup()
+    )
+
+# Préparer les séquences filtrées
+filtered_sequences <- DNAStringSet(filtered_df$sequence)
+names(filtered_sequences) <- paste(filtered_df$AN, filtered_df$Pays, filtered_df$Annee, sep = "_")
+
+# Écrire les séquences filtrées dans un nouveau fichier FASTA
+writeXStringSet(filtered_sequences, "C:Users/Ousmane KEBE/Desktop/SFMN_Bioinformatic_Workspace/Phylodynamics of Hepatite E virus accross Africa and risk factors (confidentiel!)/1/Human_HEV_g1_ok.fasta")
+```
+
