@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><beast beautitemplate='Standard' beautistatus='' namespace="beast.core:beast.evolution.alignment:beast.evolution.tree.coalescent:beast.core.util:beast.evolution.nuc:beast.evolution.operators:beast.evolution.sitemodel:beast.evolution.substitutionmodel:beast.base.evolution.alignment:beast.pkgmgmt:beast.base.core:beast.base.inference:beast.base.evolution.tree.coalescent:beast.pkgmgmt:beast.base.core:beast.base.inference.util:beast.evolution.nuc:beast.base.evolution.operator:beast.base.inference.operator:beast.base.evolution.sitemodel:beast.base.evolution.substitutionmodel:beast.base.evolution.likelihood" required="BEAST.base v2.7.7:BEAST_CLASSIC v1.6.3" version="2.7">
+        
+
+    <data
+id="NPEV_D_trim"
+spec="Alignment"
+name="alignment">
+                                
+        <sequence id="seq_JF416929|Nonhuman_Primate|2007" spec="Sequence" taxon="JF416929|Nonhuman_Primate|2007" totalcount="4" value="---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------nggttcttt----------------------------------------------------------------------ttttatcattggctgcttatgacaatcta---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"/>
+                                
+        <sequence id="seq_JF416932|Nonhuman_Primate|2007" spec="Sequence" taxon="JF416932|Nonhuman_Primate|2007" totalcount="4" value="----------------------------ccttctaaattcacagaacca-----------------------------gtggttgagggtttgaaggctggagctccatgttt-----------------------------------------------------aaaatcgcccagtgctgaagca-------------------------------------------------------------------tgtggatacagtgaca--------------------------------------------------------gggttttac----------------aattgaaatta---------------------------------------------------------------ggaaactcatctatag--------tgacccaggaagcagccaatgtttgt------------------------------------------------------------------------------------------------------------------tgtgcatat-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"/>
+                                
+        <sequence id="seq_JF416935|Nonhuman_Primate|2007" spec="Sequence" taxon="JF416935|Nonhuman_Primate|2007" totalcount="4" value="---------------------------------cagattgaaaaggttatgcaaactgtcgccaacacaatagaaagtgaggtcaaagctgaattgggtgtgataccatctcttaacgctgctgaaactggggcaacttctaacactagcacagaggaagccatacagaccagaactgttatcaacctgcaccgtactacggagaccttgattgaaaatttcttagggagagcagcattggtttgcatgcaaagcattgagtataataaccacgccactggtacctccactactcaaaagaactacttcaattggacactaaacatcagggaattcgttcaattgagacggaagatggagttgttcacttacctgagatttgatactgagatcaccatagtacccacgcttcgactgtatagctcaggtgctagttacgcaggattaccaaatttaacattgcaggcaatgtttgtaccaactggtgctccaaaacccactacccaggattcgtttgaatggcaatcagcatgcaatccaagtgtcttctttaaaattgatgacccaccagctagaatgacyatmccwtttatgtgcattaaytcagcttatgccaatgtttatgatggatttgcaggctttgaaaagacagacctgtatggaatcaatccagccaacaccatgggcaatctgtgtctcagagtggtcaatgcatatcaacctgctcaatttaccctaacagtcagggtgtacatgaaacccaaacacatcaaagcatgggcacctagacccccacgcaccatgccatacactaacat----------------------------------------------------------------------------------------------------------"/>
+                                
+        <sequence id="seq_JF416938|Nonhuman_Primate|2007" spec="Sequence" taxon="JF416938|Nonhuman_Primate|2007" totalcount="4" value="----------------------------------------------------------------------------------------------------------------------------------------ccttagacatt-----------------------------agtactgaaccaattcctcttga--------------------------------------------------------------------------------------------------------------------------------gagtgctatgtatgggatggaag--gattagaa---------------------------------------------gcccttgacctaaccactagtgggtacccatat----------ct--------actgcagggaa-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"/>
+                                
+        <sequence id="seq_OP267506|Homo_sapiens|2021" spec="Sequence" taxon="OP267506|Homo_sapiens|2021" totalcount="4" value="atagaccatttacatggagcagaggcagcctaccagattgagagcatcattaaaacagcaactgacactgtgaaaagtgagattaacgctgaacttggtgtagtccctagcttaaatgcagttgaaacaggtgcaacatcaaacactgaaccagaagaagctatacaaactcgcacagtgataaatcaacacggtgtatccgaaactctagtggagaattttctcagtagagcagctttggtgtcgaagagaagtttcgaatacaaagaccatacttcatctacagcacaaacagataagaacttcttcaaatggacaattaacaccaggtcctttgtacagctaagaagaaagttagaattattcacatacctcagatttgatgctgagatcactatactcacaaccgtagcagtgaatggtagtaataacacatatgtgggtcttcctgacttgacactgcaggcaatgttcgtacccactggtgcccttaccccagaaaagcaagactcattccactggcagtcgggtagtaatgctagtgtattctttaaaatctctgaccccccagccagaatgaccataccttttatgtgtattaattcagcatactcagttttttatgatggatttgccggatttgagaaaactggtctgtatggaataaatccagctgatactattggtaacttgtgtgttagaatagtgaacgaacaccaaccagttggtttcacagtgaccgttagggtttacatgaagcctaaacacataaaagcatgggcaccacgaccaccacgaaccctgccatacatgagtattgcaaatgcaaattacaaaggtaaagaaagagcaccaaatgcgctcaatgctataattggcaatagagacagtgtcaaaaccatgcctcataatatagtgactact"/>
+                                
+        <sequence id="seq_OP267507|Homo_sapiens|2021" spec="Sequence" taxon="OP267507|Homo_sapiens|2021" totalcount="4" value="atagaccatttacatggagcagaggcagcctaccagattgagagcatcattaaaacagcaactgacactgtgaaaagtgagattaacgctgaacttggtgtagtccctagcttaaatgcagttgaaacaggtgcaacatcaaacactgaaccagaagaagctatacaaactcgcacagtgataaatcaacacggtgtatccgaaactctagtggagaattttctcagtagagcagctttggtgtcgaagagaagtttcgaatacaaagaccatacttcatctacagcacaaacagataagaacttcttcaaatggacaattaacaccaggtcctttgtacagctaagaagaaagttagaattattcacatacctcagatttgatgctgagatcactatactcacaaccgtagcagtgaatggtagtaataacacatatgtgggtcttcctgacttgacactgcaggcaatgttcgtacccactggtgcccttaccccagaaaagcaagactcattccactggcagtcgggtagtaatgctagtgtattctttaaaatctctgaccccccagccagaatgaccataccttttatgtgtattaattcagcatactcagttttttatgatggatttgccggatttgagaaaactggtctgtatggaataaatccagctgatactattggtaacttgtgtgttagaatagtgaacgaacaccaaccagttggtttcacagtgaccgttagggtttacatgaagcctaaacacataaaagcatgggcaccacgaccaccacgaaccctgccatacatgagtattgcaaatgcaaattacaaaggtaaagaaagagcaccaaatgcgctcaatgctataattggcaatagagacagtgtcaaaaccatgcctcataatatagtgactact"/>
+                                
+        <sequence id="seq_OP267508|Homo_sapiens|2021" spec="Sequence" taxon="OP267508|Homo_sapiens|2021" totalcount="4" value="atagaccatttacatggagcagaggcagcctaccagattgagagcatcattaaaacagcaactgacactgtgaaaagtgagattaacgctgaacttggtgtagtccctagcttaaatgcagttgaaacaggtgcaacatcaaacactgaaccagaagaagctatacaaactcgcacagtgataaatcaacacggtgtatccgaaactctagtggagaattttctcagtagagcagctttggtgtcgaagagaagtttcgaatacaaagaccatactttatctacagcacaaacagataagaacttcttcaaatggacaattaacaccaggtcctttgtacagctaagaagaaagttagaattattcacatacctcagatttgatgctgagatcactatactcacaaccgtagcagtgaatggtagtaataacacatatgtgggtcttcctgacttgacactgcaggcaatgttcgtacccactggtgcccttaccccagaaaagcaagactcattccactggcagtcgggtagtaatgctagtgtattctttaaaatctctgaccccccagccagaatgaccataccttttatgtgtattaattcagcatactcagttttttatgatggatttgccggatttgagaaaactggtctgtatggaataaatccagctgatactattggtaacttgtgtgttagaatagtgaacgaacaccaaccagttggtttcacagtgaccgttagggtttacatgaagcctaaacacataaaagcatgggcaccacgaccaccacgaaccctgccatacatgagtattgcaaatgcaaattacaaaggtaaagaaagagcaccaaatgcgctcaatgctataattggcaatagagacagtgtcaaaaccatgcctcataatatagtgactact"/>
+                                
+        <sequence id="seq_OP267509|Homo_sapiens|2021" spec="Sequence" taxon="OP267509|Homo_sapiens|2021" totalcount="4" value="atagaccatttacatggagcagaggcagcctaccagattgagagcatcattaaaacagcaactgacactgtgaaaagtgagattaacgctgaacttggtgtagtccctagcttaaatgcagttgaaacaggtgcaacatcaaacactgaaccagaagaagctatacaaactcgcacagtgataaatcaacacggtgtgtccgaaactctagtggagaattttctcagtagagcagctttggtgtcgaagagaagtttcgaatacaaagaccatacttcatctacagcacaaacagataagaacttcttcaaatggacaattaacaccaggtcctttgtacagctaagaagaaagttagaattattcacatacctcagatttgatgctgagatcactatactcacaaccgtagcagtgaatggtagtaataacacatatgtgggtcttcctgacttgacactgcaggcaatgttcgtacccactggtgcccttaccccagaaaagcaagactcattccactggcagtcgggtagtaatgctagtgtattctttaaaatctctgaccccccagccagaatgaccataccttttatgtgtattaattcagcatactcagttttttatgatggatttgccggatttgagaaaactggtctgtatggaataaatccagctgatactattggtaacttgtgtgttagaatagtgaacgaacaccaaccagttggtttcacagtgaccgttagggtttacatgaagcctaaacacataaaagcatgggcaccacgaccaccacgaaccctgccatacatgagtattgcaaatgcaaattacaaaggtaaagaaagagcaccaaatgcgctcaatgctataattggcaatagagacagtgtcaaaaccatgcctcataatatagtgactact"/>
+                                
+        <sequence id="seq_OP267510|Homo_sapiens|2021" spec="Sequence" taxon="OP267510|Homo_sapiens|2021" totalcount="4" value="ataaaccatttacatggagcagaggcagcctaccagattgagagcatcattaaaacagcaactgacactgtgaaaagtgagattaacgctgaacttggtgtagtccctagcttaaatgcagttgaaacaggtgcaacatcaaacactgaaccagaagaagctatacaaactcgcacagtgataaatcaacacggtgtatccgaaactctagtggagaattttctcagtagagcagctttggtgtcgaagagaagtttcgaatacaaagaccatacttcatctacagcacaaacagataagaacttcttcaaatggacaattaacaccaggtcctttgtacagctaagaagaaagttagaattattcacatacctcagatttgatgctgagatcactatactcacaaccgtagcagtgaatggtagtaataacacatatgtgggtcttcctgacttgacactgcaggcaatgttcgtacccactggtgcccttaccccagaaaagcaagactcattccactggcagtcgggtagtaatgctagtgtattctttaaaatctctgaccccccagccagaatgaccataccttttatgtgtattaattcagcatactcagttttttatgatggatttgccggatttgagaaaactggtctgtatggaataaatccagctgatactattggtaacttgtgtgttagaatagtgaacgaacaccaaccagttggtttcacagtgaccgttagggtttacatgaagcctaaacacataaaagcatgggcaccacgaccaccacgaaccctgccatacatgagtattgcaaatgcaaattacaaaggtaaagaaagagcaccaaatgcgctcaatgctataattggcaatagagacagtgtcaaaaccatgcctcataatatagtgactact"/>
+                                
+        <sequence id="seq_OP267511|Homo_sapiens|2021" spec="Sequence" taxon="OP267511|Homo_sapiens|2021" totalcount="4" value="ctagaccacttacatggagcagaggcagcctaccagatcgagagcatcatcaaaacagcaaccgacactgtgaaaagcgagattaacgctgaacttggtgtagtccccagcttaaatgcagttgaaacaggtgcaacatctaacactgaaccggaagaagctatacaaactcgcacagtgataaatcaacatggtgtgtccgaaactctagtggagaattttctcagtagagcagctttggtatcgaagagaagtttcgaatacaaagatcacacttcgtctgcagcacaagcagataagaactttttcaaatggacaattaacactaggtcctttgtacagctaagaagaaagttagaattattcacataccttaggtttgatgctgagatcactatactcacaactgtagcagtgaatagtagtaataacacatatgtgggtcttcccgatttgacactgcaggcaatgtttgtacccactggtgcccttaccccagaaaagcaagactcattccactggcagtcaggtagtaatgctagtgtattctttaaaatctccgaccccccagccagaatgaccataccttttatgtgtattaattcagcatactcagttttttatgatggctttgccgggtttgagaaaactggtctgtatggaataaatccagctgatactattggtaacttgtgtgtcagaatagtgaatgaacaccaaccagttggtttcacagtaactgttagggtttacatgaagcctaaacacataaaagcgtgggcaccacgaccaccacgaaccctgccatacatgagtattgcaaatgcaaattacaaaggtaaagaaagagcaccaaatgcactcaatgctataattggcaatagagacagtgttaaaaccatgcctcataatatagtgactact"/>
+                                
+        <sequence id="seq_OP267512|Homo_sapiens|2021" spec="Sequence" taxon="OP267512|Homo_sapiens|2021" totalcount="4" value="atagaccatttacatggagcagaggcagcctaccagattgagagcatcattaaaacagcaactgacactgtgaaaagtgagattaacgctgaacttggtgtagtccctagcttaaatgcagttgaaacaggtgcaacatcaaacactgaaccagaagaagctatacaaactcgcacagtgataaatcaacacggtgtatctgaaactctagtggagaattttctcagtagagcagctttggtgtcgaagagaagtttcgaatacaaagaccatacttcatctacagcacaaacagataagaacttcttcaaatggacaattaacaccaggtcctttgtacagctaagaagaaagttagaattattcacatacctcagatttgatgctgagatcactatactcacaaccgtagcagtgaatggtagtagtaacacatatgtgggtcttcctgacttgacactgcaggcaatgttcgtacccactggtgcccttaccccagaaaagcaagactcattccactggcagtcgggtagtaatgctagtgtattctttaaaatctctgaccccccagccagaatgaccataccttttatgtgtattaattcagcatactcagttttttatgatggatttgccggatttgagaaaactggtttgtatggaataaatccagctgatactattggtaacttgtgtgttagaatagtgaacgaacaccaaccagttggtttcacagtgaccgttagggtttacatgaagcctaaacacataaaagcatgggcaccacgaccaccacgaaccctgccatacatgagtattgcaaatgcaaattacaaaggtaaagaaagagcaccaaatgcgctcaatgctataattggcaatagagacagtgtcaaaaccatgcctcataatatagtgactact"/>
+                                
+        <sequence id="seq_OP267513|Homo_sapiens|2021" spec="Sequence" taxon="OP267513|Homo_sapiens|2021" totalcount="4" value="atagaccatttacatggagcagaggcagcctaccagattgagagcatcattaaaacagcaactgacactgtgaaaagtgagattaacgctgaacttggtgtagtccctagcttaaatgcagttgaaacaggtgcaacatcaaacactgaaccagaagaagctatacaaactcgcacagtgataaatcaacacggtgtatccgaaactctagtggagaattttctcagtagagcagctttggtgtcgaagagaagtttcgaatacaaagaccatacttcatctacagcacaaacagataagaacttcttcaaatggacaattaacaccaggtcctttgtacagctaagaagaaagttagaattattcacatacctcagatttgatgctgagatcactatactcacaaccgtagcagtgaatggtagtaataacacatatgtgggtcttcctgacttgacactgcaggcaatgttcgtacccactggtgcccttaccccagaaaagcaagactcattccactggcagtcgggtagtaatgctagtgtattctttaaaatctctgaccccccagccagaatgaccataccttttatgtgtattaattcagcatactcagttttttatgatggatttgccggatttgagaaaactggtctgtatggaataaatccagctgatactattggtaacttgtgtgttagaatagtgaacgaacaccaaccagttggtttcacagtgaccgttagggtttacatgaagcctaaacacataaaagcatgggcaccacgaccaccacgaaccctgccatacatgagtattgcaaatgcaaattacaaaggtaaagaaagagcaccaaatgcgctcaatgctataattggcaatagagacagtgtcaaaaccatgcctcataatatagtgactact"/>
+                                
+        <sequence id="seq_OP267514|Homo_sapiens|2021" spec="Sequence" taxon="OP267514|Homo_sapiens|2021" totalcount="4" value="atagaccatttacatggagcagaggcagcctaccagattgagagcatcattaaaacagcaactgacactgtgaaaagtgagattaacgctgaacttggtgtagtccctagcttaaatgcagttgaaacaggtgcaacatcaaacactgaaccagaagaagctatacaaactcgcacagtgataaatcaacacggtgtatccgaaactctagtggagaattttctcagtagagcagctttggtgtcgaagagaagtttcgaatacaaagaccatacttcatctacagcacaaacagataagaacttcttcaaatggacaattaacaccaggtcctttgtacagctaagaagaaagttagaattattcacatacctcagatttgatgctgagatcactatactcacaaccgtagcagtgaatggtagtaataacacatatgtgggtcttcctgacttgacactgcaggcaatgttcgtacccactggtgcccttaccccagaaaagcaagactcattccactggcagtcgggtagtaatgctagtgtattctttaaaatctctgaccccccagccagaatgaccataccttttatgtgtattaattcagcatactcagttttttatgatggatttgccggatttgagaaaactggtctgtatggaataaatccagctgatactattggtaacttgtgtgttagaatagtgaacgaacaccaaccagttggtttcacagtgaccgttagggtttacatgaagcctaaacacataaaagcatgggcaccacgaccaccacgaaccctgccatacatgagtattgcaaatgcaaattacaaaggtaaagaaagagcaccaaatgcgctcaatgctataattggcaatagagacagtgtcaaaaccatgcctcataatatagtgactact"/>
+                                
+        <sequence id="seq_OP267515|Homo_sapiens|2021" spec="Sequence" taxon="OP267515|Homo_sapiens|2021" totalcount="4" value="ctagaccacttacatggagcagaggcagcctaccagatcgagagcatcatcaaaacagcaaccgacactgtgaaaagcgagattaacgctgaacttggtgtagtccccagcttaaatgcagttgaaacaggtgcaacatctaacactgaaccggaagaagctatacaaactcgcacagtgataaatcaacatggtgtgtccgaaactctagtggagaattttctcagtagagcagctttggtatcgaagagaagtttcgaatacaaagatcacacttcatctgcagcacaagcagataagaactttttcaaatggacaattaacactaggtcctttgtacagctaagaagaaagttagaattattcacataccttagatttgatgctgagatcactatactcacaactgtagcagtgaatggtagtaataacacatatgtgggtcttcccgatttgacactgcaggcaatgtttgtacccactggtgcccttaccccagaaaagcaagactcattccactggcagtcaggcagtaatgctagtgtattctttaaaatctccgaccccccagccagaatgaccataccttttatgtgtattaattcagcatactcagttttttatgatggctttgccgggtttgagaaaactggtctgtatggaataaatccagctgataccattggtaacttgtgtgtcagaatagtgaatgaacaccaaccagttggtttcacagtaactgttagggtttacatgaagcctaaacacataaaagcgtgggcaccacgaccaccacgaaccctgccatacatgagtattgcaaatgcaaattacaaaggtaaagaaagagcaccaaatgcactcaatgctataattggcaatagagacagtgttaaaaccatgcctcataatatagtgactact"/>
+                                
+        <sequence id="seq_OP267516|Homo_sapiens|2021" spec="Sequence" taxon="OP267516|Homo_sapiens|2021" totalcount="4" value="ctagaccacttacatggagcagaggcagcctaccagatcgagagcatcatcaaaacagcaaccgacactgtgaaaagcgagattaacgctgaacttggtgtagtccccagcttaaatgcagttgaaacaggtgcaacatctaacactgaaccggaagaagctatacaaactcgcacagtgataaatcaacatggtgtgtccgaaactctagtggagaattttctcagtagagcagctttggtatcgaagagaagtttcgaatacaaagatcacacttcgtctgcagcacaagcagataagaactttttcaaatggacaattaacactaggtcctttgtacagctaagaagaaagttagaattattcacataccttagatttgatgctgagatcactatactcacaactgtagcagtgaatggtagtaataacacatatgtgggtcttcccgatttgacactgcaggcaatgtttgtacccactggtgcccttaccccagaaaagcaagactcattccactggcagtcaggtagtaatgctagtgtattctttaaaatctccgaccccccagccagaatgaccataccttttatgtgtattaattcagcatactcagttttttatgatggctttgccgggtttgagaaaactggtctgtatggaataaatccagctgatactattggtaacttgtgtgtcagaatagtgaatgaacaccaaccagttggttttacagtaactgttagggtttacatgaagcctaaacacataaaagcgtgggcaccacgaccaccacgaaccctgccatacatgagtattgcaaatgcaaattacaaaggtaaagaaagagcaccaaatgcactcaatgctataattggcaatagagacagtgttaaaaccatgcctcataatatagtgactact"/>
+                                
+        <sequence id="seq_OP267517|Homo_sapiens|2021" spec="Sequence" taxon="OP267517|Homo_sapiens|2021" totalcount="4" value="atagaccatttacatggagcagaggcagcctaccagattgagagcatcattaaaacagcaactgacactgtgaaaagtgagattaacgctgaacttggtgtagtccctagcttaaatgcagttgaaacaggtgcaacatcaaacactgaaccagaagaagctatacaaactcgcacagtgataaatcaacacggtgtatccgaaactctagtggagaattttctcagtagagcagctttggtgtcgaagagaagtttcgaatacaaagaccatacttcatctacagcacaaacagataagaacttcttcaaatggacaattaacaccaggtcctttgtacagctaagaagaaagttagaattattcacatacctcagatttgatgctgagatcactatactcacaaccgtagcagtgaatggtagtaataacacatatgtgggtcttcctgacttgacactgcaggcaatgttcgtacccactggtgcccttaccccagaaaagcaagactcattccactggcagtcgggtagtaatgctagtgtattctttaaaatctctgaccccccagccagaatgaccataccttttatgtgtattaattcagcatactcagttttttatgatggatttgccggatttgagaaaactggtctatatggaataaatccagctgatactattggtaacttgtgtgttagaatagtgaacgaacaccaaccagttggtttcacagtgaccgttagggtttacatgaagcctaaacacataaaagcatgggcaccacgaccaccacgaaccctgccatacatgagtattgcaaatgcaaattacaaaggtaaagaaagagcaccaaatgcgctcaatgctataattggcaatagagacagtgtcaaaaccatgcctcataatatagtgactact"/>
+                                
+        <sequence id="seq_OP267518|Homo_sapiens|2021" spec="Sequence" taxon="OP267518|Homo_sapiens|2021" totalcount="4" value="atagaccatttacatggagcagaggcagcctaccagattgagagcatcattaaaacagcaactgacactgtgaaaagtgagattaacgctgaacttggtgtagtccctagcttaaatgcagttgaaacaggtgcaacatcgaacactgaaccagaagaagctatacaaactcgcacagtgataaatcaacacggtgtatccgaaactctagtggagaattttctcagtagagcagctttggtgtcgaagagaagtttcgaatacaaagaccatacttcatctacagcacaaacagataagaacttcttcaaatggacaattaacaccaggtcctttgtacagctaagaagaaagttagaattattcacatacctcagatttgatgctgagatcactatactcacaaccgtagcagtgaatggtagtaataacacatatgtgggtcttcctgacttgacactgcaggcaatgttcgtacccactggtgcccttaccccagaaaagcaagactcattccactggcagtcgggtagtaatgctagtgtattctttaaaatctctgaccccccagccagaatgaccataccttttatgtgtattaattcagcatactcagttttttatgatggatttgccggatttgagaaaactggtctgtatggaataaatccagctgatactattggtaacttgtgtgttagaatagtgaacgaacaccaaccagttggtttcacagtgaccgttagggtttacatgaagcctaaacacataaaagcatgggcaccacgaccaccacgaaccctgccatacatgagtattgcaaatgcaaattacaaaggtaaagaaagagcaccaaatgcgctcaatgctataattggcaatagagacagtgtcaaaaccatgcctcataatatagtgactact"/>
+                                
+        <sequence id="seq_OP267519|Homo_sapiens|2021" spec="Sequence" taxon="OP267519|Homo_sapiens|2021" totalcount="4" value="atagaccatttacatggagcagaggcagcctaccagattgagagcatcattaaaacagcaattgacactgtgaaaagtgagattaacgctgaacttggtgtagtccctagcttaaatgcagttgaaacaggtgcaacatcaaacactgaaccagaagaagctatacaaactcgcacagtgataaatcaacacggtgtatccgaaactctagtggagaattttctcagtagagcagctttggtgtcgaagagaagtttcgaatacaaagaccatacttcatctacaacacaaacagataagaacttcttcaaatggacaattaacaccaggtcctttgtacagctaagaagaaagttagaattattcacatacctcagatttgatgctgagatcactatactcacaaccgtagcagtgaatggtagtaataacacatatgtgggtcttcctgacttgacactgcaggcaatgttcgtacccactggtgcccttaccccagaaaagcaagactcattccactggcagtcgggtagtaatgctagtgtattctttaaaatctctgaccccccagccagaatgaccataccttttatgtgtattaattcagcatactcagttttttatgatggatttgccggatttgagaaaactggtctgtatggaataaatccagctgatactattggtaacttatgtgttagaatagtgaacgaacaccaaccagttggtttcacagtgaccgtcagggtttacatgaagcctaaacacataaaagcatgggcaccacgaccaccacgaactctgccatacatgagtattgcaaatgcaaattacaaaggtaaagaaagagcaccaaatgcgctcaatgctataattggcaatagagacagtgtcaaaaccatgcctcataatatagtgactact"/>
+                                
+        <sequence id="seq_OP267520|Homo_sapiens|2021" spec="Sequence" taxon="OP267520|Homo_sapiens|2021" totalcount="4" value="atagaccacttacatggagcagaggcagcctaccagatcgagagcatcatcaaaacagcgaccgacactgtgaaaagcgagattaacgctgaacttggtgtagtccccagcttaaatgcagttgaaacaggtgcaacatctaacactgaaccagaagaagctatacaaactcgcacagtgataaatcaacatggtgtgtccgaaactctagtggagaattttctcagtagagcagctttggtatcgaagagaagtttcgaatacaaagatcacacttcgtctgcagcacaagcagataagaactttttcaaatggacaattaacactaggtcctttgtgcagctaagaagaaagttagaattattcacataccttagatttgatgctgagatcactatactcacaactgtagcagtgaatggtagtaataacacatatgtgggtcttcctgatttgacactgcaggcaatgtttgtacccactggtgcccttaccccagaaaagcaagactcattccactggcagtcaggtagtaatgctagtgtattctttaaaatctccgaccccccagccagaatgaccataccttttatgtgtattaattcagcatactcagttttttatgatggctttgccgggtttgagaaaactggtctgtatggaataaatccagctgatactattggtaacttgtgtgtcagaatagtgaatgaacaccaaccagttggtttcacagtaactgttagggtttacatgaagcctaaacacataaaagcgtgggcaccacgaccaccacgaaccctgccatacatgagtattgcaaatgcaaattacaaaggtaaagaaagagcaccaaatgcactcaatgctataattggcaatagagacagtgttaaaaccatgcctcataatatagtgactact"/>
+                                
+        <sequence id="seq_OP267521|Homo_sapiens|2021" spec="Sequence" taxon="OP267521|Homo_sapiens|2021" totalcount="4" value="ctagaccacttacatggagcagaggcagcctatcagatcgagagcatcatcaaaacagcaaccgacactgtgaaaagcgagattaacgctgaacttggtgtagtccccagcttaaatgcagttgaaacaggtgcaacatctaacactgaaccggaagaagctatacaaactcgcacagtgataaatcaacatggtgtgtccgaaactctagtggagaattttctcagtagagcagctttggtatcgaagagaagtttcgaatacaaagatcacacttcgtctgcagcacaagcagataagaactttttcaaatggacaattaacactaggtcctttgtgcagctaagaagaaagttagaattattcacataccttagatttgatgctgagatcactatactcacaactgtagcagtgaatggtagtaataacacatatgtgggtcttcctgatttgacactgcaggcaatgtttgtacccactggtgcccttaccccagaaaagcaagactcattccactggcagtcaggtagtaatgctagtgtattctttaaaatctccgaccccccagccagaatgaccataccttttatgtgtattaattcagcatactcagttttttatgatggctttgccgggtttgagaaaactggtctgtatggaataaatccagctgatactattggtaacttgtgtgtcagaatagtgaatgaacaccaaccagttggtttcacagtaactgttagggtttacatgaagcctaaacacataaaagcgtgggcaccacgaccaccacgaaccctgccatacatgagtattgcaaatgcaaattacaaaggtaaagaaagagcaccaaatgcactcaatgctataattggcaatagagacagtgttaaaaccatgcctcataatatagtgactact"/>
+                                
+        <sequence id="seq_OP267522|Homo_sapiens|2021" spec="Sequence" taxon="OP267522|Homo_sapiens|2021" totalcount="4" value="ctagaccacttacatggagcagaggcagcctaccagatcgagagcatcatcaaaacagcaaccgacactgtgaaaagcgagattaacgctgaacttggtgtagtccccagcttaaatgcagttgaaacaggtgcaacatctaacactgaaccggaagaagctatacaaactcgcacagtgataaatcaacatggtgtgtccgaaactctagtggagaattttctcagtagagcagctttggtatcgaagagaagtttcgaatacaaagatcacacttcgtctgcagcacaagcagataagaactttttcaaatggacaattaacactaggtcctttgtacagctaagaagaaagttagaattattcacataccttagatttgatgctgagatcactatactcacaactgtagcagtgaatggtagtaataacacatatgtgggtcttcccgatttgacactgcaggcaatgtttgtacccactggtgcccttaccccagaaaagcaagactcattccactggcagtcaggtagtaatgctagtgtattctttaaaatctccgaccccccagccagaatgaccataccttttatgtgtattaattcagcatactcagttttttatgatggctttgccgggtttgagaaaactggtctgtatggaataaatccagctgatactattggtaacttgtgtgtcagaatagtgaatgaacaccaaccagttggtttcacagtaactgttagggtttacatgaagcctaaacacataaaagcgtgggcaccacgaccaccacgaaccctgccatacatgagtattgcaaatgcaaattacaaaggtaaagaaagagcaccaaatgcactcaatgctataattggcaatagagacagtgttaaaaccatgcctcataatatagtgactact"/>
+                                
+        <sequence id="seq_OP267523|Homo_sapiens|2021" spec="Sequence" taxon="OP267523|Homo_sapiens|2021" totalcount="4" value="atagaccatttacatggagcagaggcagcctaccagattgagagcatcattaaaacagcaactgacactgtgaaaagtgagattaacgctgaacttggtgtagtccctagcttaaatgcagttgaaacaggtgcaacatcaaacactgaaccagaagaagctatacaaactcgcacagtgataaatcaacacggtgtatccgaaactctagtggagaattttctcagtagagcagctttggtgtcgaagagaagtttcgaatacaaagaccatacttcatctacagcacaaacagataagaacttcttcaaatggacaattaacaccaggtcctttgtacagctaagaagaaagttagaattattcacatacctcagatttgatgctgagatcactatactcacaaccgtagcagtgaatggtagtaataacacatatgtgggtcttcctgacttgacactgcaggcaatgttcgtacccactggtgcccttaccccagaaaagcaagactcattccactggcagtcgggtagtaatgctagtgtattctttaaaatctctgaccccccagccagaatgaccataccttttatgtgtattaattcagcatactcagttttttatgatggatttgccggatttgagaaaactggtctgtatggaataaatccagctgatactattggtaacttgtgtgttagaatagtgaacgaacaccaaccagttggtttcatagtgaccgttagggtttacatgaagcctaaacacataaaagcatgggcaccacgaccaccacgaaccctgccatacatgagtattgcaaatgcaaattacaaaggtaaagaaagagcaccaaatgcgctcaatgctataattggcaatagagacagtgtcaaaaccatgcctcataatatagtgactact"/>
+                                
+        <sequence id="seq_OP267524|Homo_sapiens|2021" spec="Sequence" taxon="OP267524|Homo_sapiens|2021" totalcount="4" value="atagaccatttacatggagcagaggcagcctaccagattgagagcatcattaaaacagcaactgacactgtgaaaagtgagattaacgctgaacttggtgtagtccctagcttaaatgcagttgaaacaggtgcaacatcaaacactgaaccagaagaagctatacaaactcgcacagtgataaatcaacacggtgtatccgaaactctagtggagaattttctcagtagagcagctttggtgtcgaagagaagtttcgaatacaaagaccatacttcatctacagcacaaacagataagaacttcttcaaatggacaattaacaccaggtcctttgtacagctaagaagaaagttagaattattcacatacctcagatttgatgctgagatcactatactcacaaccgtagcagtgaatggtagtaataacacatatgtgggtcttcctgacttgacactgcaggcaatgttcgtacccactggtgcccttaccccagaaaagcaagactcattccactggcagtcgggtagtaatgctagtgtattctttaaaatctctgaccccccagccagaatgaccataccttttatgtgtattaattcagcatactcagttttttatgatggatttgccggatttgagaaaactggtctgtatggaataaatccagctgatactattggtaacttgtgtgttagaatagtgaacgaacaccaaccagttggtttcacagtgaccgttagggtttacatgaagcctaaacacataaaagcatgggcaccacgaccaccacgaaccctgccatacatgagtattgcaaatgcaaattacaaaggtaaagaaagagcaccaaatgcgctcaatgctataattggcaatagagacagtgtcaaaaccatgcctcataatatagtgactact"/>
+                                
+        <sequence id="seq_OP267525|Homo_sapiens|2021" spec="Sequence" taxon="OP267525|Homo_sapiens|2021" totalcount="4" value="atagaccatttacatggagcagaggcagcctaccagattgagagcatcattaaaacagcaactgacactgtgaaaagtgagattaacgctgaacttggtgtagtccctagcttaaatgcagttgaaacaggtgcaacatcaaacactgaaccagaagaagctatacaaactcgcacagtgataaatcaacacggtgtatccgaaactctagtggagaattttctcagtagagcagctttggtgtcgaagagaagtttcgaatacaaagaccatacttcatctacagcacaaacagataagaacttcttcaaatggacaattaacaccaggtcctttgtacagctaagaagaaagttagaattattcacatacctcagatttgatgctgagatcactatactcacaaccgtagcagtgaatggtagtaataacacatatgtgggtcttcctgacttgacactgcaggcaatgttcgtacccactggtgcccttaccccagaaaagcaagactcattccactggcagtcgggtagtaatgctagtgtattctttaaaatctctgaccccccagccagaatgaccataccttttatgtgtattaattcagcatactcagttttttatgatggatttgccggatttgagaaaactggtctgtatggaataaatccagctgatactattggtaacttgtgtgttagaatagtgaacgaacaccaaccagttggtttcacagtgaccgttagggtttacatgaagcctaaacacataaaagcatgggcaccacgaccaccacgaaccctgccatacatgagtattgcaaatgcaaattacaaaggtaaagaaagagcaccaaatgcgctcaatgctataattggcaatagagacagtgtcaaaaccatgcctcataatatagtgactact"/>
+                                
+        <sequence id="seq_OP267526|Homo_sapiens|2021" spec="Sequence" taxon="OP267526|Homo_sapiens|2021" totalcount="4" value="atagaccacttacatggagcagaggcagcctaccagatcgagagcatcatcaaaacagcaaccgacactgtgaaaagcgagattaacgctgaacttggtgtagtccccagcttaaatgcagttgaaacaggtgcaacatctaacactgaaccggaagaagctatacaaactcgcacagtgataaatcaacatggtgtgtccgaaactctagtggagaattttctcagtagagcagctttggtatcgaagagaagtttcgaatacaaagatcacacttcgtctgcagcacaagcagataagaactttttcaaatggacaattaacactaggtcctttgtgcagctaagaagaaagttagaattattcacataccttagatttgatgctgagatcactatactcacaactgtagcagtgaatggtagtaataacacatatgtgggtcttcctgatttgacactgcaggcaatgtttgtacccactggtgcccttaccccagaaaagcaagactcattccactggcagtcaggtagtaatgctagtgtattctttaaaatctccgaccccccagccagaatgaccataccttttatgtgtattaattcagcatactcagttttttatgatggctttgccgggtttgagaaaactggtctgtatggaataaatccagctgatactattggtaacttgtgtgtcagaatagtgaatgaacaccaaccagttggtttcacagtaactgttagggtttacatgaagcctaaacacataaaagcgtgggcaccacgaccaccacgaaccctgccatacatgagtattgcaaatgcaaattacaaaggtaaagaaagagcaccaaatgcactcaatgctataattggcaatagagacagtgttaaaaccatgcctcataatatagtgactact"/>
+                                
+        <sequence id="seq_OP267527|Homo_sapiens|2021" spec="Sequence" taxon="OP267527|Homo_sapiens|2021" totalcount="4" value="ctagaccacttacatggagcagaggcagcctaccagatcgagagcatcatcaaaacagcaaccgacactgtgaaaagcgagattaacgctgaacttggtgtagtccccagcttaaatgcagttgaaacaggtgcaacatctaacactgaaccggaagaagctatacaaactcgcacagtgataaatcaacatggtgtgtccgaaactctagtggagaattttctcagtagagcagctttggtatcgaagagaagtttcgaatacaaagatcacacttcgtctgcagcacaagcagataagaactttttcaaatggacaattaacactaggtcctttgtgcagctaagaagaaagttagaattattcacataccttagatttgatgctgaggtcactatactcacaactgtagcagtgaatggtagtaataacacatatgtgggtcttcctgatttgacactgcaggcaatgtttgtgcccactggtgcccttaccccagaaaagcaagactcattccactggcagtcaggtagtaatgctagtgtattctttaaaatctccgaacccccagccagaatgaccataccttttatgtgtattaattcagcatactcagttttttatgatggctttgccgggtttgagaaaactggtctgtatggaataaatccagctgatactattggtaacttgtgtgtcagaatagtgaatgaacaccaaccagttggtttcacagtaactgttagggtttacatgaagcctaaacacataaaagcgtgggcaccacgaccaccacgaaccctgccatacatgagtattgcaaatgcaaattacaaaggtaaagaaagagcaccaaatgcactcaatgctataattggcaatagagacagtgttaaaaccatgcctcataatatagtgactact"/>
+                                
+        <sequence id="seq_OP267528|Homo_sapiens|2021" spec="Sequence" taxon="OP267528|Homo_sapiens|2021" totalcount="4" value="ctagaccacttacatggagcagaggcagcttaccagatcgagagcatcattaaaacagcaaccgacactgtgaaaagcgagattaacgctgaacttggtgtagtccccagcttaaatgcagttgaaacaggtgcaacatctaacactgaaccagaagaagctatacaaactcgcacagtgataaatcaacatggtgtgtccgaaactctagtggaaaattttctcagtagagcagctttggtatcgaagagaagtttcgaatacaaagatcacacttcgtctgcagcacaagcagacaagaactttttcaaatggacaattaacactaggtcctttgtacagctaagaagaaagttagaattattcacataccttagatttgatgctgagatcactatactcacaactgtagcagtgaatggtagtaataacacatatgtgggtcttcctgacttgacactgcaggcaatgtttgtacccactggtgcccttaccccagaaaagcaagactcattccactggcagtcaggtagtaatgctagtgtattctttaaaatctccgaccccccagccagaatgaccataccttttatgtgtattaattcagcatactcagtattttatgatggctttgccgggtttgagaaaactggtctgtatggaataaatccagctgatactattggtaacttgtgtgtcagaatagtgaatgaacaccaaccagttggtttcacagtaactgttagggtttacatgaagcctaaacacataaaagcgtgggcaccacgaccaccacgaaccctgccatacatgagtattgcaaatgcaaattacaaaggtaargaaagagcaccaaatgcactcaatgctataattggsaatagagacagtgttaaaaccatgcctcataatatagtgactact"/>
+                                
+        <sequence id="seq_OP267529|Homo_sapiens|2021" spec="Sequence" taxon="OP267529|Homo_sapiens|2021" totalcount="4" value="ctagaccacttacatggagcagaggcagcctaccagatcgagagcatcatcaaaacagcaaccgacactgtgaaaagcgagattaacgctgaacttggtgtagtccccagcttaaatgcagttgaaacaggtgcaacatctaacactgaaccggaagaagctatacaaactcgcacagtgataaatcaacatggtgtgtccgaaactctagtggagaattttctcagtagagcagctttggtatcgaagagaagtttcgaatacaaagatcacacttcgtctgcagcacaagcagataagaactttttcaaatggacaattaacactaggtcctttgtacagctaagaagaaagttagaattattcacataccttagatttgatgctgagatcactatactcacaactgtagcagtgaatggtagtaataacacatatgtgggtcttcccgatttgacactgcaggcaatgtttgtacccactggtgcccttaccccagaaaagcaagactcattccactggcagtcaggtagtaatgctagtgtattctttaaaatctccgaccccccagccagaatgaccataccttttatgtgtattaattcagcatactcagttttttatgatggctttgctgggtttgagaaaactggtctgtatggaataaatccagctgatactattggtaacttgtgtgtcagaatagtgaatgaacaccaaccagttggtttcacagtaactgttagggtttacatgaagcctaaacacataaaagcgtgggcaccacgaccaccacgaaccctgccatacatgagtattgcaaatgcaaattacaaaggtaaagaaagagcaccaaatgcactcaatgctataattggcaatagagacagtgttaaaaccatgcctcataatatagtgactact"/>
+                                
+        <sequence id="seq_OP267530|Homo_sapiens|2021" spec="Sequence" taxon="OP267530|Homo_sapiens|2021" totalcount="4" value="ctaaaccacttacatggagcagaggcagcctaccagatcgagagcatcatcaaaacagcaaccgacactgtgaaaagcgagattaacgctgaacttggtgtagtccccagcttaaatgcagttgaaacaggtgcaacatctaacactgaaccggaagaagctatacaaactcgcacagtgataaatcaacatggtgtgtccgaaactctagtggagaattttctcagtagagcagctttggtatcgaagagaagtttcgaatacaaagatcacacttcgtctgcagcacaagcagataagaactttttcaaatggacaattaacactaggtcctttgtacagctaagaagaaagttagaattattcacataccttagatttgatgctgagatcactatactcacaactgtagcagtgaatggtagtaataacacatatgtgggtcttcccgatttgacactgcaggcaatgtttgtacccactggtgcccttaccccagaaaagcaagactcattccactggcagtcaggtagtaatgctagtgtattctttaaaatctccgaccccccagccagaatgaccataccttttatgtgtattaattcagcatactcagttttttatgatggctttgccgggtttgagaaaactggtctgtatggaataaatccagctgatactattggtaacttgtgtgtcagaatagtgaatgaacaccaaccagttggtttcacagtaactgttagggtttacatgaagcctaaacacataaaagcgtgggcaccacgaccaccacgaaccctgccatacatgagtattgcaaatgcaaattacaaaggtaaagaaagagcaccaaatgcactcaatgctataattggcaatagagacagtgttaaaaccatgcctcataatatagtgactact"/>
+                                
+        <sequence id="seq_OP267531|Homo_sapiens|2021" spec="Sequence" taxon="OP267531|Homo_sapiens|2021" totalcount="4" value="---------------------------------------------------------------------------------------------------------------------------------ggtgcaacatcaaacactgaaccagaagaagctatacaaactcgcacagtgataaatcaacacggtgtatccgaaactctagtggagaattttctcagtagagcagctttggtgtcgaagagaagtttcgaatacaaagaccatacttcatctacagcacaaacagataagaacttcttcaaatggacaattaacaccaggtcctttgtacagctaagaagaaagttagaattattcacatacctcagatttgatgctgagatcactatactcacaaccgtagcagtgaatggtagtaataacacatatgtgggtcttcctgacttgacactgcaggcaatgt--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"/>
+                                
+        <sequence id="seq_OP267532|Homo_sapiens|2021" spec="Sequence" taxon="OP267532|Homo_sapiens|2021" totalcount="4" value="---------------------------------------------------------------------------------------------------------------------------------ggtgcaacatcaaatactgaaccagargaagctatacaaactcgcacagtgataaatcaacacggtgtatccgaaactctagtggagaattttctcagtagagcagctttggtgtcgaagagaagtttcgaatacaaagaccatacttcatctacagcacaaacagataagaacttcttcaaatggacaattaacactaggtcctttgtacagctaagaagaaagttagaattattcacatacctcagatttgatgctgagatcactatactcacaaccgtagcagtgaatggtagtaataacacatatgtgggtcttcctgacttgacactgcaggcaatgt--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"/>
+                                
+        <sequence id="seq_OP267533|Homo_sapiens|2021" spec="Sequence" taxon="OP267533|Homo_sapiens|2021" totalcount="4" value="------------------------------------------------------------------------------------------------------------------------------------gcaacatcaaacactgaaccagaagaagctatacaaactcgcacagtgataaatcaacacggtgtatccgaaactctagtggagaattttctcagtagagcagctttggtgtcgaagagaagtttcgaatacaaagaccatacttcatctacagcacaaacagataagaacttcttcaaatggacaattaacaccaggtcctttgtacagctaagaagaaagttagaattattcacatacctcagatttgatgctgagatcactatactcacaaccgtagcagtgaatggtagtaataacacatatgtgggtcttcctgacttgacactacaggca------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"/>
+                                
+        <sequence id="seq_OP267534|Homo_sapiens|2021" spec="Sequence" taxon="OP267534|Homo_sapiens|2021" totalcount="4" value="---------------------------------------------------------------------------------------------------------------------------------ggtgcaacatcaaacactgaaccagaagaagctatacaaactcgcacagtgataaatcaacacggtgtatccgaaactctagtggagaattttctcagtagagcagctttggtgtcgaagagaagtttcgaatacaaagaccatacttcatctacagcacaaacagataagaacttcttcaaatggacaattaacaccaggtcctttgtacagctaagaagaaagttagaattattcacatacctcagatttgatgctgagatcactatactcacaaccgtagcagtgaatggtagtaataacacatatgtgggtcttcctgacttgacactgcaggcaat----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"/>
+                                
+        <sequence id="seq_OP267535|Homo_sapiens|2021" spec="Sequence" taxon="OP267535|Homo_sapiens|2021" totalcount="4" value="atagaccatttacatggagcagaggcagcctaccagattgagagcatcattaaaacagcaactgacactgtgaaaagtgagattaacgctgaacttggtgtagtccctagcttaaatgcagttgaaacaggtgcaacatcaaacactgaaccagaagaagctatacaaactcgcacagtgataaatcaacacggtgtatccgaaactctagtggagaattttctcagtagagcagctttggtgtcgaagagaagtttcgaatacaaagaccatacttcatctacagcacaaacagataagaacttcttcaaatggacaattaacaccaggtcctttgtacagctaagaagaaagttagaattattcacatacctcagatttgatgctgagatcactatactcacaaccgtagcagtgaatggtagtaataacacatatgtgggtcttcctgacttgacactgcaggcaatgttcgtacccactggtgcccttaccccagaaaagcaagrctcattccactggcsgtcgggtagtaatgctagtgtattctttaaaatctctgaccccccagccagaatgaccataccttttatgtgtattaattcagcatactcagttttttatgatggatttgccggatttgagaaaactggtctgtatggaataaatccagctgatactattggtaacttgtgtgttagaatagtgaatgaac-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"/>
+                                
+        <sequence id="seq_OQ653554|Mus_musculus|2021" spec="Sequence" taxon="OQ653554|Mus_musculus|2021" totalcount="4" value="atagaccacttacatggagcagaggcagcctaccagatcgagagcatcattaaaacagcaactgacactgtgaaaagtgagattaacgctgaacttggtgtagtccctagcttaaatgcagttgaaacaggtgcaacatctaacactgaaccagaagaagctatacaaactcgcacagtgataaatcaacacggtgtatccgaaactctagtggagaattttctcagtagagcagctttggtgtcgaaaagaagtttcgaatacaaagaccatacttcgtctacagcacgaacagataagaacttcttcaaatggacaattaacaccaggtcctttgtacagctaagaagaaagttagaattattcacataccttagatttgatgctgagatcactatactcacaactgtagcagtgaatggtagtaataatacatatgtgggtcttcctgacttgacactgcaggcaatgttcgtacccactggtgcccttaccccagaaaagcaagactcattccactggcagtcaggtagtaatgctagtgtattctttaaaatctctgaccctccagccagaatgaccataccttttatgtgtattaattcagcatactcagttttttatgatggctttgccggatttgagaaaacttgtctgtatggaataaatccagctgacactattggtaacttgtgtgttagaatagtgaatgaacaccaaccagttggtttcacagtgaccgttagggtttacatgaagcctaaacacataaaagcgtgggcaccacgaccaccacgaaccctgccatacatgagtattgcaaatgcaaattacaaaggtaaagaaagagcaccaaatgcgctcaatgctataattggcaatagagacagtgttaaaaccatgcctcataatatagtgaccact"/>
+                            
+    </data>
+        
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+    <map name="Uniform" >beast.base.inference.distribution.Uniform</map>
+
+    
+
+    <map name="Exponential" >beast.base.inference.distribution.Exponential</map>
+
+    
+
+    <map name="LogNormal" >beast.base.inference.distribution.LogNormalDistributionModel</map>
+
+    
+
+    <map name="Normal" >beast.base.inference.distribution.Normal</map>
+
+    
+
+    <map name="Beta" >beast.base.inference.distribution.Beta</map>
+
+    
+
+    <map name="Gamma" >beast.base.inference.distribution.Gamma</map>
+
+    
+
+    <map name="LaplaceDistribution" >beast.base.inference.distribution.LaplaceDistribution</map>
+
+    
+
+    <map name="prior" >beast.base.inference.distribution.Prior</map>
+
+    
+
+    <map name="InverseGamma" >beast.base.inference.distribution.InverseGamma</map>
+
+    
+
+    <map name="OneOnX" >beast.base.inference.distribution.OneOnX</map>
+
+    
+
+    <run id="mcmc" spec="MCMC" chainLength="50000000">
+            
+        <state id="state" spec="State" storeEvery="5000">
+                    
+            <tree id="Tree.t:NPEV_D_trim" spec="beast.base.evolution.tree.Tree" name="stateNode">
+                            
+                <trait id="dateTrait.t:NPEV_D_trim" spec="beast.base.evolution.tree.TraitSet" traitname="date" value="OP267535|Homo_sapiens|2021=2021,OP267534|Homo_sapiens|2021=2021,OP267533|Homo_sapiens|2021=2021,OP267532|Homo_sapiens|2021=2021,OP267531|Homo_sapiens|2021=2021,OP267530|Homo_sapiens|2021=2021,OP267529|Homo_sapiens|2021=2021,OP267528|Homo_sapiens|2021=2021,OP267527|Homo_sapiens|2021=2021,OP267526|Homo_sapiens|2021=2021,OP267525|Homo_sapiens|2021=2021,OP267524|Homo_sapiens|2021=2021,OP267523|Homo_sapiens|2021=2021,OP267522|Homo_sapiens|2021=2021,OP267521|Homo_sapiens|2021=2021,OP267520|Homo_sapiens|2021=2021,OP267519|Homo_sapiens|2021=2021,OP267518|Homo_sapiens|2021=2021,OP267517|Homo_sapiens|2021=2021,OP267516|Homo_sapiens|2021=2021,OP267515|Homo_sapiens|2021=2021,OP267514|Homo_sapiens|2021=2021,OP267513|Homo_sapiens|2021=2021,OP267512|Homo_sapiens|2021=2021,OP267511|Homo_sapiens|2021=2021,OP267510|Homo_sapiens|2021=2021,OP267509|Homo_sapiens|2021=2021,OP267508|Homo_sapiens|2021=2021,OP267507|Homo_sapiens|2021=2021,OP267506|Homo_sapiens|2021=2021,OQ653554|Mus_musculus|2021=2021,JF416938|Nonhuman_Primate|2007=2007,JF416929|Nonhuman_Primate|2007=2007,JF416935|Nonhuman_Primate|2007=2007,JF416932|Nonhuman_Primate|2007=2007">
+                                    
+                    <taxa id="TaxonSet.NPEV_D_trim" spec="TaxonSet">
+                                            
+                        <alignment idref="NPEV_D_trim"/>
+                                        
+                    </taxa>
+                                
+                </trait>
+                            
+                <taxonset idref="TaxonSet.NPEV_D_trim"/>
+                        
+            </tree>
+                    
+            <parameter id="clockRate.c:NPEV_D_trim" spec="parameter.RealParameter" lower="0.0" name="stateNode">1.0</parameter>
+                    
+            <parameter id="kappa.s:NPEV_D_trim" spec="parameter.RealParameter" lower="0.0" name="stateNode">2.0</parameter>
+                    
+            <parameter id="freqParameter.s:NPEV_D_trim" spec="parameter.RealParameter" dimension="4" lower="0.0" name="stateNode" upper="1.0">0.25</parameter>
+                    
+            <parameter id="skygridPrecision" spec="parameter.RealParameter" lower="0.0" name="stateNode">1.0</parameter>
+                    
+            <parameter id="skygridLogPopSize" spec="parameter.RealParameter" dimension="5" name="stateNode">1.0</parameter>
+                    
+            <stateNode id="rateIndicator.s:host" spec="parameter.BooleanParameter" dimension="3">true</stateNode>
+                    
+            <parameter id="relativeGeoRates.s:host" spec="parameter.RealParameter" dimension="3" name="stateNode">1.0</parameter>
+                    
+            <parameter id="traitClockRate.c:host" spec="parameter.RealParameter" name="stateNode">1.0</parameter>
+                
+        </state>
+            
+        <init id="RandomTree.t:NPEV_D_trim" spec="RandomTree" estimate="false" initial="@Tree.t:NPEV_D_trim" taxa="@NPEV_D_trim">
+                    
+            <populationModel id="ConstantPopulation0.t:NPEV_D_trim" spec="ConstantPopulation">
+                            
+                <parameter id="randomPopSize.t:NPEV_D_trim" spec="parameter.RealParameter" name="popSize">1.0</parameter>
+                        
+            </populationModel>
+                
+        </init>
+            
+        <distribution id="posterior" spec="CompoundDistribution">
+                    
+            <distribution id="prior" spec="CompoundDistribution">
+                            
+                <distribution id="SkyGrid.t:NPEV_D_trim" spec="beastclassic.evolution.tree.coalescent.GMRFMultilocusSkyrideLikelihood" cutOff="40.0" numGridPoints="4" populationSizes="@skygridLogPopSize" precisionParameter="@skygridPrecision" tree="@Tree.t:NPEV_D_trim">
+                                    
+                    <trees id="alltrees" spec="beastclassic.evolution.tree.coalescent.TreeList">
+                                            
+                        <tree idref="Tree.t:NPEV_D_trim"/>
+                                        
+                    </trees>
+                                
+                </distribution>
+                            
+                <prior id="ClockPrior.c:NPEV_D_trim" name="distribution" x="@clockRate.c:NPEV_D_trim">
+                                    
+                    <Uniform id="Uniform.0" name="distr" upper="Infinity"/>
+                                
+                </prior>
+                            
+                <prior id="FrequenciesPrior.s:NPEV_D_trim" name="distribution" x="@freqParameter.s:NPEV_D_trim">
+                                    
+                    <distr id="Dirichlet.0" spec="distribution.Dirichlet">
+                                            
+                        <parameter id="RealParameter.7" spec="parameter.RealParameter" dimension="4" estimate="false" name="alpha">4.0 4.0 4.0 4.0</parameter>
+                                        
+                    </distr>
+                                
+                </prior>
+                            
+                <prior id="KappaPrior.s:NPEV_D_trim" name="distribution" x="@kappa.s:NPEV_D_trim">
+                                    
+                    <LogNormal id="LogNormalDistributionModel.1" name="distr">
+                                            
+                        <parameter id="RealParameter.5" spec="parameter.RealParameter" estimate="false" name="M">1.0</parameter>
+                                            
+                        <parameter id="RealParameter.6" spec="parameter.RealParameter" estimate="false" name="S">1.25</parameter>
+                                        
+                    </LogNormal>
+                                
+                </prior>
+                            
+                <prior id="nonZeroRatePrior.s:host" name="distribution">
+                                    
+                    <x id="nonZeroRates.s:host" spec="beast.base.evolution.Sum">
+                                            
+                        <arg idref="rateIndicator.s:host"/>
+                                        
+                    </x>
+                                    
+                    <distr id="Poisson.0" spec="distribution.Poisson" offset="2.0">
+                                            
+                        <parameter id="RealParameter.14" spec="parameter.RealParameter" estimate="false" name="lambda">0.693</parameter>
+                                        
+                    </distr>
+                                
+                </prior>
+                            
+                <prior id="relativeGeoRatesPrior.s:host" name="distribution" x="@relativeGeoRates.s:host">
+                                    
+                    <Gamma id="Gamma.4" name="distr">
+                                            
+                        <parameter id="RealParameter.12" spec="parameter.RealParameter" estimate="false" name="alpha">1.0</parameter>
+                                            
+                        <parameter id="RealParameter.13" spec="parameter.RealParameter" estimate="false" name="beta">1.0</parameter>
+                                        
+                    </Gamma>
+                                
+                </prior>
+                            
+                <prior id="SkyGridPrecisionPrior" name="distribution" x="@skygridPrecision">
+                                    
+                    <Gamma id="Gamma.2" name="distr">
+                                            
+                        <parameter id="RealParameter.8" spec="parameter.RealParameter" estimate="false" name="alpha">0.01</parameter>
+                                            
+                        <parameter id="RealParameter.9" spec="parameter.RealParameter" estimate="false" name="beta">100.0</parameter>
+                                        
+                    </Gamma>
+                                
+                </prior>
+                            
+                <prior id="geoclockPrior.c:host" name="distribution" x="@traitClockRate.c:host">
+                                    
+                    <Gamma id="Gamma.3" name="distr">
+                                            
+                        <parameter id="RealParameter.10" spec="parameter.RealParameter" estimate="false" name="alpha">0.001</parameter>
+                                            
+                        <parameter id="RealParameter.11" spec="parameter.RealParameter" estimate="false" name="beta">1000.0</parameter>
+                                        
+                    </Gamma>
+                                
+                </prior>
+                        
+            </distribution>
+                    
+            <distribution id="likelihood" spec="CompoundDistribution" useThreads="true">
+                            
+                <distribution id="treeLikelihood.NPEV_D_trim" spec="ThreadedTreeLikelihood" data="@NPEV_D_trim" tree="@Tree.t:NPEV_D_trim">
+                                    
+                    <siteModel id="SiteModel.s:NPEV_D_trim" spec="SiteModel">
+                                            
+                        <parameter id="mutationRate.s:NPEV_D_trim" spec="parameter.RealParameter" estimate="false" lower="0.0" name="mutationRate">1.0</parameter>
+                                            
+                        <parameter id="gammaShape.s:NPEV_D_trim" spec="parameter.RealParameter" estimate="false" lower="0.1" name="shape">1.0</parameter>
+                                            
+                        <parameter id="proportionInvariant.s:NPEV_D_trim" spec="parameter.RealParameter" estimate="false" lower="0.0" name="proportionInvariant" upper="1.0">0.0</parameter>
+                                            
+                        <substModel id="hky.s:NPEV_D_trim" spec="HKY" kappa="@kappa.s:NPEV_D_trim">
+                                                    
+                            <frequencies id="estimatedFreqs.s:NPEV_D_trim" spec="Frequencies" frequencies="@freqParameter.s:NPEV_D_trim"/>
+                                                
+                        </substModel>
+                                        
+                    </siteModel>
+                                    
+                    <branchRateModel id="StrictClock.c:NPEV_D_trim" spec="beast.base.evolution.branchratemodel.StrictClockModel" clock.rate="@clockRate.c:NPEV_D_trim"/>
+                                
+                </distribution>
+                            
+                <distribution id="traitedtreeLikelihood.host" spec="beastclassic.evolution.likelihood.AncestralStateTreeLikelihood" tag="location" tree="@Tree.t:NPEV_D_trim">
+                                    
+                    <data
+id="host"
+spec="beastclassic.evolution.alignment.AlignmentFromTrait">
+                                            
+                        <traitSet id="traitSet.host" spec="beast.base.evolution.tree.TraitSet" taxa="@TaxonSet.NPEV_D_trim" traitname="discrete">OP267535|Homo_sapiens|2021=Homo_sapiens,
+
+OP267534|Homo_sapiens|2021=Homo_sapiens,
+
+OP267533|Homo_sapiens|2021=Homo_sapiens,
+
+OP267532|Homo_sapiens|2021=Homo_sapiens,
+
+OP267531|Homo_sapiens|2021=Homo_sapiens,
+
+OP267530|Homo_sapiens|2021=Homo_sapiens,
+
+OP267529|Homo_sapiens|2021=Homo_sapiens,
+
+OP267528|Homo_sapiens|2021=Homo_sapiens,
+
+OP267527|Homo_sapiens|2021=Homo_sapiens,
+
+OP267526|Homo_sapiens|2021=Homo_sapiens,
+
+OP267525|Homo_sapiens|2021=Homo_sapiens,
+
+OP267524|Homo_sapiens|2021=Homo_sapiens,
+
+OP267523|Homo_sapiens|2021=Homo_sapiens,
+
+OP267522|Homo_sapiens|2021=Homo_sapiens,
+
+OP267521|Homo_sapiens|2021=Homo_sapiens,
+
+OP267520|Homo_sapiens|2021=Homo_sapiens,
+
+OP267519|Homo_sapiens|2021=Homo_sapiens,
+
+OP267518|Homo_sapiens|2021=Homo_sapiens,
+
+OP267517|Homo_sapiens|2021=Homo_sapiens,
+
+OP267516|Homo_sapiens|2021=Homo_sapiens,
+
+OP267515|Homo_sapiens|2021=Homo_sapiens,
+
+OP267514|Homo_sapiens|2021=Homo_sapiens,
+
+OP267513|Homo_sapiens|2021=Homo_sapiens,
+
+OP267512|Homo_sapiens|2021=Homo_sapiens,
+
+OP267511|Homo_sapiens|2021=Homo_sapiens,
+
+OP267510|Homo_sapiens|2021=Homo_sapiens,
+
+OP267509|Homo_sapiens|2021=Homo_sapiens,
+
+OP267508|Homo_sapiens|2021=Homo_sapiens,
+
+OP267507|Homo_sapiens|2021=Homo_sapiens,
+
+OP267506|Homo_sapiens|2021=Homo_sapiens,
+
+OQ653554|Mus_musculus|2021=Mus_musculus,
+
+JF416938|Nonhuman_Primate|2007=Nonhuman_Primate,
+
+JF416929|Nonhuman_Primate|2007=Nonhuman_Primate,
+
+JF416935|Nonhuman_Primate|2007=Nonhuman_Primate,
+
+JF416932|Nonhuman_Primate|2007=Nonhuman_Primate</traitSet>
+                                            
+                        <userDataType id="traitDataType.host" spec="beast.base.evolution.datatype.UserDataType" codeMap="Homo_sapiens=0,Mus_musculus=1,Nonhuman_Primate=2,? = 0 1 2 " codelength="-1" states="3"/>
+                                        
+                    </data>
+                                    
+                    <siteModel id="geoSiteModel.s:host" spec="SiteModel" gammaCategoryCount="1">
+                                            
+                        <parameter id="mutationRate.s:host" spec="parameter.RealParameter" estimate="false" name="mutationRate">1.0</parameter>
+                                            
+                        <parameter id="gammaShape.s:host" spec="parameter.RealParameter" estimate="false" name="shape">1.0</parameter>
+                                            
+                        <parameter id="proportionInvariant.s:host" spec="parameter.RealParameter" estimate="false" lower="0.0" name="proportionInvariant" upper="1.0">0.0</parameter>
+                                            
+                        <substModel id="svs.s:host" spec="beastclassic.evolution.substitutionmodel.SVSGeneralSubstitutionModel" rateIndicator="@rateIndicator.s:host" rates="@relativeGeoRates.s:host">
+                                                    
+                            <frequencies id="traitfreqs.s:host" spec="Frequencies">
+                                                            
+                                <parameter id="traitfrequencies.s:host" spec="parameter.RealParameter" dimension="3" name="frequencies">0.3333333333333333</parameter>
+                                                        
+                            </frequencies>
+                                                
+                        </substModel>
+                                        
+                    </siteModel>
+                                    
+                    <branchRateModel id="StrictClockModel.c:host" spec="beast.base.evolution.branchratemodel.StrictClockModel" clock.rate="@traitClockRate.c:host"/>
+                                
+                </distribution>
+                        
+            </distribution>
+                
+        </distribution>
+            
+        <operator id="StrictClockRateScaler.c:NPEV_D_trim" spec="AdaptableOperatorSampler" weight="1.5">
+                    
+            <parameter idref="clockRate.c:NPEV_D_trim"/>
+                    
+            <operator id="AVMNOperator.NPEV_D_trim" spec="kernel.AdaptableVarianceMultivariateNormalOperator" allowNonsense="true" beta="0.05" burnin="400" initial="800" weight="0.1">
+                            
+                <transformations id="AVMNSumTransform.NPEV_D_trim" spec="operator.kernel.Transform$LogConstrainedSumTransform">
+                                    
+                    <f idref="freqParameter.s:NPEV_D_trim"/>
+                                
+                </transformations>
+                            
+                <transformations id="AVMNLogTransform.NPEV_D_trim" spec="operator.kernel.Transform$LogTransform">
+                                    
+                    <f idref="clockRate.c:NPEV_D_trim"/>
+                                    
+                    <f idref="kappa.s:NPEV_D_trim"/>
+                                
+                </transformations>
+                            
+                <transformations id="AVMNNoTransform.NPEV_D_trim" spec="operator.kernel.Transform$NoTransform">
+                                    
+                    <f idref="Tree.t:NPEV_D_trim"/>
+                                
+                </transformations>
+                        
+            </operator>
+                    
+            <operator id="StrictClockRateScalerX.c:NPEV_D_trim" spec="kernel.BactrianScaleOperator" parameter="@clockRate.c:NPEV_D_trim" upper="10.0" weight="3.0"/>
+                
+        </operator>
+            
+        <operator id="strictClockUpDownOperator.c:NPEV_D_trim" spec="AdaptableOperatorSampler" weight="1.5">
+                    
+            <parameter idref="clockRate.c:NPEV_D_trim"/>
+                    
+            <tree idref="Tree.t:NPEV_D_trim"/>
+                    
+            <operator idref="AVMNOperator.NPEV_D_trim"/>
+                    
+            <operator id="strictClockUpDownOperatorX.c:NPEV_D_trim" spec="operator.kernel.BactrianUpDownOperator" scaleFactor="0.75" weight="3.0">
+                            
+                <up idref="clockRate.c:NPEV_D_trim"/>
+                            
+                <down idref="Tree.t:NPEV_D_trim"/>
+                        
+            </operator>
+                
+        </operator>
+            
+        <operator id="KappaScaler.s:NPEV_D_trim" spec="AdaptableOperatorSampler" weight="0.05">
+                    
+            <parameter idref="kappa.s:NPEV_D_trim"/>
+                    
+            <operator idref="AVMNOperator.NPEV_D_trim"/>
+                    
+            <operator id="KappaScalerX.s:NPEV_D_trim" spec="kernel.BactrianScaleOperator" parameter="@kappa.s:NPEV_D_trim" scaleFactor="0.1" upper="10.0" weight="0.1"/>
+                
+        </operator>
+            
+        <operator id="FrequenciesExchanger.s:NPEV_D_trim" spec="AdaptableOperatorSampler" weight="0.05">
+                    
+            <parameter idref="freqParameter.s:NPEV_D_trim"/>
+                    
+            <operator idref="AVMNOperator.NPEV_D_trim"/>
+                    
+            <operator id="FrequenciesExchangerX.s:NPEV_D_trim" spec="operator.kernel.BactrianDeltaExchangeOperator" delta="0.01" weight="0.1">
+                            
+                <parameter idref="freqParameter.s:NPEV_D_trim"/>
+                        
+            </operator>
+                
+        </operator>
+            
+        <operator id="SkyGridBICEPSEpochTop.t:NPEV_D_trim" spec="EpochFlexOperator" scaleFactor="0.1" tree="@Tree.t:NPEV_D_trim" weight="2.0"/>
+            
+        <operator id="SkyGridBICEPSEpochAll.t:NPEV_D_trim" spec="EpochFlexOperator" fromOldestTipOnly="false" scaleFactor="0.1" tree="@Tree.t:NPEV_D_trim" weight="2.0"/>
+            
+        <operator id="SkyGridBICEPSTreeFlex.t:NPEV_D_trim" spec="TreeStretchOperator" scaleFactor="0.01" tree="@Tree.t:NPEV_D_trim" weight="2.0"/>
+            
+        <operator id="SkyGridTreeRootScaler.t:NPEV_D_trim" spec="kernel.BactrianScaleOperator" rootOnly="true" scaleFactor="0.1" tree="@Tree.t:NPEV_D_trim" upper="10.0" weight="3.0"/>
+            
+        <operator id="SkyGridUniformOperator.t:NPEV_D_trim" spec="kernel.BactrianNodeOperator" tree="@Tree.t:NPEV_D_trim" weight="30.0"/>
+            
+        <operator id="SkyGridSubtreeSlide.t:NPEV_D_trim" spec="kernel.BactrianSubtreeSlide" tree="@Tree.t:NPEV_D_trim" weight="15.0"/>
+            
+        <operator id="SkyGridNarrow.t:NPEV_D_trim" spec="Exchange" tree="@Tree.t:NPEV_D_trim" weight="15.0"/>
+            
+        <operator id="SkyGridWide.t:NPEV_D_trim" spec="Exchange" isNarrow="false" tree="@Tree.t:NPEV_D_trim" weight="3.0"/>
+            
+        <operator id="SkyGridWilsonBalding.t:NPEV_D_trim" spec="WilsonBalding" tree="@Tree.t:NPEV_D_trim" weight="3.0"/>
+            
+        <operator id="SkyGridAdaptablePopSizeOperator" spec="AdaptableOperatorSampler" weight="10.0">
+                    
+            <parameter idref="skygridLogPopSize"/>
+                    
+            <operator id="GMRFMultilocusSkyrideBlockUpdateOperator" spec="beastclassic.evolution.operators.GMRFMultilocusSkyrideBlockUpdateOperator" likelihood="@SkyGrid.t:NPEV_D_trim" scaleFactor="2.0" weight="3.0"/>
+                    
+            <operator id="SkyGridPopSizeWalker" spec="operator.kernel.BactrianRandomWalkOperator" parameter="@skygridLogPopSize" scaleFactor="0.5" weight="3.0"/>
+                    
+            <operator id="SkyGridAVMNOperator" spec="kernel.AdaptableVarianceMultivariateNormalOperator" allowNonsense="true" beta="0.05" burnin="400" initial="800" weight="3.0">
+                            
+                <transformations id="SkyGridLogTransform" spec="operator.kernel.Transform$LogTransform">
+                                    
+                    <f idref="skygridPrecision"/>
+                                
+                </transformations>
+                            
+                <transformations id="SkyGridNoTransform" spec="operator.kernel.Transform$NoTransform">
+                                    
+                    <f idref="skygridLogPopSize"/>
+                                
+                </transformations>
+                        
+            </operator>
+                
+        </operator>
+            
+        <operator id="SkyGridPrecisionScaler" spec="kernel.BactrianScaleOperator" parameter="@skygridPrecision" scaleFactor="0.5" upper="10.0" weight="0.1"/>
+            
+        <operator id="georateScaler.s:host" spec="ScaleOperator" parameter="@relativeGeoRates.s:host" scaleAllIndependently="true" scaleFactor="0.99" weight="30.0"/>
+            
+        <operator id="indicatorFlip.s:host" spec="operator.BitFlipOperator" parameter="@rateIndicator.s:host" weight="30.0"/>
+            
+        <operator id="geoMuScaler.c:host" spec="ScaleOperator" parameter="@traitClockRate.c:host" scaleFactor="0.9" weight="3.0"/>
+            
+        <operator id="BSSVSoperator.c:host" spec="beastclassic.evolution.operators.BitFlipBSSVSOperator" indicator="@rateIndicator.s:host" mu="@traitClockRate.c:host" weight="30.0"/>
+            
+        <logger id="tracelog" spec="Logger" fileName="$(filebase).log" logEvery="1000" model="@posterior" sanitiseHeaders="true" sort="smart">
+                    
+            <log idref="posterior"/>
+                    
+            <log idref="likelihood"/>
+                    
+            <log idref="prior"/>
+                    
+            <log idref="treeLikelihood.NPEV_D_trim"/>
+                    
+            <log id="TreeHeight.t:NPEV_D_trim" spec="beast.base.evolution.tree.TreeStatLogger" tree="@Tree.t:NPEV_D_trim"/>
+                    
+            <log idref="clockRate.c:NPEV_D_trim"/>
+                    
+            <log idref="kappa.s:NPEV_D_trim"/>
+                    
+            <log idref="freqParameter.s:NPEV_D_trim"/>
+                    
+            <log idref="SkyGrid.t:NPEV_D_trim"/>
+                    
+            <log idref="skygridPrecision"/>
+                    
+            <log idref="skygridLogPopSize"/>
+                    
+            <log idref="rateIndicator.s:host"/>
+                    
+            <log idref="relativeGeoRates.s:host"/>
+                    
+            <log idref="traitClockRate.c:host"/>
+                    
+            <log id="geoSubstModelLogger.s:host" spec="beastclassic.evolution.substitutionmodel.SVSGeneralSubstitutionModelLogger" dataType="@traitDataType.host" model="@svs.s:host"/>
+                
+        </logger>
+            
+        <logger id="screenlog" spec="Logger" logEvery="1000">
+                    
+            <log idref="posterior"/>
+                    
+            <log idref="likelihood"/>
+                    
+            <log idref="prior"/>
+                
+        </logger>
+            
+        <logger id="treelog.t:NPEV_D_trim" spec="Logger" fileName="$(filebase)-$(tree).trees" logEvery="1000" mode="tree">
+                    
+            <log id="TreeWithMetaDataLogger.t:NPEV_D_trim" spec="beast.base.evolution.TreeWithMetaDataLogger" tree="@Tree.t:NPEV_D_trim"/>
+                
+        </logger>
+            
+        <logger id="treeWithTraitLogger.host" spec="Logger" fileName="host_tree_with_trait.trees" logEvery="10000" mode="tree">
+                    
+            <log id="treeWithTraitLoggerItem.t:NPEV_D_trim" spec="beastclassic.evolution.tree.TreeWithTraitLogger" tree="@Tree.t:NPEV_D_trim">
+                            
+                <metadata idref="posterior"/>
+                            
+                <metadata idref="traitedtreeLikelihood.host"/>
+                        
+            </log>
+                
+        </logger>
+            
+        <operatorschedule id="OperatorSchedule" spec="OperatorSchedule"/>
+        
+    </run>
+
+    
+
+</beast>
