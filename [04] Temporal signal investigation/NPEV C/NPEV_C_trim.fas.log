@@ -1,0 +1,319 @@
+IQ-TREE multicore version 2.3.2 COVID-edition for Linux 64-bit built Apr  9 2024
+Developed by Bui Quang Minh, James Barbetti, Nguyen Lam Tung,
+Olga Chernomor, Heiko Schmidt, Dominik Schrempf, Michael Woodhams, Ly Trong Nhan, Thomas Wong
+
+Host:    sfmn (AVX, 7 GB RAM)
+Command: /home/sfmn-bioinformatician/iqtree2 -s NPEV_C_trim.fas -m TEST -nt 2 -B 1000
+Seed:    455992 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Wed Jul 24 09:55:49 2024
+Kernel:  AVX - 2 threads (4 CPU cores detected)
+
+Reading alignment file NPEV_C_trim.fas ... Fasta format detected
+Reading fasta file: done in 0.00203317 secs using 80.86% CPU
+Alignment most likely contains DNA/RNA sequences
+Alignment has 121 sequences with 865 columns, 682 distinct patterns
+585 parsimony-informative, 24 singleton sites, 256 constant sites
+                   Gap/Ambiguity  Composition  p-value
+Analyzing sequences: done in 0.000180396 secs using 346.5% CPU
+   1  FJ868371_AUS_2006    0.00%    passed     89.15%
+   2  GU983190_BRA_1987    0.00%    passed     86.88%
+   3  GU983189_BRA_2003    0.00%    passed     71.49%
+   4  GU983188_BRA_2003    0.00%    passed     84.96%
+   5  GU983197_BRA_2004    0.00%    passed     79.04%
+   6  GU983196_BRA_2004    0.00%    passed     83.94%
+   7  GU983203_BRA_2005    0.00%    passed     88.78%
+   8  GU983202_BRA_2005    0.00%    passed     92.54%
+   9  GU983206_BRA_2009    0.00%    passed     82.59%
+  10  GU983205_BRA_2009    0.00%    passed     81.52%
+  11  OM386801_CHN_1988    0.00%    passed     95.67%
+  12  MT741566_CHN_1988    0.00%    passed     99.30%
+  13  KJ857503_CHN_1990    0.69%    passed     79.33%
+  14  KJ857502_CHN_1990    0.69%    passed     79.33%
+  15  OM386810_CHN_1994    0.00%    passed     86.60%
+  16  OM386809_CHN_1994    0.00%    passed     97.70%
+  17  OM386811_CHN_1995    0.00%    passed     98.35%
+  18  OM386812_CHN_1997    0.00%    passed     92.34%
+  19  GQ329723_CHN_1997    1.27%    passed     93.13%
+  20  GQ329726_CHN_1999    0.00%    passed     50.68%
+  21  AB268310_CHN_2000   14.80%    passed     96.81%
+  22  AB268302_CHN_2000   15.26%    passed     77.51%
+  23  OM386802_CHN_2003    0.00%    passed     89.79%
+  24  GQ329725_CHN_2003    0.00%    passed     88.45%
+  25  AB727976_CHN_2005   37.80%    passed     80.80%
+  26  JQ968948_CHN_2006   16.30%    passed     51.15%
+  27  JQ968952_CHN_2006   15.61%    passed     27.66%
+  28  OM386803_CHN_2007    0.00%    passed     82.87%
+  29  MT741582_CHN_2007    0.00%    passed     73.61%
+  30  HQ538435_CHN_2010   15.61%    passed     84.56%
+  31  OM386808_CHN_2010    0.00%    passed     86.97%
+  32  JX678287_CHN_2011    3.47%    passed      6.84%
+  33  KU531431_CHN_2011    0.58%    passed     73.69%
+  34  KT161275_CHN_2012    2.08%    passed     76.81%
+  35  AB759898_CHN_2012   20.81%    passed     43.57%
+  36  KJ933342_CHN_2013    0.35%    passed     68.02%
+  37  KJ933341_CHN_2013    0.00%    passed     40.40%
+  38  LC411979_CHN_2014    0.00%    passed     52.53%
+  39  KX910099_CHN_2016   23.01%    passed     30.96%
+  40  LC201512_CHN_2016    0.92%    passed     78.89%
+  41  LC412982_CHN_2017    0.00%    passed     70.89%
+  42  OR352727_CHN_2023    0.00%    passed     92.20%
+  43  OR352726_CHN_2023    0.00%    passed     92.20%
+  44  KT285371_CIV_2013    9.02%    passed     87.11%
+  45  KC787154_CMR_2009   45.32%    passed     11.83%
+  46  KC787151_CMR_2009   53.53%    passed     40.99%
+  47  MK310981_COD_2013   46.01%    passed     39.19%
+  48  MK310969_COD_2013   46.13%    passed     87.34%
+  49  KC184885_CUB_1986   49.02%    passed     58.95%
+  50  KC184884_CUB_1986   49.02%    passed     58.95%
+  51  KC184890_CUB_1987   49.02%    passed     45.72%
+  52  KC184889_CUB_1987   49.02%    passed     45.72%
+  53  KC205662_CUB_1991   50.17%    passed     64.86%
+  54  KC205661_CUB_1991   50.17%    passed     61.20%
+  55  KC205677_CUB_1992   50.17%    passed     60.64%
+  56  KC205676_CUB_1992   50.17%    passed     55.81%
+  57  KC205690_CUB_1993   50.17%    passed     59.22%
+  58  KC205689_CUB_1993   50.17%    passed     69.92%
+  59  KC286993_CUB_1997   50.17%    passed     83.91%
+  60  KC286992_CUB_1997   50.17%    passed     83.91%
+  61  KC287076_CUB_2003   49.83%    passed     91.51%
+  62  KC287075_CUB_2003   49.83%    passed     92.64%
+  63  KC287081_CUB_2005   49.83%    passed     92.30%
+  64  KC287080_CUB_2005   49.83%    passed     92.30%
+  65  KC676726_EGY_2010   11.91%    passed     90.17%
+  66  KC676725_EGY_2010   11.91%    passed     87.81%
+  67  MK086167_FRA_2015    3.47%    passed     36.72%
+  68  MK086186_FRA_2015   27.40%    passed     88.65%
+  69  MN812176_GHA_2012    3.47%    passed     28.47%
+  70  MN812188_GHA_2012    1.16%    passed     46.53%
+  71  MN812182_GHA_2013    2.20%    passed     93.04%
+  72  KF412907_IND_2004   16.65%    passed     39.24%
+  73  KF412910_IND_2004   45.66%    passed     52.58%
+  74  KF412928_IND_2005    5.20%    passed     41.13%
+  75  KF413028_IND_2006    0.81%    passed     84.81%
+  76  KF413027_IND_2006    0.81%    passed     86.58%
+  77  KF413033_IND_2007    3.47%    passed     26.37%
+  78  KF413034_IND_2007    3.47%    passed     69.95%
+  79  KF412989_IND_2008   19.42%    passed     62.93%
+  80  KF413019_IND_2009   49.48%    passed     42.41%
+  81  JX513567_IND_2010   40.69%    passed     53.48%
+  82  JX513566_IND_2010   42.31%    passed     64.41%
+  83  JX173883_ITA_2009    3.47%    passed      9.97%
+  84  JX173882_ITA_2009    3.47%    passed     14.14%
+  85  LC062784_JPN_2014    2.08%    passed     87.76%
+  86  LC062779_JPN_2014    2.08%    passed     87.68%
+  87  KX197453_KHM_2012    6.47%    passed     74.00%
+  88  KX197450_KHM_2013   47.51%    passed     68.49%
+  89  MK618767_MEX_2017    0.00%    passed     95.47%
+  90  MK618766_MEX_2017    0.00%    passed     97.11%
+  91  KF726100_MNG_2011    5.90%    passed     22.41%
+  92  KF726101_MNG_2013    5.90%    passed     16.04%
+  93  KY433692_NER_2013    1.04%    passed     90.99%
+  94  KY433693_NER_2014    1.27%    passed     78.43%
+  95  MG272373_NLD_1973    0.00%    passed     97.10%
+  96  KP861807_RUS_2010    0.58%    passed     82.74%
+  97  KR185974_RUS_2010    0.35%    passed     35.94%
+  98  KP861806_RUS_2012    0.00%    passed     90.69%
+  99  KR185975_RUS_2013    0.69%    passed     84.78%
+ 100  KP861809_RUS_2013    0.69%    passed     88.64%
+ 101  KR185973_RUS_2014    0.58%    passed     97.20%
+ 102  KR185977_RUS_2014    2.08%    passed     77.28%
+ 103  KY433694_SEN_2014    0.58%    passed     91.06%
+ 104  KY433695_SEN_2014    2.08%    passed     88.05%
+ 105  KP137046_THA_2014    4.16%    passed     80.03%
+ 106  KP137045_THA_2014    0.00%    passed     92.93%
+ 107  AB901474_TWN_1985    0.00%    passed     92.09%
+ 108  AB901473_TWN_1985    0.00%    passed     92.56%
+ 109  AB901478_TWN_1986    0.00%    passed     88.93%
+ 110  AB901477_TWN_1986    0.00%    passed     94.22%
+ 111  AB901479_TWN_2000    0.00%    passed     82.00%
+ 112  AB901480_TWN_2001    0.00%    passed     64.96%
+ 113  AB901485_TWN_2002    0.00%    passed     84.96%
+ 114  AB901484_TWN_2002    0.00%    passed     84.96%
+ 115  AB901486_TWN_2003    0.00%    passed     81.83%
+ 116  AB901488_TWN_2007    0.00%    passed     86.25%
+ 117  AB901487_TWN_2007    0.00%    passed     76.51%
+ 118  AB901490_TWN_2008    0.00%    passed     79.58%
+ 119  AB901489_TWN_2008    0.00%    passed     77.19%
+ 120  AB901493_TWN_2010    0.00%    passed     78.26%
+ 121  AB901492_TWN_2010    0.00%    passed     70.95%
+WARNING: 9 sequences contain more than 50% gaps/ambiguity
+****  TOTAL               12.78%  0 sequences failed composition chi2 test (p-value<5%; df=3)
+NOTE: OR352726_CHN_2023 is identical to OR352727_CHN_2023 but kept for subsequent analysis
+NOTE: KC184884_CUB_1986 is identical to KC184885_CUB_1986 but kept for subsequent analysis
+NOTE: KC184889_CUB_1987 is identical to KC184890_CUB_1987 but kept for subsequent analysis
+NOTE: KC286992_CUB_1997 is identical to KC286993_CUB_1997 but kept for subsequent analysis
+NOTE: KC287080_CUB_2005 is identical to KC287081_CUB_2005 but kept for subsequent analysis
+NOTE: AB901484_TWN_2002 is identical to AB901485_TWN_2002 but kept for subsequent analysis
+
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.024 seconds
+Perform fast likelihood tree search using GTR+I+G model...
+Estimate model parameters (epsilon = 5.000)
+Perform nearest neighbor interchange...
+Estimate model parameters (epsilon = 1.000)
+1. Initial log-likelihood: -24635.955
+2. Current log-likelihood: -24634.558
+3. Current log-likelihood: -24633.261
+4. Current log-likelihood: -24632.038
+Optimal log-likelihood: -24630.847
+Rate parameters:  A-C: 2.83753  A-G: 9.85032  A-T: 2.63094  C-G: 1.83595  C-T: 16.77143  G-T: 1.00000
+Base frequencies:  A: 0.296  C: 0.246  G: 0.219  T: 0.239
+Proportion of invariable sites: 0.246
+Gamma shape alpha: 0.656
+Parameters optimization took 4 rounds (0.489 sec)
+Time for fast ML tree search: 1.703 seconds
+
+NOTE: ModelFinder requires 13 MB RAM!
+ModelFinder will test up to 88 DNA models (sample size: 865) ...
+ No. Model         -LnL         df  AIC          AICc         BIC
+  1  GTR+F         28727.657    247 57949.314    58147.875    59125.708
+  2  GTR+F+I       26581.327    248 53658.655    53859.148    54839.812
+  3  GTR+F+G4      24672.888    248 49841.775    50042.269    51022.932
+  4  GTR+F+I+G4    24630.151    249 49758.303    49960.742    50944.222
+  8  SYM+I+G4      24723.878    246 49939.757    50136.398    51111.388
+ 12  TVM+F+I+G4    24678.431    248 49852.862    50053.355    51034.019
+ 16  TVMe+I+G4     24777.124    245 50044.247    50238.981    51211.116
+ 20  TIM3+F+I+G4   24666.820    247 49827.640    50026.201    51004.035
+ 24  TIM3e+I+G4    24796.523    244 50081.046    50273.885    51243.152
+ 28  TIM2+F+I+G4   24637.173    247 49768.347    49966.908    50944.741
+ 32  TIM2e+I+G4    24732.066    244 49952.132    50144.970    51114.238
+ 36  TIM+F+I+G4    24670.299    247 49834.597    50033.158    51010.992
+ 40  TIMe+I+G4     24801.566    244 50091.131    50283.970    51253.237
+ 44  TPM3u+F+I+G4  24710.243    246 49912.486    50109.127    51084.118
+ 48  TPM3+I+G4     24844.483    243 50174.967    50365.923    51332.310
+ 52  TPM2u+F+I+G4  24684.159    246 49860.317    50056.958    51031.948
+ 56  TPM2+I+G4     24783.650    243 50053.301    50244.257    51210.644
+ 60  K3Pu+F+I+G4   24712.899    246 49917.797    50114.438    51089.429
+ 64  K3P+I+G4      24848.284    243 50182.569    50373.525    51339.912
+ 68  TN+F+I+G4     24670.410    246 49832.820    50029.461    51004.451
+ 72  TNe+I+G4      24801.589    243 50089.177    50280.134    51246.521
+ 76  HKY+F+I+G4    24713.017    245 49916.034    50110.768    51082.903
+ 80  K2P+I+G4      24848.327    242 50180.653    50369.740    51333.234
+ 84  F81+F+I+G4    26024.034    244 52536.069    52728.908    53698.175
+ 88  JC+I+G4       26079.715    241 52641.429    52828.659    53789.247
+Akaike Information Criterion:           GTR+F+I+G4
+Corrected Akaike Information Criterion: GTR+F+I+G4
+Bayesian Information Criterion:         GTR+F+I+G4
+Best-fit model: GTR+F+I+G4 chosen according to BIC
+
+All model information printed to NPEV_C_trim.fas.model.gz
+CPU time for ModelFinder: 21.482 seconds (0h:0m:21s)
+Wall-clock time for ModelFinder: 10.841 seconds (0h:0m:10s)
+Generating 1000 samples for ultrafast bootstrap (seed: 455992)...
+
+NOTE: 13 MB RAM (0 GB) is required!
+Estimate model parameters (epsilon = 0.100)
+Thoroughly optimizing +I+G parameters from 10 start values...
+Init pinv, alpha: 0.000, 0.693 / Estimate: 0.000, 0.373 / LogL: -24672.888
+Init pinv, alpha: 0.033, 0.693 / Estimate: 0.257, 0.687 / LogL: -24630.170
+Init pinv, alpha: 0.066, 0.693 / Estimate: 0.257, 0.687 / LogL: -24630.175
+Init pinv, alpha: 0.099, 0.693 / Estimate: 0.257, 0.688 / LogL: -24630.172
+Init pinv, alpha: 0.132, 0.693 / Estimate: 0.258, 0.691 / LogL: -24630.151
+Init pinv, alpha: 0.164, 0.693 / Estimate: 0.257, 0.688 / LogL: -24630.170
+Init pinv, alpha: 0.197, 0.693 / Estimate: 0.257, 0.688 / LogL: -24630.176
+Init pinv, alpha: 0.230, 0.693 / Estimate: 0.257, 0.687 / LogL: -24630.174
+Init pinv, alpha: 0.263, 0.693 / Estimate: 0.261, 0.698 / LogL: -24630.147
+Init pinv, alpha: 0.296, 0.693 / Estimate: 0.262, 0.701 / LogL: -24630.164
+Optimal pinv,alpha: 0.261, 0.698 / LogL: -24630.147
+
+Parameters optimization took 9.401 sec
+Wrote distance file to... 
+Computing ML distances based on estimated model parameters...
+Calculating distance matrix: done in 0.0611003 secs using 199.6% CPU
+Computing ML distances took 0.062514 sec (of wall-clock time) 0.124501 sec (of CPU time)
+WARNING: Some pairwise ML distances are too long (saturated)
+Setting up auxiliary I and S matrices: done in 0.000524992 secs using 172.6% CPU
+Computing RapidNJ tree took 0.014043 sec (of wall-clock time) 0.011093 sec (of CPU time)
+Log-likelihood of RapidNJ tree: -24861.502
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 98 parsimony trees... 2.535 second
+Computing log-likelihood of 98 initial trees ... 2.169 seconds
+Current best score: -24630.147
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 1: -24630.142
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 2: -24625.311
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 3: -24624.783
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 10: -24624.556
+Iteration 10 / LogL: -24624.556 / Time: 0h:0m:30s
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 15: -24622.414
+Iteration 20 / LogL: -24625.504 / Time: 0h:0m:36s
+Finish initializing candidate tree set (13)
+Current best tree score: -24622.414 / CPU time: 16.006
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 22: -24622.105
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 25: -24619.818
+Iteration 30 / LogL: -24655.279 / Time: 0h:0m:43s (0h:1m:46s left)
+Iteration 40 / LogL: -24646.022 / Time: 0h:0m:48s (0h:1m:23s left)
+Estimate model parameters (epsilon = 0.100)
+UPDATE BEST LOG-LIKELIHOOD: -24619.561
+Iteration 50 / LogL: -24621.149 / Time: 0h:0m:54s (0h:1m:6s left)
+Log-likelihood cutoff on original alignment: -24656.558
+Iteration 60 / LogL: -24621.015 / Time: 0h:1m:0s (0h:0m:54s left)
+Estimate model parameters (epsilon = 0.100)
+UPDATE BEST LOG-LIKELIHOOD: -24619.474
+Iteration 70 / LogL: -24631.478 / Time: 0h:1m:6s (0h:0m:44s left)
+Iteration 80 / LogL: -24620.710 / Time: 0h:1m:11s (0h:0m:34s left)
+Estimate model parameters (epsilon = 0.100)
+UPDATE BEST LOG-LIKELIHOOD: -24619.297
+Iteration 90 / LogL: -24619.525 / Time: 0h:1m:16s (0h:0m:25s left)
+Iteration 100 / LogL: -24657.129 / Time: 0h:1m:21s (0h:0m:17s left)
+Log-likelihood cutoff on original alignment: -24657.309
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.996
+Iteration 110 / LogL: -24619.303 / Time: 0h:1m:27s (0h:1m:3s left)
+Iteration 120 / LogL: -24628.100 / Time: 0h:1m:33s (0h:0m:55s left)
+TREE SEARCH COMPLETED AFTER 126 ITERATIONS / Time: 0h:1m:36s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+1. Initial log-likelihood: -24619.297
+Optimal log-likelihood: -24619.292
+Rate parameters:  A-C: 2.97663  A-G: 10.29538  A-T: 2.65702  C-G: 1.87068  C-T: 17.59686  G-T: 1.00000
+Base frequencies:  A: 0.296  C: 0.246  G: 0.219  T: 0.239
+Proportion of invariable sites: 0.253
+Gamma shape alpha: 0.663
+Parameters optimization took 1 rounds (0.087 sec)
+BEST SCORE FOUND : -24619.292
+Creating bootstrap support values...
+Split supports printed to NEXUS file NPEV_C_trim.fas.splits.nex
+Total tree length: 17.870
+
+Total number of iterations: 126
+CPU time used for tree search: 145.051 sec (0h:2m:25s)
+Wall-clock time used for tree search: 75.700 sec (0h:1m:15s)
+Total CPU time used: 186.664 sec (0h:3m:6s)
+Total wall-clock time used: 96.858 sec (0h:1m:36s)
+
+Computing bootstrap consensus tree...
+Reading input file NPEV_C_trim.fas.splits.nex...
+121 taxa and 534 splits.
+Consensus tree written to NPEV_C_trim.fas.contree
+Reading input trees file NPEV_C_trim.fas.contree
+Log-likelihood of consensus tree: -24620.866
+
+Analysis results written to: 
+  IQ-TREE report:                NPEV_C_trim.fas.iqtree
+  Maximum-likelihood tree:       NPEV_C_trim.fas.treefile
+  Likelihood distances:          NPEV_C_trim.fas.mldist
+
+Ultrafast bootstrap approximation results written to:
+  Split support values:          NPEV_C_trim.fas.splits.nex
+  Consensus tree:                NPEV_C_trim.fas.contree
+  Screen log file:               NPEV_C_trim.fas.log
+
+Date and Time: Wed Jul 24 09:57:26 2024
