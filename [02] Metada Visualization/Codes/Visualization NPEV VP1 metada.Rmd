@@ -1,0 +1,482 @@
+---
+title: "Visualization NPEV A-B-C-D VP1 Metada"
+author: "Serigne Fallou Mbacke NGOM"
+date: "2024-05-13"
+output: html_document
+---
+
+## VP1 NPEV FROM NCBI AND BV-BRC:
+```{r, include=FALSE,  warning=FALSE}
+library(dplyr)
+library(plotly)
+library(tidyverse)
+library(stringr)
+library(kableExtra)
+```
+
+
+```{r}
+NPEV_A_B_C_D = read.csv2("NPEV_Metadata_clean.csv")
+
+dim(NPEV_A_B_C_D)
+```
+```{r}
+summary(factor(african_data$collection_date))
+```
+
+## Visualization 
+### number of VP1 NPEV sequences per year:
+
+```{r}
+sequence_counts <- NPEV_A_B_C_D %>%
+  group_by(collection_date) %>%
+  summarise(SequenceCount = n())
+
+p <- ggplot(sequence_counts, aes(x = collection_date, y = SequenceCount)) +
+  geom_line() +
+  geom_point() +
+  labs(
+      x = "Years",
+       y = "Number of human NPEV sequences around the word") +
+  theme_minimal() +
+  scale_x_continuous(breaks = seq(min(sequence_counts$collection_date), max(sequence_counts$collection_date), by = 5)) +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 11)
+  )
+
+ggplotly(p)
+```
+
+
+### sequences distribution in Species - Speciess:
+```{r, warning=FALSE}
+NPEV_A_B_C_D %>%
+  group_by(Species) %>%
+  summarise(Count = n()) %>%
+  plot_ly(x = ~Species, y = ~Count, Species = "bar", color = "Yellow", text = ~Count, textposition = "outside") %>%
+  layout(title = "human NPEV sequences distribution by Species around the word", showlegend = FALSE)
+```
+
+
+### Sequences distribution by country:  
+```{r, warning=FALSE}
+fact_list = c("Species", "Assembly.Method", "Sequencing.Technology", "strain", "host", "country")
+
+for (i in fact_list) {
+  
+  NPEV_A_B_C_D[, i] = factor(NPEV_A_B_C_D[, i])
+}
+
+
+all_country_data <- NPEV_A_B_C_D %>%
+  group_by(country) %>%
+  summarise(Count = n())
+
+
+NPEV_A_B_C_D %>%
+  group_by(country) %>%
+  summarise(Count = n()) %>%
+  plot_geo(locations = ~country, z = ~Count, locationmode = "country names") %>%
+  layout(title = "")
+```
+
+```{r,  fig.width=14, fig.height=10}
+all_ORGANISM_data <- NPEV_A_B_C_D %>%
+  group_by(ORGANISM) %>%
+  summarise(Count = n())
+
+
+all_ORGANISM_data <- all_ORGANISM_data %>%
+  mutate(ORGANISM = fct_reorder(ORGANISM, Count, .desc = TRUE))
+
+ggplot(all_ORGANISM_data, aes(x = ORGANISM, y = Count, fill = Count)) +
+  geom_bar(stat = "identity", color = "black") +
+  labs(title = "", x = "Types", y = "Count") +
+  theme_minimal()+
+  theme(
+    axis.text.x = element_text(angle = 60, hjust = 1,  size = 8)
+  )
+```
+
+
+```{r}
+NPEV_A_B_C_D$country = gsub(".*Republic of the Congo.*", "Democratic Republic of the Congo", NPEV_A_B_C_D$country, ignore.case = TRUE)
+
+```
+
+- sequences distribution in Africa
+```{r}
+african_countries <- c("Algeria", "Angola", "Benin", "Botswana", "Burkina Faso", "Burundi", "Cabo Verde", "Cameroon", "Central African Republic", "Chad", "Comoros", "Congo (Brazzaville)", "Congo (Kinshasa)", "DR Congo", "Djibouti", "Egypt", "Equatorial Guinea", "Eritrea", "Eswatini", "Ethiopia", "Gabon", "Gambia", "Ghana", "Guinea", "Guinea-Bissau", "Ivory Coast", "Kenya", "Lesotho", "Liberia", "Libya", "Madagascar", "Malawi", "Mali", "Mauritania", "Mauritius", "Morocco", "Mozambique", "Namibia", "Niger", "Nigeria", "Rwanda", "Sao Tome and Principe", "Senegal", "Seychelles", "Sierra Leone", "Somalia", "South Africa", "South Sudan", "Sudan", "Tanzania", "Togo", "Tunisia", "Uganda", "Zambia", "Zimbabwe")
+
+```
+
+```{r, echo=FALSE}
+
+african_country_data <- NPEV_A_B_C_D %>%
+  filter(country %in% african_countries) %>%
+  group_by(collection_date) %>%
+  summarise(Count = n())
+
+plot_geo(
+  african_country_data,
+  locations = ~country,
+  z = ~Count,
+  locationmode = "country names"
+) %>%
+  layout(
+    title = "",
+    geo = list(projection = list(Species = "orthographic")),
+    showlegend = FALSE, 
+    margin = list(l = 0, r = 0, t = 40, b = 0)  
+      )
+```
+```{r}
+african_country_data$country = gsub(".*Democratic Republic of the Congo.*", "DR Congo", african_country_data$country, ignore.case = TRUE)
+```
+
+
+```{r,  fig.width=10, fig.height=6}
+library(ggplot2)
+library(forcats)
+
+african_country_data <- african_country_data %>%
+  mutate(country = fct_reorder(country, Count, .desc = TRUE))
+
+
+ggplot(african_country_data, aes(x = country, y = Count, fill = Count)) +
+  geom_bar(stat = "identity", color = "black") +
+  labs(title = "", x = "Country", y = "Count") +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 14)
+  )
+
+```
+
+
+### host:   
+```{r}
+# Fonction pour reformater la colonne 'host'
+reformat_host <- function(host) {
+  host <- gsub(".*Homo sapiens.*|.*Human sapiens.*|.*Hmo sapiens.*|.*humam.*", "Homo sapiens", host, ignore.case = TRUE)
+  host <- gsub(".*Rhesus macaque.*|.*Macaca mulatta.*|.*Macaca mulatta (Rhesus macaque).*", "Macaca", host, ignore.case = TRUE)
+  host <- gsub(".*Macaca nemestrina.*", "Macaca", host, ignore.case = TRUE)
+  host <- gsub(".*Pan troglodytes troglodytes.*|.*Pan troglodytes.*|.*Pan troglodytes verus.*|.*chimpanzee.*", "Pan troglodytes", host, ignore.case = TRUE)
+  host <- gsub(".*Vero cells.*|.*vero.*|.*B-Vero cells.*", "NA", host, ignore.case = TRUE)
+  host <- gsub(".*Gorilla gorilla.*", "Gorilla gorilla", host, ignore.case = TRUE)
+  host <- gsub(".*Mus musculus.*|.*mouse.*|.*ICR Mouse.*", "Mus musculus", host, ignore.case = TRUE)
+  host <- gsub(".*RD.*|.*RD cells.*|.*RD Cells.*|.*RD cell.*|.*RD human rhabdomyosarcoma.*|.*RD (rhabdomyosarcoma) cells.*", "NA", host, ignore.case = TRUE)
+  host <- gsub(".*Mandrillus sphinx.*", "Mandrillus sphinx", host, ignore.case = TRUE)
+  host <- gsub(".*Domestic goat.*", "Domestic goat", host, ignore.case = TRUE)
+  host <- gsub(".*HEp-2.*|.*HEp-2 cells.*", "NA", host, ignore.case = TRUE)
+  host <- gsub(".*BGM cells.*|.*Medium BGM infected cells.*", "NA", host, ignore.case = TRUE)
+  host <- gsub(".*MA104 cells.*", "NA", host, ignore.case = TRUE)
+  host <- gsub(".*cell line DU145.*|.*cell line RD.*|.*cell line C33A.*|.*cell line MRC-5.*|.*MRC-5 cells.*", "NA", host, ignore.case = TRUE)
+  host <- gsub(".*Sclaters guenon.*", "Sclaters guenon", host, ignore.case = TRUE)
+  host <- gsub(".*gerbil.*", "gerbil", host, ignore.case = TRUE)
+  host <- gsub(".*Medium Rabdomiosarcoma infected cells.*|.*MCF 7.*", "NA", host, ignore.case = TRUE)
+  host <- gsub(".*infant.*", "Homo sapiens", host, ignore.case = TRUE)
+  host <- gsub(".*mosquito.*", "mosquito", host, ignore.case = TRUE)
+  host <- gsub(".*Sichuan snub-nosed monkey.*", "Sichuan snub-nosed monkey", host, ignore.case = TRUE)
+  host <- gsub(".*unknown.*", "NA", host, ignore.case = TRUE)
+  host <- gsub(".*dog.*", "dog", host, ignore.case = TRUE)
+  host <- gsub(".*domestic wastewater.*", "NA", host, ignore.case = TRUE)
+  host <- gsub(".*nonhuman primate.*", "nonhuman primate", host, ignore.case = TRUE)
+  host <- gsub(".*stool.*", "", host, ignore.case = TRUE)
+  host <- gsub(".*cell line.*", "NA", host, ignore.case = TRUE)
+  host <- gsub(".*infected cells.*", "NA", host, ignore.case = TRUE)
+  host <- gsub("Macaca|Pan troglodytes|Gorilla gorilla|Mandrillus sphinx|Sclaters guenon|Sichuan snub-nosed monkey|nonhuman primate", "Nonhuman Primate", host, ignore.case = TRUE)
+  }
+
+NPEV_A_B_C_D$host <- reformat_host(NPEV_A_B_C_D$host)
+
+```
+
+```{r}
+unique(NPEV_A_B_C_D$host)
+```
+
+### NPEV Species by Hosts:
+```{r}
+my_colors <- c("#E41A1C", "#377EB8", "#4DAF4A", "#FF7F00", "#984EA3", "#FFD92F", "#A65628", "#F781BF", "#999999", "#8dd3c7", "#bebada", "#fb8072", "#80b1d3", "#fdb462", "#b3de69", "#fccde5", "#d9d9d9", "#bc80bd", "#ccebc5", "#ffed6f")
+
+NPEV_A_B_C_D_host = NPEV_A_B_C_D[-which(NPEV_A_B_C_D$host==""), ] 
+NPEV_A_B_C_D_host = NPEV_A_B_C_D_host[-which(NPEV_A_B_C_D_host$host=="NA"), ]
+NPEV_A_B_C_D_host[-which(is.na(NPEV_A_B_C_D_host$host)), ] %>%
+    ggplot(
+    mapping = aes(x = host, fill = Species )
+  ) + 
+  geom_bar(position = "fill", col = "black", width = 1) +  
+  scale_fill_manual(values = my_colors) +  
+  theme_classic() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1,  size = 12)  
+  ) +
+  labs(
+    x = "Host",
+    y = "Species (proportion)",
+    title = ""
+  )
+```
+
+### number of VP1 NPEV sequences per year in africa:
+```{r,warning=FALSE}
+sequence_counts <- NPEV_A_B_C_D %>%
+   filter(country %in% african_countries) %>%
+  group_by(collection_date) %>%
+  summarise(SequenceCount = n())
+
+ggplot(sequence_counts, aes(x = collection_date, y = SequenceCount)) +
+  geom_line() +
+  geom_point() +
+  labs(title = "Africa",
+       x = "Years",
+       y = "Number of VP1 NPEV sequences") +
+  theme_minimal() +
+    scale_x_continuous(breaks = seq(min(sequence_counts$collection_date), max(sequence_counts$collection_date), by = 2))+
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1,  size = 10)
+  )
+```
+
+### NPEV Species distribution in africa countries:
+```{r}
+NPEV_A_B_C_D$country = gsub(".*Democratic Republic of the Congo.*", "DR Congo", NPEV_A_B_C_D$country, ignore.case = TRUE)
+
+african_data$country = gsub(".*Central African Republic.*", "CA Republic", african_data$country, ignore.case = TRUE)
+```
+
+
+```{r, fig.width=10, fig.height=4}
+library(dplyr)
+library(ggplot2)
+
+# Liste des pays africains par région
+west_africa <- c("Ghana", "Nigeria", "Senegal", "Niger", "Guinea", "Mauritania", "Guinea-Bissau", "Gambia")
+north_africa <- c("Egypt", "Algeria", "Tunisia", "Morocco", "Libya")
+east_africa <- c("Kenya", "Madagascar", "Uganda", "Ethiopia", "Burundi", "Malawi", "South Sudan", "Tanzania", "Mozambique")
+south_africa <- c("South Africa", "Angola")
+central_africa <- c("Gabon", "Cameroon", "CA Republic", "DR Congo", "Chad")
+
+# Créer une nouvelle colonne pour les régions et combiner avec le pays
+african_data <- african_data %>%
+  mutate(region = case_when(
+    country %in% west_africa ~ "West Africa",
+    country %in% north_africa ~ "North Africa",
+    country %in% east_africa ~ "East Africa",
+    country %in% south_africa ~ "South Africa",
+    country %in% central_africa ~ "Central Africa",
+    TRUE ~ "Other"
+  )) %>%
+  mutate(region = factor(region, levels = c("West Africa", "North Africa", "East Africa", "South Africa", "Central Africa")))
+
+# Filtrer les pays africains et créer le graphique
+african_data  %>%
+  ggplot(mapping = aes(x = country, fill = Species)) + 
+  geom_bar(position = "fill", col = "black", width = 1) + 
+  scale_fill_manual(values = my_colors) +  
+  theme_classic() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 8.5) 
+  ) +
+  labs(
+    x = "African Countries",
+    y = "Species (proportion)",
+    title = "C)"
+  ) +
+  facet_wrap(~ region, scales = "free_x", nrow = 1)
+
+```
+
+```{r}
+# Compter les occurrences de chaque type par espèce
+species_counts <- african_data %>%
+  group_by(Species, ORGANISM) %>%
+  summarise(Count = n()) %>%
+  arrange(Species, desc(Count))
+
+# Regrouper les types avec moins de 10 occurrences sous "Others" pour chaque espèce
+species_counts$ORGANISM <- ifelse(species_counts$Count < 10, "Others", species_counts$ORGANISM)
+
+# Recalculer les totaux après regroupement sous "Others"
+species_counts <- species_counts %>%
+  group_by(Species, ORGANISM) %>%
+  summarise(Count = sum(Count)) %>%
+  arrange(Species, desc(Count))
+
+# Créer le graphique avec facet_wrap pour séparer les espèces
+plot_B <- ggplot(species_counts, aes(x = ORGANISM, y = Count, fill = ORGANISM)) +
+  geom_bar(stat = "identity", color = "black") +
+  labs(
+    title = "Distribution of Types by Species",
+    x = "Type",
+    y = "Count"
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 80, hjust = 1, size = 9)
+  ) +
+  facet_wrap(~ Species, scales = "free_x") +
+  guides(fill = guide_legend(title = "Type"))
+
+plot_B
+```
+
+### GRAPHES SYNTHETIQUES:
+
+```{r, fig.width=14, fig.height=8 }
+library(ggplot2)
+library(cowplot)
+library(maps)
+
+# Graphique A
+sequence_counts <- NPEV_A_B_C_D %>%
+  filter(country %in% african_countries) %>%
+  group_by(collection_date) %>%
+  summarise(SequenceCount = n())
+
+plot_A <- ggplot(sequence_counts, aes(x = collection_date, y = SequenceCount)) +
+  geom_line() +
+  geom_point() +
+  labs(title = " Africa",
+       x = "Years",
+       y = "Number of human NPEV sequences") +
+  theme_minimal() +
+  scale_x_continuous(breaks = seq(min(sequence_counts$collection_date), max(sequence_counts$collection_date), by = 3)) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 11))
+
+# Graphique B
+african_country_data <- african_country_data %>%
+  mutate(country = fct_reorder(country, Count, .desc = TRUE))
+plot_B = ggplot(african_country_data, aes(x = country, y = Count, fill = Count)) +
+  geom_bar(stat = "identity", color = "black") +
+  labs(title = " Africa ", x = "Countries", y = "Number of human NPEV sequences") +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 10)
+  )
+
+# Combine les graphiques
+combined_plot <- plot_grid(
+  plot_B ,
+  plot_A  ,
+     labels = c("A)", "B)"),
+  ncol = 2, nrow = 1,
+  align = "v"
+)
+
+combined_plot
+```
+
+
+```{r, fig.width=16, fig.height=10 }
+
+library(dplyr)
+library(ggplot2)
+library(cowplot)
+library(maps)
+
+# Graphique A
+species_counts <- NPEV_A_B_C_D %>%
+  filter(country %in% african_countries) %>%
+  group_by(Species) %>%
+  summarise(Count = n()) %>%
+  arrange(desc(Count))
+
+
+plot_A <- ggplot(species_counts, aes(x = Species, y = Count, fill = Count)) +
+  geom_bar(stat = "identity", color = "black") +
+  labs(
+    title = " Africa",
+    x = "Species",
+    y = "Count"
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 11)
+  )
+
+# Graphique C
+# Définir une palette de couleurs personnalisée
+my_colors <- c("#4B4B4B",  "#8B4513", "#2F4F4F", "#556B2F" )
+
+
+# Filtrer les données pour les pays africains
+african_data <- NPEV_A_B_C_D %>%
+  filter(country %in% african_countries)
+
+# Créer le graphique à barres empilées proportionnelles
+plot_C  <- african_data  %>%
+  ggplot(mapping = aes(x = country, fill = Species)) + 
+  geom_bar(position = "fill", col = "black", width = 1) + 
+  scale_fill_manual(values = my_colors) +  
+  theme_classic() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 8) 
+  ) +
+  labs(
+    x = "African Countries",
+    y = "Species (proportion)",
+    title = "C)"
+  ) +
+  facet_wrap(~ region, scales = "free_x", nrow = 1)
+# Graphique B
+
+species_counts <- NPEV_A_B_C_D %>%
+  filter(country %in% african_countries) %>%
+  group_by(ORGANISM) %>%
+  summarise(Count = n()) %>%
+  arrange(desc(Count))
+
+species_counts$ORGANISM <- ifelse(species_counts$Count < 10, "Others", species_counts$ORGANISM)
+
+
+species_counts <- species_counts %>%
+  group_by(ORGANISM) %>%
+  summarise(Count = sum(Count)) %>%
+  arrange(desc(Count))
+
+
+plot_B <- ggplot(species_counts, aes(x = ORGANISM, y = Count, fill = Count)) +
+  geom_bar(stat = "identity", color = "black") +
+  labs(
+    title = " Africa",
+    x = "Types",
+    y = "Count"
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 80, hjust = 1, size = 9)
+  )
+
+# Graphique D
+african_data_host <- NPEV_A_B_C_D_host %>%
+  filter(country %in% african_countries)
+
+plot_D <- ggplot(african_data_host[-which(is.na(african_data_host$host)), ], aes(x = host, fill = Species)) + 
+  geom_bar(position = "fill", color = "black", width = 1) + 
+  scale_fill_manual(values = my_colors) +  
+  theme_classic() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 11)
+  ) +
+  labs(
+    x = "host",
+    y = "Species (Proportion)",
+    title = ""
+  )
+
+# Combine les graphiques
+combined_plot <- plot_grid(
+  plot_A, plot_B, plot_C, plot_D,
+  labels = c("A)", "B)", "C)", "D)"),
+  ncol = 2, nrow = 2,
+  align = "v"
+)
+
+# Afficher le graphique combiné
+print(combined_plot)
+
+```
+
+
