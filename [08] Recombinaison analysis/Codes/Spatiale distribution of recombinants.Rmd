@@ -1,0 +1,345 @@
+---
+title: "Spatiale distribution of recombinants"
+author: "Serigne Fallou Mb. NGOM"
+date: "2025-08-28"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+library(stringr)
+
+# Lecture du fichier CSV
+data <- read.csv("NPEVABCD_recomb_sign.csv")
+
+# Extraction des informations et création du dataframe
+result <- data %>%
+  # Sélectionner la colonne des séquences
+  select(Sequence = Recombinant.Sequence.s.) %>%
+  # Nettoyer les noms de séquences (supprimer les caractères spéciaux comme ^)
+  mutate(Sequence = str_remove_all(Sequence, "\\^")) %>%
+  # Extraire les composants avec une expression régulière plus robuste
+  mutate(
+    ID = str_extract(Sequence, "^[^_]+"),
+    Country = str_extract(Sequence, "(?<=_)[A-Za-z]+(?=_)"),
+    Year = str_extract(Sequence, "\\d{4}$")
+  ) %>%
+  # Filtrer les lignes où Year est NA (formats non conformes)
+  filter(!is.na(Year)) %>%
+  # Compter le nombre de mutations par pays et année
+  count(Country, Year, name = "Number_of_Mutations") %>%
+  # Trier par pays et année
+  arrange(Country, Year)
+
+# Affichage du résultat
+print(result)
+
+# Optionnel : afficher les séquences qui n'ont pas pu être analysées
+invalid_sequences <- data %>%
+  select(Sequence = Recombinant.Sequence.s.) %>%
+  mutate(Sequence = str_remove_all(Sequence, "\\^")) %>%
+  filter(!str_detect(Sequence, ".+_.+_\\d{4}$"))
+
+if(nrow(invalid_sequences) > 0) {
+  cat("\nSéquences au format non valide (ignorées) :\n")
+  print(invalid_sequences)
+}
+```
+
+```{r}
+# Préparer les données avec année
+result_year <- data %>%
+  select(Sequence = Recombinant.Sequence.s.) %>%
+  mutate(Sequence = str_remove_all(Sequence, "\\^")) %>%
+  mutate(
+    ID = str_extract(Sequence, "^[^_]+"),
+    Country = str_extract(Sequence, "(?<=_)[A-Za-z]+(?=_)"),
+    Year = str_extract(Sequence, "\\d{4}$")
+  ) %>%
+  filter(!is.na(Year)) %>%
+  count(Country, Year, name = "Number_of_Mutations") %>%
+  mutate(Country = ifelse(Country %in% names(country_mapping), 
+                         country_mapping[Country], 
+                         Country))
+
+```
+
+```{r}
+library(tidyverse)
+library(sf)
+library(rnaturalearth)
+library(rnaturalearthdata)
+library(viridis)
+library(patchwork)
+
+# Charger les données du monde
+world <- ne_countries(scale = "medium", returnclass = "sf")
+
+# Nettoyer les noms de pays pour qu'ils correspondent aux standards
+country_mapping <- c(
+  "USA" = "United States",
+  "CentralAfrican" = "Central African Republic",
+  "SouthKorea" = "South Korea",
+  "UnitedKingdom" = "United Kingdom",
+  "VietNam" = "Vietnam"
+)
+
+# Préparer les données avec la période
+result_periods <- result_year %>%
+  mutate(
+    Period = case_when(
+      Year %in% 1975:1987 ~ "1975-1987",
+      Year %in% 1988:2000 ~ "1988-2000",
+      Year %in% 2001:2013 ~ "2001-2013",
+      Year %in% 2014:2023 ~ "2014-2023",
+      TRUE ~ "Other"
+    )
+  ) %>%
+  group_by(Country, Period) %>%
+  summarise(Number_of_Recombinants = sum(Number_of_Mutations, na.rm = TRUE)) %>%
+  ungroup() %>%
+  mutate(Country = ifelse(Country %in% names(country_mapping), 
+                         country_mapping[Country], 
+                         Country))
+
+# Joindre avec les données géographiques
+world_periods <- world %>%
+  left_join(result_periods, by = c("name" = "Country")) %>%
+  mutate(
+    Number_of_Recombinants = replace_na(Number_of_Recombinants, 0),
+    Period = factor(Period, levels = c("1975-1987", "1988-2000", "2001-2013", "2014-2023"))
+  )
+```
+
+```{r, fig.width=12, fig.height=5, dpi=330}
+library(tidyverse)
+library(sf)
+library(rnaturalearth)
+library(rnaturalearthdata)
+
+# Charger les données du monde
+world <- ne_countries(scale = "medium", returnclass = "sf")
+
+# Nettoyer les noms de pays pour qu'ils correspondent aux standards
+country_mapping <- c(
+  "USA" = "United States",
+  "CentralAfrican" = "Central African Republic",
+  "SouthKorea" = "South Korea",
+  "UnitedKingdom" = "United Kingdom",
+  "VietNam" = "Vietnam"
+)
+
+# Calculer les valeurs min et max globales pour l'échelle de couleurs
+all_periods_data <- bind_rows(
+  result_year %>% filter(Year >= 1975 & Year <= 1987) %>% 
+    group_by(Country) %>% 
+    summarise(Number_of_Mutations = sum(Number_of_Mutations, na.rm = TRUE)),
+  result_year %>% filter(Year >= 1988 & Year <= 2000) %>% 
+    group_by(Country) %>% 
+    summarise(Number_of_Mutations = sum(Number_of_Mutations, na.rm = TRUE)),
+  result_year %>% filter(Year >= 2001 & Year <= 2013) %>% 
+    group_by(Country) %>% 
+    summarise(Number_of_Mutations = sum(Number_of_Mutations, na.rm = TRUE)),
+  result_year %>% filter(Year >= 2014 & Year <= 2023) %>% 
+    group_by(Country) %>% 
+    summarise(Number_of_Mutations = sum(Number_of_Mutations, na.rm = TRUE))
+) %>%
+  mutate(Country = ifelse(Country %in% names(country_mapping), 
+                         country_mapping[Country], 
+                         Country))
+
+min_val <- 0
+max_val <- max(all_periods_data$Number_of_Mutations, na.rm = TRUE)
+
+# Définir les breaks en fonction de la valeur maximale
+  breaks <- c(0, 10, 40, 70)
+
+# Fonction pour créer une carte pour n'importe quelle période
+create_period_map <- function(start_year, end_year, data) {
+  # Filtrer les données pour la période spécifiée
+  result_period <- data %>%
+    filter(Year >= start_year & Year <= end_year) %>%
+    group_by(Country) %>%
+    summarise(Number_of_Mutations = sum(Number_of_Mutations, na.rm = TRUE)) %>%
+    ungroup() %>%
+    mutate(Country = ifelse(Country %in% names(country_mapping), 
+                           country_mapping[Country], 
+                           Country))
+  
+  # Joindre avec les données géographiques
+  world_data <- world %>%
+    left_join(result_period, by = c("name" = "Country")) %>%
+    mutate(Number_of_Mutations = replace_na(Number_of_Mutations, 0))
+  
+  # Créer la visualisation
+  ggplot(data = world_data) +
+    geom_sf(aes(fill = Number_of_Mutations), color = "white", size = 0.1) +
+    scale_fill_gradient(
+      name = "Number of Recombinant sequences",
+      low = "grey90",
+      high = "darkred",
+      trans = "log1p",
+      limits = c(min_val, max_val),  # Mêmes limites pour toutes les cartes
+      breaks = breaks,
+      labels = as.character(breaks),
+      guide = guide_colorbar(
+        barwidth = 0.5,
+        barheight = 5,
+        ticks.colour = "black"
+      )
+    ) +
+    theme_minimal() +
+    labs(
+      title = paste( start_year, "-", end_year, sep = "")
+    ) +
+    theme(
+      plot.title = element_text(hjust = 0.5, face = "bold", size = 8),
+      legend.title = element_text(size = 7),
+      legend.text = element_text(size = 6),
+      legend.key.height = unit(0.5, "cm"),
+      legend.key.width = unit(0.3, "cm"),
+      legend.position = "right"
+    ) +
+    coord_sf(expand = TRUE)
+}
+
+# Utiliser la fonction pour créer les cartes pour chaque période
+map_1975_1987 <- create_period_map(1975, 1987, result_year)
+map_1988_2000 <- create_period_map(1988, 2000, result_year)
+map_2001_2013 <- create_period_map(2001, 2013, result_year)
+map_2014_2023 <- create_period_map(2014, 2023, result_year)
+
+# Optionnel: Combiner les cartes en une seule visualisation
+library(patchwork)
+
+combined_maps <- (map_1975_1987 + map_1988_2000) / (map_2001_2013 + map_2014_2023) +
+  plot_annotation(
+    title = "Geographic Distribution of NPEV Recombinant Sequences by Period",
+    theme = theme(plot.title = element_text(hjust = 0.5, face = "bold", size = 16))
+  )
+
+print(combined_maps)
+```
+
+
+
+```{r, fig.width=12, fig.height=5, dpi=500}
+library(tidyverse)
+library(sf)
+library(rnaturalearth)
+library(rnaturalearthdata)
+library(patchwork)
+
+# Charger les données du monde
+world <- ne_countries(scale = "medium", returnclass = "sf")
+
+# Nettoyer les noms de pays pour qu'ils correspondent aux standards
+country_mapping <- c(
+  "USA" = "United States",
+  "CentralAfrican" = "Central African Republic",
+  "SouthKorea" = "South Korea",
+  "UnitedKingdom" = "United Kingdom",
+  "VietNam" = "Vietnam"
+)
+
+# Calculer les valeurs min et max globales pour l'échelle de taille
+all_periods_data <- bind_rows(
+  result_year %>% filter(Year >= 1975 & Year <= 1987) %>% 
+    group_by(Country) %>% 
+    summarise(Number_of_Mutations = sum(Number_of_Mutations, na.rm = TRUE)),
+  result_year %>% filter(Year >= 1988 & Year <= 2000) %>% 
+    group_by(Country) %>% 
+    summarise(Number_of_Mutations = sum(Number_of_Mutations, na.rm = TRUE)),
+  result_year %>% filter(Year >= 2001 & Year <= 2013) %>% 
+    group_by(Country) %>% 
+    summarise(Number_of_Mutations = sum(Number_of_Mutations, na.rm = TRUE)),
+  result_year %>% filter(Year >= 2014 & Year <= 2023) %>% 
+    group_by(Country) %>% 
+    summarise(Number_of_Mutations = sum(Number_of_Mutations, na.rm = TRUE))
+) %>%
+  mutate(Country = ifelse(Country %in% names(country_mapping), 
+                         country_mapping[Country], 
+                         Country))
+
+min_val <- 1
+max_val <- max(all_periods_data$Number_of_Mutations, na.rm = TRUE)
+
+# Définir les breaks en fonction de la valeur maximale
+breaks <- c(1, 10, 40, 70)
+
+# Fonction pour créer une carte avec des points pour n'importe quelle période
+create_period_map_points <- function(start_year, end_year, data) {
+  # Filtrer les données pour la période spécifiée
+  result_period <- data %>%
+    filter(Year >= start_year & Year <= end_year) %>%
+    group_by(Country) %>%
+    summarise(Number_of_Mutations = sum(Number_of_Mutations, na.rm = TRUE)) %>%
+    ungroup() %>%
+    mutate(Country = ifelse(Country %in% names(country_mapping), 
+                           country_mapping[Country], 
+                           Country))
+  
+  # Joindre avec les données géographiques et calculer les centroïdes
+  world_data <- world %>%
+    left_join(result_period, by = c("name" = "Country")) %>%
+    mutate(Number_of_Mutations = replace_na(Number_of_Mutations, 0))
+  
+  # Filtrer les pays avec au moins une mutation
+  countries_with_mutations <- world_data %>%
+    filter(Number_of_Mutations > 0)
+  
+  # Calculer les centroïdes
+  centroids <- st_centroid(countries_with_mutations)
+  
+  # Créer la visualisation avec des points
+  ggplot() +
+    # Carte de base
+    geom_sf(data = world, fill = "lightgray", color = "white", size = 0.1) +
+    # Points représentant les mutations
+    geom_sf(
+      data = centroids,
+      aes(size = Number_of_Mutations),
+      color = "darkred",
+      alpha = 0.7
+    ) +
+    scale_size_continuous(
+      name = "Number of Recombinant sequences",
+      range = c(1, 10),  # Taille minimale et maximale des points
+      limits = c(min_val, max_val),  # Mêmes limites pour toutes les cartes
+      breaks = breaks,
+      labels = as.character(breaks)
+    ) +
+    theme_minimal() +
+    labs(
+      title = paste(start_year, "-", end_year, sep = "")
+    ) +
+    theme(
+      plot.title = element_text(hjust = 0.5, face = "bold", size = 8),
+      legend.title = element_text(size = 7),
+      legend.text = element_text(size = 6),
+      legend.position = "right"
+    ) +
+    coord_sf(expand = TRUE)
+}
+
+# Utiliser la fonction pour créer les cartes avec points pour chaque période
+map_1975_1987_points <- create_period_map_points(1975, 1987, result_year)
+map_1988_2000_points <- create_period_map_points(1988, 2000, result_year)
+map_2001_2013_points <- create_period_map_points(2001, 2013, result_year)
+map_2014_2023_points <- create_period_map_points(2014, 2023, result_year)
+
+# Combiner les cartes en une seule visualisation
+combined_maps_points <- (map_1975_1987_points + map_1988_2000_points) / 
+  (map_2001_2013_points + map_2014_2023_points) +
+  plot_annotation(
+    title = "Geographic Distribution of NPEV Recombinant Sequences by Period",
+    theme = theme(plot.title = element_text(hjust = 0.5, face = "bold", size = 16))
+  )
+
+print(combined_maps_points)
+```
+
+```{r}
+
+```
+

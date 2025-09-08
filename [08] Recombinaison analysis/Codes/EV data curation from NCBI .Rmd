@@ -1,0 +1,157 @@
+---
+title: "BVB-RC to NCBI"
+author: "Serigne Fallou Mbacke NGOM"
+date: "2024-05-14"
+output: html_document
+---
+
+```{r}
+accessions <- read.delim("SL polio metaada.seq", header = FALSE)
+All_accessions = accessions$V1[206:363]
+```
+
+
+```{r, include=FALSE}
+library(rentrez)
+library(dplyr)
+library(stringr)
+
+for (id in All_accessions) {
+  entrez_record <- entrez_fetch(db = "nucleotide", id = id, rettype = "gb", timeout = 60, retmax=50000 )
+  metadata_list[[id]] <- entrez_record
+}
+```
+
+```{r}
+metadata_df <- data.frame(Metadata = unlist(metadata_list))
+metadata_df <- metadata_df %>%
+  mutate(
+    ACCESSION = str_extract(Metadata, "ACCESSION\\s+(.*?)\n"),
+    DEFINITION = str_extract(Metadata, "DEFINITION\\s+(.*?)\n"),
+    VERSION   = str_extract(Metadata, "VERSION\\s+(.*?)\n"),
+    REFERENCE = str_extract(Metadata, "REFERENCE\\s+(.*?)\n"),
+    ORGANISM = str_extract(Metadata, "ORGANISM\\s+(.*?)\n"),
+    AUTHORS = str_extract(Metadata, "AUTHORS\\s+(.*?)\n"),
+    TITLE = str_extract(Metadata, "TITLE\\s+(.*?)\n"),
+    'Assembly Method' = str_extract(Metadata, "Assembly Method\\s+(.*?)\n"),
+    "Sequencing Technology" = str_extract(Metadata, "Sequencing Technology\\s+(.*?)\n"),
+    "Location/Qualifiers" = str_extract(Metadata, "Location/Qualifiers\\s+(.*?)\n"),
+    mol_type = str_extract(Metadata, "mol_type=\"(.*?)\""),
+    strain = str_extract(Metadata, "strain=\"(.*?)\""),
+    host = str_extract(Metadata, "host=\"(.*?)\""),
+    geo_loc_name = str_extract(Metadata, "geo_loc_name=\"(.*?)\""),
+    collection_date = str_extract(Metadata, "collection_date=\"(.*?)\"")
+  )
+
+metadata_df <- metadata_df[, -1]
+metas <- c("ACCESSION","VERSION","DEFINITION", "REFERENCE", "ORGANISM", "AUTHORS", "TITLE", "Assembly Method", "Sequencing Technology", "Location/Qualifiers")
+for (colonne in colonnes_metas) {
+  metadata_df[[colonne]] <- sub(paste0("^", colonne, "\\s+"), "", metadata_df[[colonne]])
+}
+
+metadata_df[,'Assembly Method'] <- sub(':: ', '', metadata_df[,'Assembly Method'])
+metadata_df[,"Sequencing Technology"] <- sub(':: ', '', metadata_df[,"Sequencing Technology"])
+metadata_df[,"Location/Qualifiers"] <- sub('source ', '', metadata_df[,"Location/Qualifiers"])
+
+columns_to_process <- c("mol_type", "collection_date", "host", "geo_loc_name", "strain")
+for (col in columns_to_process) {
+  metadata_df[[col]] <- sub(paste0(col, '='), '', metadata_df[[col]])
+}
+
+colonnes_metas <- c("ACCESSION","VERSION","DEFINITION", "REFERENCE", "ORGANISM", "AUTHORS", "TITLE", "Location/Qualifiers")
+for (colonne in colonnes_metas) {
+  metadata_df[[colonne]] <- sub(paste0("^", colonne, "\\s+"), "", metadata_df[[colonne]])
+}
+
+metadata_df[,"Location/Qualifiers"] <- sub('source ', '', metadata_df[,"Location/Qualifiers"])
+
+columns_to_process <- c("collection_date", "host", "geo_loc_name", "strain")
+for (col in columns_to_process) {
+  metadata_df[[col]] <- sub(paste0(col, '='), '', metadata_df[[col]])
+  metadata_df[[col]] <- sub('"', '', metadata_df[[col]])
+  metadata_df[[col]] <- sub('"', '', metadata_df[[col]])
+
+}
+metadata_df$collection_date <- gsub(".*[^0-9](\\d{4})[^0-9]*", "\\1", metadata_df$collection_date)
+
+metadata_df$collection_date <- substr(metadata_df$collection_date, 1, 4)
+
+metadata_df$geo_loc_name  = str_extract(metadata_df$geo_loc_name, "^[^:]+")
+```
+
+
+```{r}
+metadata_df = metadata_df[-which(is.na(metadata_df$collection_date)), ]
+```
+
+```{r}
+metadata_df = metadata_df[-which(is.na(metadata_df$geo_loc_name)), ]
+```
+
+```{r}
+NPEV <- metadata_df %>%
+  filter(!ORGANISM %in% c("Poliovirus 1\n", "Poliovirus 2\n", "Poliovirus 3\n"))
+```
+
+
+```{r}
+library(Biostrings)
+
+fasta_file <- "EV C complete genome.fasta"
+all_sequences <- readDNAStringSet(fasta_file)
+accession_ids <- NPEV$ACCESSION
+
+filtered_sequencesD <- all_sequences[(substr(names(all_sequences), 1, 8) %in% substr(accession_ids, 1, 8))]
+
+output_fasta_file <- "NPEV_C_compGenom_clean.fasta"
+writeXStringSet(filtered_sequencesD, filepath = output_fasta_file)
+```
+
+```{r}
+csv_data = metadata_df
+```
+```{r}
+summary(factor(metadata_df$geo_loc_name))
+```
+
+
+```{r}
+csv_data$ORGANISM = sub("-", "", csv_data$ORGANISM)
+```
+
+```{r}
+library(Biostrings)
+library(dplyr)
+
+fasta_path <- "Sabin-like Polio.fasta"
+fasta_sequences <- readDNAStringSet(fasta_path)
+
+for (i in 1:length(csv_data$ACCESSION)) {
+  accession <- csv_data$ACCESSION[i]
+  country <- csv_data$geo_loc_name[i]
+  organism = csv_data$ORGANISM[i]
+
+  index <- which(substr(names(fasta_sequences), 1, 8) == (substr(accession, 1, 8)))
+  
+  if (length(index) > 0) {
+    new_name <- paste0(substr(accession, 1, 8),"_", paste0(country),"_", "Sabin-like", paste0(organism), sep = "")
+    names(fasta_sequences)[index] <- new_name
+  }
+}
+
+writeXStringSet(fasta_sequences, "Sabin-like_Polio_formatted.fasta")
+```
+
+```{r}
+# Charger le fichier FASTA
+fasta_file <- "NPEVc vs Poliovirus.fasta"
+file_content <- readLines(fasta_file)
+
+# Supprimer les lignes vides
+non_empty_lines <- file_content[file_content != ""]
+
+# Écrire le contenu filtré dans un nouveau fichier FASTA
+output_file <- "NPEVC_vs_Poliovirus.fasta"
+writeLines(non_empty_lines, output_file)
+```
+

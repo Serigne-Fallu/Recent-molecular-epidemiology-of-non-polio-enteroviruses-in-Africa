@@ -1,0 +1,266 @@
+---
+title: "Analyse resutats recombinaison"
+author: "Serigne Fallou Mbacke NGOM"
+date: "2024-10-21"
+output: html_document
+---
+
+```{r}
+data <- read.csv("NPEV-ABCD/NPEV_ABDCD.csv", header = FALSE)
+```
+
+```{r}
+EVD_recomb <- data[!(data$V2 == ""), ]
+```
+
+
+```{r}
+write.csv2(EVD_recomb, "ABDCD_recombinaison_events.csv")
+```
+
+```{r}
+# Load the necessary data
+recomb_data <- read.csv2("ABDCD_recombinaison_events.csv", header=TRUE)
+
+# Inspect the column names
+print(colnames(recomb_data))
+
+# Modify the list of column names based on actual names in your dataset
+# Replace with the actual column names for the methods
+method_columns <- c("RDP", "GENECONV", "Bootscan", "Maxchi", "Chimaera", 
+                    "SiSscan", "PhylPro", "LARD", "X3Seq")
+
+# Ensure that these columns exist in your data
+missing_columns <- setdiff(method_columns, colnames(recomb_data))
+if (length(missing_columns) > 0) {
+  stop(paste("These method columns are missing:", paste(missing_columns, collapse = ", ")))
+}
+
+# Replace 'NS' with NA for easier counting
+recomb_data[, method_columns] <- lapply(recomb_data[, method_columns], 
+                                        function(x) ifelse(x == "NS", NA, x))
+
+# Count the number of methods detecting recombination for each event
+recomb_data$Method_Count <- rowSums(!is.na(recomb_data[, method_columns]))
+
+# Filter for events detected by at least 5 methods
+recomb_5_methods <- recomb_data[recomb_data$Method_Count >= 5, ]
+
+# View the filtered data
+print(recomb_5_methods)
+
+# Optional: Write results to a new file
+write.csv2(recomb_5_methods, "NPEVABCD_recomb_sign.csv", row.names = FALSE)
+
+# Additional analysis: Summary statistics
+summary_stats <- summary(recomb_data$Method_Count)
+cat("Summary Statistics for Number of Methods Detecting Recombination:\n")
+print(summary_stats)
+
+```
+
+
+```{r}
+# Charger la librairie Biostrings
+library(Biostrings)
+
+# Dictionnaire des fichiers et des espèces correspondantes
+fasta_files <- list(
+  "NPEV_A_compGenom_formatted.fasta" = "NPEV-A",
+  "NPEV_B_compGenom_formatted.fa" = "NPEV-B",
+  "NPEV_C_compGenom_formatted.fa" = "NPEV-C",
+  "NPEV_D_compGenom_formatted.fasta" = "NPEV-D",
+)
+
+# Fonction pour renommer les séquences
+rename_fasta_sequences <- function(fasta_file, species) {
+  # Lire le fichier FASTA
+  sequences <- readDNAStringSet(fasta_file)
+  
+  # Renommer les séquences en ajoutant l'espèce à la fin
+  names(sequences) <- paste0(names(sequences), "_", species)
+  
+  # Sauvegarder les séquences renommées dans un nouveau fichier
+  writeXStringSet(sequences, paste0("renamed_", fasta_file))
+  
+}
+
+# Appliquer la fonction à chaque fichier FASTA
+for (fasta_file in names(fasta_files)) {
+  species <- fasta_files[[fasta_file]]
+  rename_fasta_sequences(fasta_file, species)
+}
+
+```
+
+
+```{r}
+# Charger les données
+data <- read.csv2("NPEVABCD_recomb_sign.csv")  # Assurez-vous d'ajuster le séparateur selon votre fichier
+
+# Fonction pour vérifier si une séquence est un poliovirus
+is_polio <- function(sequence) {
+  grepl("Poliovirus", sequence)
+}
+
+# Initialiser les compteurs
+polio_vs_polio <- 0
+ev_vs_ev <- 0
+polio_vs_ev <- 0
+
+# Parcourir chaque ligne du dataframe
+for (i in 1:nrow(data)) {
+  recombinant <- data$Recombinant.Sequence.s.[i]
+  minor_parent <- data$Minor.Parental.Sequence.s.[i]
+  major_parent <- data$Major.Parental.Sequence.s.[i]
+  
+  # Vérifier si chaque séquence est un poliovirus
+  is_recombinant_polio <- is_polio(recombinant)
+  is_minor_polio <- is_polio(minor_parent)
+  is_major_polio <- is_polio(major_parent)
+  
+  # Cas 1: Polio vs Polio
+  if (is_recombinant_polio & is_minor_polio & is_major_polio) {
+    polio_vs_polio <- polio_vs_polio + 1
+  }
+  
+  # Cas 2: EV non-polio vs EV non-polio
+  if (!is_recombinant_polio & !is_minor_polio & !is_major_polio) {
+    ev_vs_ev <- ev_vs_ev + 1
+  }
+  
+  # Cas 3: Polio vs EV non-polio
+  if ((is_recombinant_polio & (!is_minor_polio | !is_major_polio)) |
+      (!is_recombinant_polio & (is_minor_polio | is_major_polio))) {
+    polio_vs_ev <- polio_vs_ev + 1
+  }
+}
+
+# Afficher les résultats
+cat("Nombre de recombinaisons Polio vs Polio: ", polio_vs_polio, "\n")
+cat("Nombre de recombinaisons EV non-polio vs EV non-polio: ", ev_vs_ev, "\n")
+cat("Nombre de recombinaisons Polio vs EV non-polio: ", polio_vs_ev, "\n")
+
+```
+
+
+- NPEV A vs SL:
+Nombre de recombinaisons EV non-polio vs EV non-polio:  44 
+Nombre de recombinaisons Polio vs EV non-polio:  0 
+
+- NPEV B vs SL:
+Nombre de recombinaisons EV non-polio vs EV non-polio:  312 
+Nombre de recombinaisons Polio vs EV non-polio:  0 
+
+- NPEV C vs SL:
+Nombre de recombinaisons EV non-polio vs EV non-polio:  147 
+Nombre de recombinaisons Polio vs EV non-polio:  60
+
+- NPEV C vs Polio:
+Nombre de recombinaisons EV non-polio vs EV non-polio:  14 
+Nombre de recombinaisons Polio vs EV non-polio:  43
+
+- NPEV D vs SL: 
+Nombre de recombinaisons EV non-polio vs EV non-polio:  11 
+Nombre de recombinaisons Polio vs EV non-polio:  2
+
+
+NPEV A vs NPEV B : 0 événements
+NPEV A vs NPEV C : 31 événements
+NPEV A vs NPEV D : 0 événements
+NPEV A vs Poliovirus : 20 événements
+NPEV B vs NPEV C : 0 événements
+NPEV B vs NPEV D : 0 événements
+NPEV B vs Poliovirus : 0 événements
+NPEV C vs NPEV D : 0 événements
+NPEV C vs Poliovirus : 56 événements
+NPEV D vs Poliovirus : 0 événements
+
+
+
+```{r}
+library(dplyr)
+library(ggplot2)
+
+# Charger les données depuis le fichier CSV
+recomb_data <- read.csv2("NPEV-ABCD/NPEVABCD_recomb_sign.csv")
+
+# Nettoyer et convertir les colonnes "Begin.1" et "End.1"
+recomb_data$Begin.1 <- as.numeric(gsub("\\*", "", recomb_data$Begin.1))
+recomb_data$End.1 <- as.numeric(gsub("\\*", "", recomb_data$End.1))
+
+# Créer une colonne "Region" en fonction des annotations du génome de l'entérovirus
+recomb_data <- recomb_data %>%
+  mutate(Region = case_when(
+    Begin.1 >= 1 & End.1 <= 743 ~ "5' UTR",
+    Begin.1 >= 743 & End.1 <= 1000 ~ "VP4",
+    Begin.1 >= 1000 & End.1 <= 2000 ~ "VP2",
+    Begin.1 >= 2000 & End.1 <= 2500 ~ "VP3",
+    Begin.1 >= 2500 & End.1 <= 3386 ~ "VP1",
+    Begin.1 >= 3386 & End.1 <= 5110 ~ "P2(2A,2B,2C)",
+    Begin.1 >= 5110 & End.1 <= 7370 ~ "P3(3A,3B,3C,3D)",
+    Begin.1 >= 7370 & End.1 <= 7500 ~ "3' UTR",
+    TRUE ~ "Other"
+  ))
+
+# Calculer la fréquence de recombinaison par région
+freq_recomb_region <- recomb_data %>%
+  group_by(Region) %>%
+  summarise(Frequency = n()) %>%
+  mutate(Percentage = (Frequency / sum(Frequency)) * 100)
+
+# Créer une carte du génome pour la représentation en abscisse
+genome_map <- data.frame(
+  Region = c("5' UTR", "VP4", "VP2", "VP3", "VP1","P2(2A,2B,2C)","P3(3A,3B,3C,3D)", "3' UTR"),
+  Start = c(1, 744, 1001, 2001, 2501, 3387, 5111, 7371),
+  End = c(743, 1000, 2000, 2500, 3386, 5110, 7370, 7500)
+)
+
+# Fusionner avec les fréquences pour aligner les régions
+freq_recomb_region <- merge(freq_recomb_region, genome_map, by = "Region")
+
+# Définir une palette de couleurs personnalisée pour chaque région
+custom_palette <- c(
+  "5' UTR" = "#1f77b4",
+  "VP4" = "#17becf",
+  "VP2" = "#2ca02c",
+  "VP3" = "#ffbb78",
+  "VP1" = "#d62728",
+  "P2(2A,2B,2C)" = "#aec7e8",
+  "P3(3A,3B,3C,3D)" = "#e377c2",
+  "3' UTR" = "gray"
+)
+
+# Visualiser les fréquences de recombinaison le long du génome de l'entérovirus
+ggplot(freq_recomb_region, aes(xmin = Start, xmax = End, ymin = 0, ymax = Percentage, fill = Region)) +
+  geom_rect(color = "black") +
+  geom_text(aes(x = (Start + End) / 2, y = Percentage + 2, label = Region), size = 3, angle = 45, hjust = 0.4) +
+  labs(title = "E) All human EV species",
+       x = "Genome Position (bp)",
+       y = "Recombination Frequency (%)") +
+  scale_x_continuous(breaks = seq(0, 11500, 1000), limits = c(0, 11500)) +
+  theme_minimal() +
+  scale_fill_manual(values = custom_palette) +
+  theme(
+    plot.title = element_text(size = 16, face = "bold", hjust = 0.5),
+    axis.title.x = element_text(size = 12),
+    axis.title.y = element_text(size = 12),
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  )
+
+```
+
+
+
+```{r}
+library(dplyr)
+
+# Assuming your data frames are named df1, df2, df3, df4, and df5
+merged_df <- bind_rows(freq_recomb_region_NPEVA, freq_recomb_region_NPEVB, freq_recomb_region_NPEVC1, freq_recomb_region_NPEVD, freq_recomb_region_NPEVC2, freq_recomb_region_allEV)
+
+```
+
+```{r}
+write.csv(merged_df, "Regions_recombinaison.csv")
+```
+
