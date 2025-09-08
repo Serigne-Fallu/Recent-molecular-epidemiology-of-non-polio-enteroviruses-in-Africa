@@ -1,0 +1,788 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><beast beautitemplate='Standard' beautistatus='' namespace="beast.core:beast.evolution.alignment:beast.evolution.tree.coalescent:beast.core.util:beast.evolution.nuc:beast.evolution.operators:beast.evolution.sitemodel:beast.evolution.substitutionmodel:beast.base.evolution.alignment:beast.pkgmgmt:beast.base.core:beast.base.inference:beast.base.evolution.tree.coalescent:beast.pkgmgmt:beast.base.core:beast.base.inference.util:beast.evolution.nuc:beast.base.evolution.operator:beast.base.inference.operator:beast.base.evolution.sitemodel:beast.base.evolution.substitutionmodel:beast.base.evolution.likelihood" required="BEAST.base v2.7.7:BEAST_CLASSIC v1.6.3" version="2.7">
+        
+
+    <data
+id="NPEV_C_trim"
+spec="Alignment"
+name="alignment">
+                                
+        <sequence id="seq_AB828288_JPN_2001" spec="Sequence" taxon="AB828288_JPN_2001" totalcount="4" value="ggaattgatgatgtcattgacacagtcgtagccaatgcacttaaagtatccatgccacaa------aagacacacaatcaagtggaccagtcaactcaaaagaagtccctgcattaactgctgttgagacgggtgccaccagccaaatagaaccttcagatgtgatcgagacgcgccatgtcataaaccaaaggttaagatcagaatgcaccgtagaatccttctttgggagatctgcttgtgtggctataataggtttgagcaacaagaagcccaca--gataccaatggcaaagaattgttcgcaacatggtctatctcatatctagacacatatcaattgaggagaaagttggagatgtttacttactctagatttgatattgagatgacttttgtcataacagagagattcttcacctcaacatctgca---gctagggactatgtataccagatcatgta--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"/>
+                                
+        <sequence id="seq_AB901473_TWN_1985" spec="Sequence" taxon="AB901473_TWN_1985" totalcount="4" value="ggcattgaggagaccattgacaccgtcattactaatgcactacaactgtcacaacctaaaccacccaatcgacaccgcctaccagtggagtgaactcacaggaagtacctgcactgactgcagtagagactggtgcatccggtcaggcagtacccagtgatgtaattgagaccaggcacgtcgtgaactacaagaccagatccgagtcaacacttgagtccttttttggaagatctgcttgcgtcaccatactggaggtggagaattttaatgccacgccgaagctgacaggaaaaagcagttcaccacatgggccattacgtacacagatacagtccaactaagaaggaaactggaatttttcacctactccagatttgatttagagatgacttttgtcataacagaaaggtattatgccagcaacacaggacgtgccaggaaccaagtctaccagcttatgtacataccgcctggcgctccgcgacccacggcttgggatgactacacctggcagagctcatcgaacccgtcagtgttttacatatacggtagtgcaccacccagaatgtccatcccctatgttggcattgcaaacgcgtactcacacttttatgatgggttcgcacgagttcctttgaaagatgagactgttgactctggggacaactatggactggtcaccattaatgatttcgggaccttggcagtgagggtagtaaacgaatacaaccccgcccgcattacatctaaaataagagtatatatgaaacccaagcatgtaaggtgttggtgtcccagaccgcctcgcgcagttccgtaccgaggtgaaggtgtcgactttaagcaagaccactccactgacagctgaaaccattaataccttt"/>
+                                
+        <sequence id="seq_AB901474_TWN_1985" spec="Sequence" taxon="AB901474_TWN_1985" totalcount="4" value="ggtattgaggagaccattgacaccgtcattactaatgcactacaactgtcacaacctaaaccacccaatcgacaccgcctaccagtggagtgaactcacaggaagtacctgcactgactgcagtagagactggtgcatccggtcaggcagtacccagtgatgtaattgagaccaggcacgtcgtgaactacaagaccagatccgagtcaacacttgagtccttttttggaagatctgcttgcgtcaccatactggaggtggagaattttaatgccacgccgaagctgacaggaaaaagcagttcaccacatgggccattacgtacacagatacagtccaactaagaaggaaactggaatttttcacctactccagatttgatttagagatgacttttgtcataacagaaaggtattatgccagcaacacaggacatgccaggaaccaagtctaccagcttatgtacataccgcctggcgctccgcgacccacggcttgggatgactacacctggcagagctcatcaaacccgtcagtgttttacacatacggtagtgcaccacccagaatgtccatcccctatgttggcattgcaaacgcgtactcacacttttatgatgggttcgcacgagttcctttgaaagatgagactgttgactctggggacaactatggactggtcaccattaatgatttcgggaccttggcagtgagggtagtaaacgaatacaaccccgcccgcattacatctaaaataagagtatatatgaaacccaagcatgtaaggtgttggtgtcccagaccgcctcgcgcagttccgtaccgaggtgaaggtgtcgactttaaacaagaccactccactgacagctgaaaccattaataccttt"/>
+                                
+        <sequence id="seq_AB901477_TWN_1986" spec="Sequence" taxon="AB901477_TWN_1986" totalcount="4" value="ggtattgaggagaccattgacaccgtcattactaatgcactacaactgtcacaacctaaaccacccaatcgacaccgcctaccagtggagtgaactcacaggaagtacctgcactgactgcagtggagactggtgcatccggtcaggcagtacccagtgatgtgattgagaccaggcacgtcgtgaactacaagaccagatccgagtcaacacttgagtccttttttggaagatctgcttgcgtcaccatactgggggtggagaattttaatgccacgccgaagctgacaggaaaaagcagttcaccacatgggccattacgtacacagatacagtccaactaagaaggaaactggaatttttcacctactccagatttgatttagagatgacttttgtcataacagaaaggtattatgccagcaacacaggacatgccaggaaccaagtctaccagcttatgtacataccgcctggcgctccgcgacccacggcttgggatgactacacctggcagagctcatcgaacccgtcagtgttttacacatacggtagtgcaccacccagaatgtccatcccttatgttggcattgcaaacgcgtactcacacttttatgatgggttcgcacgagttcctttgaaagatgagactgttgactctggggacaactatggactggtcaccattaatgatttcgggaccttggcagtgagggtagtaaacgaatacaaccccgcccgcattacatctaaaataagagtatttatgaaacccaagcatgtaaggtgttggtgtcccagaccgcctcgcgcagttccgtaccgaggtgaaggtgtcgactttaagcaagaccactccactggcagctgaaaccattaataccttt"/>
+                                
+        <sequence id="seq_AB901478_TWN_1986" spec="Sequence" taxon="AB901478_TWN_1986" totalcount="4" value="ggtattgaggagaccattgacaccgtcattactaatgcactacaactgtcacaacctaaaccacccaatcgacaccgcctaccagtggagtgaactcacaggaagtacctgcactgactgcagtggagactggtgcatccggtcaggcagtacccagtgatgtaattgagaccaggcacgtcgtgaactacaagaccagatccgagtcaacacttgagtccttttttggaagatctgcttgcgtcaccatactggaggtggagaattttaatgccacgccgaagctgacaggaaaaagcagttcaccacatgggccattacgtacacagatacagtccaactaagaaggaaactggaatttttcacctactccagatttgatttagagatgacttttgtcataacagaaaggtattatgccagcaacacaggacatgccaggaaccaagtctaccagcttatgtacataccgcctggcgctccgcgacccacggcttgggatgactacacctggcagagctcatcgaacccgtcagtgttttacacatacggtagtgcaccacccagaatgtccatcccctatgttggcattgcaaacgcgtactcacacttttatgatgggttcgcacgagttcctttgaaagatgagactgttgactctggggacaactatggactggtcaccattaatgatttcgggaccttggcagtgagggtagtaaacgaatacaaccccgcccgcattacatctaaaataagagtatatatgaaacccaagcatgtaaagtgttggtgtcccagaccgcctcgcgcagttccgtaccgaggtgaaggtgtcgactttaagcaagaccaccccactgacagctgaaaccattaataccttt"/>
+                                
+        <sequence id="seq_AB901479_TWN_2000" spec="Sequence" taxon="AB901479_TWN_2000" totalcount="4" value="ggcattgaggagaccattgacaccgttatcaccaacgcactacagctttcacagcctaagccacccaatccacaccgcccactagtggagtcaactcacaggaggtgcccgcactaactgcagtagagactggtgcatccggccaggcagtacccagtgatgtaattgagaccagacacgttgtgaactacaagactaggtctgaatcaacactagagtccttctttggaagatctgcttgtgtcaccatactggaagtggagaattttaacgccacgctgacgctgacagaaaaaagcagtttactacatgggctatcacatatacagacacagtccagctaagaaggaaactggaattctttacctactccagatttgacctagagatgacttttgtcataacagaaaggtattatgccagtaacacaggacatgccagaaatcaagtctatcagctcatgtacataccacctggcgctccacgacctacagcctgggacgactacacctggcagagctcatccaacccgtcagtgttctatacgtacggcagtgcaccacccagaatgtccattccctatgttggcattgcaaatgcgtactcacacttctatgatgggttcgcgcgtgttcctttgaaagatgagaccgttgactccggagacaattatggattggtcaccattaatgattttgggaccttagcagtgagggtagtgaatgagtacaatcccgcccgcattacatctaagataagagtgtacatgaagcccaagcatgtaaggtgttggtgtcctagaccgcctcgtgcagttccgtacccaggtgagggtgtcgattttaagcaagactaccccactgacagccgaaaacatcaatactttt"/>
+                                
+        <sequence id="seq_AB901480_TWN_2001" spec="Sequence" taxon="AB901480_TWN_2001" totalcount="4" value="ggcattgaggagaccattgacaccgttatcaccaacgcactacagctttcacagcctaagccacccaatccacaccgcccactagtggagtcaactcacaggaggtgcccgcactaactgcagtagagactggtgcatccggccaggcagtacccagcgatgtaattgagaccagacacgttgtgaactacaagactaggtctgaatcaacactagagtccttctttggaagatctgcttgtgtcaccatactggaagtggagaattttaacgccacgctgacgcccgcagaaaaaagcagtttactacatgggctatcacatatacagacacagtccagctaagaaggaaactggaattctttacctactccagatttgacctagagatgacttttgtcataacagaaaggtattatgccagtaacacaggacatgccagaaatcaagtctatcagctcatgtacataccacctggcgctccacgacctacagcctgggacgactacacctggcagagctcatccaacccgtcagtgttctatacgtacggcagtgcaccacccagaatgtccattccctatgttggcattgcaaatgcgtactcacacttttatgatgggttcgcgcgtgttcctttgaaagatgagaccgttgactccggagacaattatggattggtcaccattaatgattttgggaccttagcagtgagggtagtgaatgagtacaatcccgcccgcattacatctaagataagagtgtacatgaagcccaagcatgtaaggtgttggtgtcctagaccgcctcgtgcagttccgtaccgaggtgagggtgtcgattttaaacaagaccaccccactgacagccgaaaacatcaatactttt"/>
+                                
+        <sequence id="seq_AB901484_TWN_2002" spec="Sequence" taxon="AB901484_TWN_2002" totalcount="4" value="ggcattgaggagaccattgacaccgttattaccaacgcattacagctttcacagcctaaaccacccaatccacaccgctcactagtggagtcaactcacaggaggtgcccgcactaactgcagtagagactggtgcatctggccaggcggtgcccagtgatgtaattgagaccagacacgttgtgaactacaagactaggtctgaatcaacactagagtccttctttggaagatctgcttgtgtcaccatactggaagtggagaattttaacgccacgctgacgctgataggaaaaagcagtttactacatgggctatcacatacacagacacagtccagctaagaaggaaactggaattttttacctactccagatttgacctagagatgacttttgtcataacggaaaggtactatgccagtaacacaggacatgccaggaatcaagtctaccagcttatgtacataccacctggcgctccgcgacccacggcctgggacgactacacctggcagagctcatcgaacccgtcagtgttttacacgtacggcagtgcaccacccaggatgtccatcccctacgttggcattgcaaatgcgtactcacacttctatgacgggttcgcgcgtgttcctttgaaagatgagaccgttgactctggagacaattatggattggtcaccatcaatgattttgggaccttagcagtgagggtagtgaatgaatacaatcctgcccgcattacatctaagataagagtgtacatgaagcccaagcatgtaaggtgttggtgtcctagaccgcctcgtgcagttccgtaccgaggtgagggtgtcgattttaagcaagactaccccactgacagccgaaaacattaatactttt"/>
+                                
+        <sequence id="seq_AB901485_TWN_2002" spec="Sequence" taxon="AB901485_TWN_2002" totalcount="4" value="ggcattgaggagaccattgacaccgttattaccaacgcattacagctttcacagcctaaaccacccaatccacaccgctcactagtggagtcaactcacaggaggtgcccgcactaactgcagtagagactggtgcatctggccaggcggtgcccagtgatgtaattgagaccagacacgttgtgaactacaagactaggtctgaatcaacactagagtccttctttggaagatctgcttgtgtcaccatactggaagtggagaattttaacgccacgctgacgctgataggaaaaagcagtttactacatgggctatcacatacacagacacagtccagctaagaaggaaactggaattttttacctactccagatttgacctagagatgacttttgtcataacggaaaggtactatgccagtaacacaggacatgccaggaatcaagtctaccagcttatgtacataccacctggcgctccgcgacccacggcctgggacgactacacctggcagagctcatcgaacccgtcagtgttttacacgtacggcagtgcaccacccaggatgtccatcccctacgttggcattgcaaatgcgtactcacacttctatgacgggttcgcgcgtgttcctttgaaagatgagaccgttgactctggagacaattatggattggtcaccatcaatgattttgggaccttagcagtgagggtagtgaatgaatacaatcctgcccgcattacatctaagataagagtgtacatgaagcccaagcatgtaaggtgttggtgtcctagaccgcctcgtgcagttccgtaccgaggtgagggtgtcgattttaagcaagactaccccactgacagccgaaaacattaatactttt"/>
+                                
+        <sequence id="seq_AB901486_TWN_2003" spec="Sequence" taxon="AB901486_TWN_2003" totalcount="4" value="ggcattgaggagaccattgacaccgttattaccaacgcattacagctttcacagcctaaaccacccaatccacaccgctcactagtggagtcaactcacaggaggtgcccgcactaactgcagtagagactggtgcatctggccaggcggtgcccagtgatgtaattgagaccagacacgttgtgaactacaagactaggtctgaatcaacactagagtccttctttggaagatctgcttgtgtcaccatactggaagtggagaattttaacgccacgctgacgctgataggaaaaagcagtttactacatgggctatcacatacacagacacagtccagctaagaaggaaactggaattttttacctactccagatttgacctagagatgacttttgtcataacggaaaggtactatgccagtaacacaggacatgccaggaatcaagtctaccagcttatgtacataccacctggcgctccgcgacccacggcctgggacgactacacctggcagagctcatcgaacccgtcagtgttttacacgtacggcagtgcaccacccaggatgtccatcccctacgttggcattgcaaatgcgtactcacacttctatgacgggttcgcgcgtgttcctttgaaagatgagaccgttgactctggagacaattatggattggtcaccatcaatgattttgggaccttagcagtgagggtagtgaatgaatacaatcctgcccgcattacatctaagataagagtgtacatgaagcccaagcatgtaaggtgttggtgtcctagaccgcctcgtgcagttccgtaccgaggtgagggtgtcgattttaagcaagactaccccactgacagccgaaaacatcaatactttt"/>
+                                
+        <sequence id="seq_AB901487_TWN_2007" spec="Sequence" taxon="AB901487_TWN_2007" totalcount="4" value="ggcattgaggagaccattgacaccgttattaccaatgcattacagctttcacagcctaaaccgctcaatccacgccgctcactagtggagtcaactcacaggaggtgcccgcactaactgcagtagagactggtgcatctggccaggcggtgcccagtgatgtaattgagaccagacatgttgtgaattacaagactaggtctgaatcaacactagagtccttctttggaagatctgcttgtgtcaccatactggcagtggagaattttaacgccacgctgatgctgataggaaaaagcagtttaccacatgggctatcacgtacacagacacagtccagctaagaaggaaactggagtttttcacctactccagatttgacctagagatgacttttgtcataacggaaaggtactacgccagcaacacaggacatgccaggaatcaagtctaccagcttatgtacataccacctggtgctccgcgacccacggcctgggacgactatacctggcagagctcatcgaacccgtcagtgttttacacgtacggcagtgcaccacccagaatgtctatcccctacgttggcatagcaaacgcgtactcgcacttttacgacgggttcgcgcgtgttcctttgaaggatgagactgttgactctggagacaattatggactggttaccattaatgactttgggaccttagcagtaagggtagtgaatgaatacaatcctgcccgcattacatctaagataagagtgtatatgaagcccaagcatgtaaggtgttggtgtcccagaccgcctcgtgcagttccgtaccgaggtgagggcgtcgatttcaaacaagaccaccccactgacagccgaaaacattaatactttt"/>
+                                
+        <sequence id="seq_AB901488_TWN_2007" spec="Sequence" taxon="AB901488_TWN_2007" totalcount="4" value="ggcattgaggagaccattgacaccgttattaccaatgcattacagctttcacagcctaaaccgctcaatccactccgctcactagtggagtcaactcacaggaggtgcccgcactaactgcagtagagactggtgcatctggccaggcggtgcccagtgatgtagttgagaccagacatgttgtgaattacaagactaggtctgaatcaacactagagtccttctttggaagatctgcttgtgtcaccatactggaagtagagaattttaacgccacgctgatgctgataggaaaaagcagtttaccacatgggctatcacgtacacagacacagtccagctaagaaggaaactggagtttttcacctactccagatttgacctagagatgacttttgtcataacggaaaggtactacgccagcaacacaggacatgccaggaatcaagtctaccagcttatgtacataccacctggtgctccgcgacccacggcctgggacgactatacctggcagagctcatcgaacccgtcagtgttttacacgtacggcagtgcaccacccagaatgtctatcccctacgttggcatagcaaacgtgtactcgcacttttacgacgggttcgcgcgtgttcctttgaaggatgagaatgttgactctggagacaattatggactggttaccatcaatgactttgggaccttagcagtaagggtagtgaatgaatacaatcctgcccgcattacatctaagataagagtgtatatgaagcccaagcatgtaaggtgttggtgtcccagaccgcctcgtgcagttccgtaccgaggtgagggcgtcgatttcaaacaagaccaccccactgacagccgaaaacattaatactttt"/>
+                                
+        <sequence id="seq_AB901489_TWN_2008" spec="Sequence" taxon="AB901489_TWN_2008" totalcount="4" value="ggcattgaggagaccattgacaccgttatcaccaatgcattacagctttcacagcctaaaccgctcaatccacgccgctcactagtggagtcaactcacaggaggtgcccgcactaactgcagtagagactggtgcatctggccaggcggtgcccagtgatgtaattgagaccagacatgttgtgaattacaagactaggtctgaatcaacactagagtccttctttggaagatctgcttgtgtcaccatactagaagtagagaattttaacgccacgctgatgctgataggaaaaagcagtttaccacatgggctattacgtacacagacacagtccagctaagaaggaaactggagtttttcacctactccagatttgacctagagatgacttttgtcataacggaaaggtactacgccagcaacacaggacgtgccaggaatcaagtctaccagcttatgtacataccacctggtgctccgcgacccacggcctgggacgactatacctggcagagctcatcgaacccgtcagtgttttacacgtacggcggtgcaccacccagaatgtctatcccctacgttggcatagcaaacgcgtactcgcacttttacgacgggttcgcgcgtgttcctttgaaggatgagactgttgactctggagacaattatggactggttaccatcaatgactttgggaccttagcagtaagggtagtgaatgaatacaatcctgcccgcattacatctaagataagagtgtatatgaagcccaagcatgtaaggtgttggtgtcccagaccgcctcgtgcagttccgtaccgaggtgagggcgtcgatttcaaacaagaccaccccactgacagccgaaaacattaatactttt"/>
+                                
+        <sequence id="seq_AB901490_TWN_2008" spec="Sequence" taxon="AB901490_TWN_2008" totalcount="4" value="ggcattgagcagaccattgacaccgttatcaccaatgcattacagctttcacagcctaaaccgctcaatccacgccgctcactagtggagtcaactcacaggaggtgcccgcactaactgcagtagagactggtgcatctggccaggcggtgcccagtgatgtaattgagaccagacatgttgtgaattacaagactaggtctgaatcaacactagagtccttctttggaagatctgcttgtgtcaccatactagaagtagagaattttaacgccacgctgatgctgataggaaaaagcagtttaccacatgggctattacgtacacagacacagtccagctaagaaggaaactggagtttttcacctactccagatttgacctagagatgacttttgtcataacggaaaggtactacgccagcaacacaggacgtgccaggaatcaagtctaccagcttatgtacataccacctggtgctccgcgacccacggcctgggacgactatacctggcagagctcatcgaacccgtcagtgttttacacgtacggcagtgcaccacccagaatgtctatcccctacgttggcatagcaaacgcgtactcgcacttttacgacgggttcgcgcgtgttcctttgaaggatgagactgttgactctggagacaattatggactggttaccatcaatgactttgggaccttagcagtaagggtagtgaatgaatacaatcctgcccgcattacatctaagataagagtgtatatgaagcccaagcatgtaaggtgttggtgtcccagaccgcctcgtgcagttccgtaccgaggtgagggcgtcgatttcaaacaagaccaccccactgacagccgaaaacattaatactttt"/>
+                                
+        <sequence id="seq_AB901492_TWN_2010" spec="Sequence" taxon="AB901492_TWN_2010" totalcount="4" value="ggcattgaggagaccattgacactgttattaccaatgcattacagctttcacaacctaaaccgcacaatccacaccgctcactagtggagtcaactcacaggaggtgcccgcactaactgcagtagagactggtgcatctggccaggcggtgcccagtgatgtaattgagaccagacatgttgtgaattacaagactaggtctgaatcaacactagagtccttctttggaagatctgcttgtgttaccatactggaagtggagaattttaacgccacgctgacgctgataggaaaaagcagtttactacgtgggctatcacgtacacagacacagtccagctaagaaggaaactggagtttttcacctactccagatttgacctagagatgacttttgtcataacggaaaggtactacgccagcaacacaggacgtgccaggagtcaagtctaccagcttatgtacataccacctggtgctccgcgacccacggcttgggacgactatacctggcagagctcatcgaacccgtcagtgttttacacgtacggcagtgcaccacccagaatgtctatcccctacgttggcatagcaaacgcgtactcgcacttttacgacgggttcgcgcgtgttcctttgaaggatgagactgttgactctggagacaattatggactggttaccatcaatgactttgggaccttggcagtgagggtagtgaatgaatacaatcctgcccgtattacatctaagataagagtgtatatgaagcccaagcatgtaaggtgttggtgtcccagaccgcctcgtgcagttccgtaccgaggtgagggcgtcgatttcaagcaagactaccccactgacagccgaagacattaatactttt"/>
+                                
+        <sequence id="seq_AB901493_TWN_2010" spec="Sequence" taxon="AB901493_TWN_2010" totalcount="4" value="ggcattgaggagaccattgacactgttattaccaatgcattacagctttcacaacctaaaccgcacaatccacaccgctcactagtggagtcaactcacaggaggtgcccgcactaactgcagtagagactggtgcatctggccaggcggtgcccagtgatgtaattgagaccagacatgttgtgaattacaagactaggtctgaatcaacactagagtccttctttggaagatctgcttgtgttaccatactggaagtggagaattttaacgccacgctgacgctgataggaaaaagcagtttactacgtgggctatcacgtacacagacacagtccagctaagaaggaaactggagtttttcacctactccagatttgacctagagatgacttttgtcataacggaaaggtactacgccagcaactcaggacgtgccaggaatcaagtctaccagcttatgtacataccacctggtgctccgcgacccacggcttgggacgactatacctggcagagctcatcgaacccgtcagtgttttacacgtacggcagtgcaccacccagaatgtctatcccctacgttggcatagcaaacgcgtactcgcacttttacgacgggttcgcgcgtgttcctttgaaggatgagactgttgactctggagacaattatggactggttaccatcaatgactttgggaccttggcagtgagggtagtgaatgaatacaatcctgcccgtattacatctaagataagagtgtatatgaagcccaagcatgtaaggtgttggtgtcccagaccgcctcgtgcagttccgtaccgaggtgagggcgtcgatttcaagcaagactaccccactgacagccgaagacattaatactttt"/>
+                                
+        <sequence id="seq_FJ868371_AUS_2006" spec="Sequence" taxon="FJ868371_AUS_2006" totalcount="4" value="ggaattgaggagaccattgacaccgttattaccaatgcattacagctttcacagcctaaaccgctcaatccacgccgctcactagtggagtcaactcacaggaggtgcccgcactaactgcagtagagactggtgcatctggccaggcggtgcccagtgatgtaattgagaccagacatgttgtgaattacaagactaggtctgaatcaacactagagtccttctttggaagatctgcttgtgtcaccatactggaagtggagaattttaacgccacgctgatgctgataggaaaaagcagtttaccacatgggctatcacatacacagacacagtccagctaagaaggaaactggagttcttcacctactccagatttgacctagagatgacttttgtcataacggaaaggtactacgccagcaacacaggacatgccaggaatcaagtctaccagcttatgtacataccacctggtgctccgcgacccacggcctgggacgactatacctggcagagctcatcgaacccgtcagtgttttacacgtacggcagtgcaccacccagaatgtctatcccctacgttggcatagcaaacgcgtactcgcacttctacgacgggttcgcgcgtgttcctttgaaggatgagaccgttgactctggagacaattatggactggttaccatcaatgattttgggaccttagcagtaagggtagtgaatgaatacaatcctgcccgcattacatctaagataagagtgtatatgaagcccaagcatgtaaggtgttggtgtcccagaccgcctcgtgtagttccgtaccgaggtgagggcgtcgattttaaacaagactaccccactgacagccgaaaacattaatactttt"/>
+                                
+        <sequence id="seq_GQ329723_CHN_1997" spec="Sequence" taxon="GQ329723_CHN_1997" totalcount="4" value="ggaattgaggatctgattacacaggttgctagcaatgctctacaaatatcccagcccaagcctgtcctaacaccaatagctcagagccagttcattcacaagaagtgcccgcactcacagcagtggagactggagctactagcactgtagtcccagctgatttggtgcagactcgacacgttatacaaacacgtagtcgaagcgaatccacggtggaatcattcttcgccagaggtgcatgtgtcaccatcatgtcagttgagaactacaacgaaa--cgagtgtgtctaaatccaaattgtttgctaagtggaacatcacatacaccgacaccgttcagctgagacgcaaactggaaatgttcacctattcaagatttgacattgagtttacatttgtggtcactgagagatattacacggcaaactctggacatgcattaaatcaggtgtaccagatcatgtacgtcccaccgggggccccagtaccacagaaatgggatgattacacgtggcaaacctcctccaatccatcagtattctacacttatggcactgctcccgccaggatctccataccatacgtgggaattgccaatgcatactcacacttctatgacgggtttgccacagtaccaattgaaggtgagactactgacccaggtgcggactatggggccacctcgattaatgactttgggatcttagcagtgagagtggttaatgaacataatccagtacaggtgtcatcaaaaatcagagtgtacatgaagcccaagcacgtgcgcgtgtggtgtcccagaccaccccgcgctgtcccgtattttggacccggcgtagattacaagggagataactccattgtccaccaaatccctgaccacatac"/>
+                                
+        <sequence id="seq_GQ329725_CHN_2003" spec="Sequence" taxon="GQ329725_CHN_2003" totalcount="4" value="ggcattgaggagaccattgacaccgttattaccaacgcattacagctttcacagcctaaaccacccaatccacaccgctcactagtggagtcaactcacaggaggtgcccgcactaactgcagtagagactggtgcatctggccaggcggtgcccagtgatgtaattgagaccagacacgttgtgaactacaagactaggtctgaatcaacactagagtccttctttggaagatctgcttgtgtcaccatactggaagtggagaattttaacgccacgctgacgctgataggaaaaagcagtttactacatgggctatcacatacacagacacagtccagctaagaaggaaactggaattttttacctattccagatttgacctagagatgacttttgtcataacggaaaggtactataccagtaacacaggacatgccaggaatcaagtctaccagcttatgtacataccacctggcgctccgcgacccacggcctgggacgactacacctggcagagctcatcgaacccgtcagtgttttacacgtacggcagtgcaccacccaggatgtccatcccctacgttggcattgcaaatgcgtactcacacttctatgacgggttcgcgcgtgttcctttgaaagatgagaccgttgactctggagacaattatggattggtcaccatcaatgattttgggaccttagcagtgagggtagtgaatgaatacaatcctgcccgcattacatctaagataagagtgtacatgaagcccaagcatgtaacgtgttggtgtcctagaccgcctcgtgcagttccgtaccgaggtgagggtgtcgattttaatgcagactaccccactgacagccgaaaacattaatactttt"/>
+                                
+        <sequence id="seq_GQ329726_CHN_1999" spec="Sequence" taxon="GQ329726_CHN_1999" totalcount="4" value="ggtattgaggaaaccatcgatacagtcattaataatgctttacagttgtctcaacccaaaccacacagtccaccgcgtcctccagtggggtgaacactcaagaagtaccagctttaaccgctgttgagactggtgcttcaggacaggccattcctagtgatgtgatcgagacacgccatgtggttaattacaagaccaggtcagaatccactctagaatctttctttggtagatccgcctgtgtaactataatagaggttgagaattttaacgccaccccactcaagataagaagaaacagtttaccacctggcccatcacatacactgacaccgtacaactccgcagaaagcttgagtttttcacatactccagatttgatttggaaatgacttttgtcatcactgagaggtattacacatccaactcaggacatgccagaaaccaggtttatcagataatgtatataccaccaggtgcccctcaacctacggcctgggatgactatacatggcaaagctcatcgaacccgtctgtgttttatacatatggtagtgcaccacccagaatgtccattccatacgtgggtattgccaatgcgtactcacacttttatgatggctttgcacgagtgcctctgaaagatgacacaacagacagtggggacatctatgggttagtaaccattaatgattttggaactttggctgtgagggtcgtaaacgagtttaatcctgccagaataacatctaaagtcagggtatacatgaaaccaaaacatgtgagatgctggtgccctagaccaccacgtgcagtaccctatcgtggcgacggagtggatttcaattcagcacacgccattaacagcaaagttcattaatacatat"/>
+                                
+        <sequence id="seq_GU983188_BRA_2003" spec="Sequence" taxon="GU983188_BRA_2003" totalcount="4" value="ggcattgaggaaaccattgacaccgttattaccaacgcattacagctttcacagcctaaaccacccaatccacaccgctcactagtggagtcaactcacaggaggtgcccgcactaactgcagtagagactggtgcatctggccaggcggtgcccagtgatgtaattgagaccagacacgtcgtgaactacaagactaggtctgaatcaacactagagtccttctttggaagatctgcttgcgtcaccatactggaagtggagaattttaacgccacgctgacgctgataggaaaaagcagtttactacatgggctatcacatacacagacacagtccagctaagaaggaaactggaattttttacctactccagatttgacctagagatgacttttgttataacggaaaggtactatgccagtaacacagggcatgccaggaatcaagtctaccagcttatgtacataccacctggcgctccgcgacccacggcctgggacgactatacctggcagagctcatcgaacccgtcagtgttttacacgtacggcagtgcaccacccaggatgtccatcccctacgttggcattgcaaatgcgtactcacacttctatgacgggttcgcgcgtgttcctttgaaagatgagaccgttgactctggagacaattatggattggtcaccatcaatgattttgggaccttagcagtgagggtagtgaatgaatacaatcctgcccgcattacatctaagataagagtgtacatgaagcccaagcatgtaaggtgttggtgtcctagaccgcctcgtgcagttccgtaccgaggtgagggtgtcgattttaagcaagactaccccactgacagccgaaaacattaatactttt"/>
+                                
+        <sequence id="seq_GU983189_BRA_2003" spec="Sequence" taxon="GU983189_BRA_2003" totalcount="4" value="ggcattgaggagaccatcgacaccgttattaccaacgcattacagctttcacagcctaaaccacccaatccacaccgctcactagtggagtcaactcacaggaggtgcccgcactaactgcagtagagactggcgcatctggccaggcggtgcccagtgatgtgattgagaccagacacgtcgtgaactacaagactaggtctgaatcaacactagagtccttctttggaagatctgcttgtgtcaccatactggaagtggagaattttaacgccacgctgacgctgataggaaaaagcagtttactacatgggctatcacatacacagacacagtccagctaagaaggaaactggaattttttacctactccagatttgacctagagatgacttttgtcataacggaaaggtactatgccagtaacacaggacatgccaggaatcaagtctaccagcttatgtacataccacctggcgctccgcgacccacggcctgggacgactacacctggcagagctcatcgaacccgtcagtgttttacacgtacggcagtgcaccacccaggatgtccatcccctacgttggcattgcaaatgcgtactcacacttctatgacgggttcgcgcgtgttcctttgaaagatgagaccgttgactctggagacaattatggattggtcaccatcaatgattttgggaccttagcagtgagggtagtgaatgaatacaatcctgcccgcattacatctaagataagagtgtacatgaagcccaagcatgtaaggtgttggtgtcctagaccgcctcgtgcagttccgtaccgaggtgagggtgtcgattttaagcaagactaccccactgacagccgaaaacattaatactttt"/>
+                                
+        <sequence id="seq_GU983190_BRA_1987" spec="Sequence" taxon="GU983190_BRA_1987" totalcount="4" value="ggtattgaggagaccattgacaccgtcattaccaatgcactacaactgtcacaacctaaaccacccaatccacaccgcccaccagtggagtgaactcacaggaagtgcctgcactgactgcagtagagactggtgcatccggtcaggcagtacccagtgacgtaattgagaccaggcacgttgtgaactacaagaccagatccgagtcaacacttgagtccttctttggaaggtccgcttgcgtcaccatactggaagtggagaattttaacgccacgctgaagctgacaagaaaaagcagtttaccacatgggccatcacatacacagatacagtccaattaagaaggaaattggaattctttacctactccagatttgatttagagatgacttttgtcataacagaaaggtattacgccagtaacacaggacatgccagaaaccaagtctaccagcttatgtatataccacctggcgctccgcgacctacagcttgggacgactatacctggcagagctcatcgaacccgtcagtgttttacacatacggcagtgcgccacccagaatgtccattccctatgtcggcattgcaaacgcgtactcacacttttatgacgggtttgcgcgagttcctttgaaagatgagactgttgactctggggataactatggactggtcaccattaatgatttcgggacactggcggtgagggtagtaaatgaatacaatcctgcccgcatcacatctaaaataagagtatacatgaaacccaagcatgtaaggtgttggtgtcccagaccgcctcgcgcagttccctaccgaggtgaaggtgtcgactttaagcaagactaccccactgacagctgaaaatatcaataccttt"/>
+                                
+        <sequence id="seq_GU983196_BRA_2004" spec="Sequence" taxon="GU983196_BRA_2004" totalcount="4" value="ggcattgaggagaccattgacaccgttattaccaacgcattacagctttcacagcctaaaccacccaatccacaccgctcactagtggagttaactcacaggaggtgcccgcactaactgcagtagagactggtgcatctggccaggcggtgcccagtgatgtaattgagaccagacacgtcgtgaactacaagactaggtctgaatcaacactagagtccttctttggaagatctgcttgtgtcaccatactggaagtggagaattttaacgccacgctgacgctgataggaaaaagcagtttactacatgggctatcacatacacagacacagtccagctaagaaggaaactggaattttttacctactccagatttgatctagagatgacttttgtcataacggaaaggtactatgccagtaacgcaggacatgccaggaatcaagtctaccagcttatgtacataccacctggcgctccgcgacccacggcctgggacgactacacctggcagagctcatcgaacccgtcagtgttttacacgtacggcagtgcaccacccaggatgtctattccctacgttggcattgcgaatgcgtactcacacttctatgacgggttcgcgcgtgttcctttgaaagatgagaccgttgactctggagacaattatggattggtcaccatcaatgattttgggaccttagcagtgagggtagtgaatgaatacaatcctgcccgcattacatctaagataagagtgtacatgaagcccaagcatgtaaggtgttggtgtcctagaccgcctcgtgcagttccgtaccgaggtgagggcgtcgattttaagcaagactaccccactgacagccgaaaacattaatactttt"/>
+                                
+        <sequence id="seq_GU983197_BRA_2004" spec="Sequence" taxon="GU983197_BRA_2004" totalcount="4" value="ggcattgaggagaccattgacaccgttattaccaacgcattacagctttcacagcctaaaccacccaatccacaccgctcactagtggagttaactcacaggaggtgcccgcactaactgcagtagagactggtgcatctggccaggcggtgcccagtgatgtaattgagaccagacacgtcgtgaactacaagactaggtctgaatcaacactagagtccttctttggaagatctgcttgtgtcaccatactggaagtggagaattttaacgccacgctgacgctgataggaaaaagcagtttactacatgggctatcacatacacagacacagtccagctaagaaggaaactggaattttttacctactccagatttgacctagagatgacttttgtcataacggaaaggtactatgccagtaacacaggacatgccaggaatcaagtctaccagcttatgtacataccacctggcgctccgcgacccacggcctgggacgactacacctggcagagctcatcgaacccgtcagtgttttacacgtacggcagtgcaccacccaggatgtctattccctacgttggcattgcgaatgcgtactcacacttctatgacgggttcgcgcgtgttcctttgaaagatgagaccgttgactctggggacaattatggattggtcaccatcaatgattttgggaccttagcagtgagggtagtgaatgaatacaatcctgcccgcatcacatctaagataagagtgtacatgaagcccaagcatgtaaggtgttggtgtcctagaccgcctcgtgcagttccgtaccgaggtgagggtgtcgatttcaagcaagactaccccactgacagccgaaaacattaatactttt"/>
+                                
+        <sequence id="seq_GU983202_BRA_2005" spec="Sequence" taxon="GU983202_BRA_2005" totalcount="4" value="ggcattgaggagaccattgacaccgttattaccaacgcattacagctttcacagcctaaaccacccaatccacaccgctcactagtggagttaactcacaggaggtgcctgcactaactgcagtagagactggtgcatctggccaagcggtgcccagtgatgtaattgagaccagacacgtcgtgaactacaagaccaggtctgaatcaacactagagtccttctttggaagatctgcttgtgtcaccatactggaagtggagaattttaacgccacgctgatgctgataggaaaaagcagtttactacatgggctatcacatacacagacacagtccagctaagaaggaaactggaattttttacctactccagatttgacctagagatgacttttgtcataacggaaaggtactatgccagtaacacaggacatgccaggaatcaagtctaccagcttatgtacataccacctggcgctccgcgacccacggcctgggacgactacacctggcagagctcatcgaacccgtcagtgttttacacgtacggcagtgcaccacccaggatgtctattccctacgttggcattgcgaatgcgtactcacacttttatgacgggttcgcgcgtgttcctttgaaagatgagaccgttgactctggagacaattatggattggtcaccatcaatgattttgggaccttagcagtgagggtagtgaatgaatacaatcctgcccgcattacatctaagataagagtgtacatgaagcccaagcatgtaaggtgttggtgtcctagaccgcctcgtgcagttccgtaccgaggtgagggtgtcgattttaagcaagactaccccactgacagccgaaaacattaatactttt"/>
+                                
+        <sequence id="seq_GU983203_BRA_2005" spec="Sequence" taxon="GU983203_BRA_2005" totalcount="4" value="ggcattgaggagaccattgacaccgttattaccaacgcattacagctttcacagcctaaaccacccaatccacaccgctcactagtggagttaactcacaggaggtgcctgcactaactgcagtagagactggtgcatctggccaagcggtgcccagtgatgtaattgagaccagacacgtcgtgaactacaagaccaggtctgaatcaacactagagtccttctttggaagatctgcttgtgtcaccatactggaggtggagaattttaacgccacgctgatgctgataggaaaaagcagtttactacatgggctatcacatacacagacacagtccagctaagaaggaaactggaattttttacctactccagatttgacctagagatgacttttgtcataacggaaaggtactatgccagtaacacaggacatgccaggaatcaagtctaccagcttatgtacataccacctggcgctccgcgacccacggcctgggacgactacacctggcagagctcatcgaacccgtcagtgttttacacgtacggcagtgcaccacccaggatgtctattccctacgttggcattgcgaatgcgtactcacacttctatgacgggttcgcgcgtgttcctttgaaagatgagaccgttgactctggagacaattatggattggtcaccatcaatgattttgggaccttagcagtgagggtagtgaatgaatacaatcctgcccgcattacatctaagataagagtgtacatgaagcccaagcatgtaaggtgttggtgtcctagaccgcctcgtgcagttccgtaccgaggtgagggtgtcgattttaagcaagactaccccactgacagccgaaaacattaatactttt"/>
+                                
+        <sequence id="seq_GU983205_BRA_2009" spec="Sequence" taxon="GU983205_BRA_2009" totalcount="4" value="ggcattgaggagaccattgacaccgttattaccaatgcattacagctttcacagcctaaaccgctcaatccacaccgcttactagtggagtcaactcacaggaggtgcccgcactaactgcagtagagactggtgcatctggccaggcggtgcccagtgatgtaattgagaccagacatgttgtgaattacaagactaggtctgaatcaacactagagtccttctttggaaggtctgcttgtgtcaccatactggaagtggagaattttaacgccacgctgatgctgataggaaaaagcagtttaccacgtgggctatcacgtacacagacacagtccagctaagaaggaaactggagttttttacctactccagatttgacctagagatgacttttgtcataacggagaggtactacgccagcaacacaggacatgccaggaatcaagtctaccagcttatgtatataccacctggcgctccgcgacccacggcctgggacgactatacctggcagagctcatcgaacccgtcagtgttttacacatacggtagtgcaccacccagaatgtctatcccctacgttggtatagcaaacgcgtactcgcacttttacgacgggttcgcgcgagttcccttgaaggatgagactgttgactctggagacaattatggactggttaccatcaatgactttgggaccttagcagtgagggtagttaatgaatacaatcctgcccgcattacatctaagataagagtgtatatgaagcccaagcatgtaagatgttggtgtcccagaccgcctcgtgcagttccgtaccgaggtgagggcgtcgatttcaaacaagactaccccactgacagccgaaaacattaatactttt"/>
+                                
+        <sequence id="seq_GU983206_BRA_2009" spec="Sequence" taxon="GU983206_BRA_2009" totalcount="4" value="ggcattgaggagaccattgacaccgttattaccaatgcattacagctttcacagcctaaaccgctcaatccacaccgcttactagtggagtcaactcacaggaggtgcccgcactaactgcagtagagactggtgcatctggccaggcggtgcccagtgatgtaattgagaccagacatgttgtgaattacaagactaggtctgagtcaacactagagtccttctttggaagatctgcttgtgtcaccatactggaagtggagaattttaacgccacgctgatgctgataggaaaaagcagtttaccacgtgggctatcacgtacacagacacagtccagctaagaaggaaactggagttttttacctactccagatttgacctagagatgacttttgtcataacggagaggtactacgccagcaacacaggacatgccaggaatcaagtctaccagcttatgtatataccacctggcgctccgcgacccacggcctgggacgactatacctggcagagctcatcgaacccgtcagtgttttacacatacggtagtgcaccacccagaatgtctatcccctatgttggtatagcaaacgcgtactcgcacttttacgacgggttcgcgcgagttcccttgaaggatgagactgttgactctggagacaattatggactggttaccatcaatgactttgggaccttagcagtgagggtagttaatgaatacaatcctgcccgcattacatctaagataagagtgtatatgaagcccaagcatgtaagatgttggtgtcccagaccgcctcgtgcagttccgtaccgaggtgagggcgtcgatttcaaacaagactaccccactgacagccgaaaacattaatactttt"/>
+                                
+        <sequence id="seq_KC787151_CMR_2009" spec="Sequence" taxon="KC787151_CMR_2009" totalcount="4" value="ggcattgaagagacaattgatactgtgatcagtaatgcactgcagctttcacaacccaagccactcagtcaacagcagccactagtggagtgaacacacaggaggtaccagcattgacagcagtggagactggagcatcagggcaagcaatacccagtgacgtgattgagactaggcacgtcgtcaattacaaaaccaggtcggagtcgactcttgagtccttcttcggaagatctgcatgtgtcaccatattagaagttgagaacttcaacgccgcaccgcagaagacaagaagaaacagttcaccacctggcccatcacatataccaacactgtccaacttagaaggaaactggagttcttcacttactccaggtttgacctagagatgacct------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"/>
+                                
+        <sequence id="seq_KC787154_CMR_2009" spec="Sequence" taxon="KC787154_CMR_2009" totalcount="4" value="ggaattgatgatataatacaacaagtcgccagcaatgcactgcagctatcgcaaccaactagacagcgaacacgcaacaaagcactccagctcactcacaagaagtccccgccttgactgcagtagaaacaggggctacaaatccattaaccccgtcagacactgtgcagaccagacatgttatacaaagtaggtccaggtcagaaagcacgatagagtcattctttgcgagaggagcatgtgtcacaattatgagtgtggacaattacaatgagactcaactagtggccaaagaaacctgtttgctacttggaatatcacatacaccgacacggtgcaactcagaagaaaactagaaatgttcacatactctagatttgacatagagttcacttttgtagtgacagaaaggtattactccagcaacgcgggacacgcacgaaatcaggtttaccaaatcatgtac-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"/>
+                                
+        <sequence id="seq_KC787162_CMR_2009" spec="Sequence" taxon="KC787162_CMR_2009" totalcount="4" value="ggtatcgatgatatcatacaacaagtggctagtaatgcattgcaactgtcgcaaccaactagacagcaaacacgtcgcaaagcactccggctcactcacaagaggttcccgctttgaccgcagttgaaacgggagctacaaatccactgaccccttcggccac----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"/>
+                                
+        <sequence id="seq_KF412907_IND_2004" spec="Sequence" taxon="KF412907_IND_2004" totalcount="4" value="-----------------------------------------------------------------------------------------------------------------------------------ggggcctcgggacaggcagtaccatcagatgtcattgaaaccagacatgtggtcaattataaaaccagatctgaaagtaccttggaatctttctttggtaggtcagcatgtgttaccatattggaagtggagaattttaatgcgacaagacagttgacaagaaaaagcaattcactgtatggcccattacttataccaacacagttcagttgagaagaaaattggagttttttacgtactccagatttgacttggaaatgacttttgtcgtgacagagagatattacaccagtaactcaggacatgccaaaaattcagtttaccaaatcatgtatatacccccaggggcacccagaccaaatgcatgggatgattacacatggcaatcatcatctaacccctcaattttctacacgtatggttgtgcaccagcgcgcatctcaatcccctacgtgggcatagccaatgcatactcacacttttacgatggctttgcgcgagtgccactaaaagatgaggaccaggattctggcgacaattacggtctagtctctattaatgactttggaaccttagcagttagagtggtgaatgagtataaccctgctcgcattacagcaaaggtgcgagtatacatgaagccaaaacacatacgttgttggtgccctcgaccaccacgggccgtgccttacaggggagaaggggtagatttgaaacaagggtacaccactgactccgactagcataactacttat"/>
+                                
+        <sequence id="seq_KF413027_IND_2006" spec="Sequence" taxon="KF413027_IND_2006" totalcount="4" value="cccattgaggagataatttccaccgtggcaagcaatgcactggctttaagtcagccaaaaccatggaaaacactcaaccaagtgcaccagttcacagtcaggaagtaccagcattgacagcagtggaaactggtgccactagtgatgtggtcccggcagatctcgtacaaacacgacacgtgatcaatgtgaagtcgcgttcggagtccaccgttgaatccttcttcgctcgagctgcttgcgtcacgataatgcaagttgacaacttcaacgccacgcaacggaagataagaaaaagctgtttgcaaagtgggccatcacttacaccgatacagtgcagctgaggagaaaactagagtttttcacatattcaaggtttgatttggaaatgacttttgtgttgacagagaggtattactctcagaattctgggcatgctagatcacaagtttatcaaattatgtacgtgccgccgggggcgcccaccccgaatgcttgggacgactacacctggcaaacatcgtcaaacccctcaatattcttcactacaggaaacgcccccccacgtatttccatcccatttgtggggattgcaaatgcctactcacacttctatgacgggttcagcagggtgcccttagagggtgaaactactgattcaggggataactacggtctcacatcaatcaatgattttggtaccctggctgtgagagtagtcaatgattacaatccagctcgtgtagaaaccagaattcgagtttacatgaaaccaaaacatgtgagggtttggtgcccaaggccccctagagccgttagctataggggccccggggttgacctcttatcaactgactcccttgtccaaacatgatctcacaacatat"/>
+                                
+        <sequence id="seq_KF413028_IND_2006" spec="Sequence" taxon="KF413028_IND_2006" totalcount="4" value="cccattgaggagataatttccaccgtggcaagcaatgcactggctttaagtcagccaaaaccatggaaaacactcaaccaagtgcaccagttcacagtcaggaagtaccagcattgacagcagtggaaactggtgccactagtgatgtggtcccggcagatctcgtacaaacacgacacgtgatcaatgtgaagtcgcgttcggagtccaccgttgaatccttcttcgctcgagctgcttgcgtcacgataatgcaagttgacaacttcaacgccacgcaatggaagataagaaaaagctgtttgcaaagtgggccatcacttacaccgatacagtgcagctgaggagaaaactagagtttttcacatattcaaggtttgatttggaaatgacttttgtgttgacagagaggtattactctcagaattctgggcatgctagatcacaagtttatcaaattatgtacgttcctcccggagcacccaccccgaatgcttgggacgactacacctggcaaacatcgtcaaacccctcaatattcttcactacaggaaacgcccccccacgtatttccatcccatttgtggggattgcaaatgcctactcacacttctatgacgggttcagcagggtgcccttagagggtgaaactactgattcaggggataactacggtctcacatcaatcaatgattttggtaccctggctgtgagagtagtcaatgattacaatccagctcgtgtagaaaccagaattcgagtttacatgaaaccaaaacatgtgagggtttggtgcccaaggccccctagagccgttagctataggggccctggggttgacctcttatcaactgactcccttgtccaaacatgatctcacaacatat"/>
+                                
+        <sequence id="seq_KF413033_IND_2007" spec="Sequence" taxon="KF413033_IND_2007" totalcount="4" value="ggtatagaggacaccattgataaagtagtggataatgcacttgcactgtcaatgcccaga------aggacactcaacaatctggtccagtcaattcacaggaagttccagctcttacagcagtagaaactggagcaactagccaagtgactccagaagatttaattgagacaagacatgtgattaataataggttgagatcggaatgcactattgagtccttctttggtagatcagcttgtgtagcaatcttgtctgtcactaacaaacaacccaca--gcaaccaatggtaatgaattgttcaccacttggagaattacatacacacagacataccaacttagaagaaaactagagttatttacttactcaagatttgatttggaactcacatttgtaatcactgaaaggttttactctagcaattcggctgctgcccggaactacatataccaaatcatgtacataccaccaggtgccccaatcccccaagcttgggatgattatacatggcaatcatccaccaacccttcagttttctacaccaccggaaacgcgagccctaggatgtccattcctttcgtaggaattggagctgcttactcgcatttctacgatggattcagtgttgtgcccttcaactcagttgatgctggtgctaccaacaagtacggatattccagtatcaatgactttggaacaatggctgtgcgcattgttaatgaatatgacccagttacaatcaacgccaaaatcagagtgtacatgaaacccaaacacgtcagagtgtggtgtccgagaccaccaagggctatgccatatgtgaattctggtgttgacttcaagccaacataaggttatgactcaagcttccattagaacatac"/>
+                                
+        <sequence id="seq_KF413034_IND_2007" spec="Sequence" taxon="KF413034_IND_2007" totalcount="4" value="ggcatagaagacacaattgagaaagtcgtaggagatgctcttgctatttcaatgccaaaa------ccgacactaaaccatctggaccagtcaactcaaaagaggttccggctcttactgctgtggaaactggagcaaccagtcaagtcacacctgaggatttaattgaaacgagacatgtggcaaatcagagattgcgctcagagtgcaccattgaatcattctttggacgcagtgcttgcgtggctattttgagtgtggctaacaagaaacccaca--acagataacatcgctgacctattcacaaagtggagaattacttaccttcaaacataccaactcaggaggaaattagaactgtttacatactccaggtttgatttggagatgacctttgtaataactgaaaggtactactcaggtgctggagccacaactagaaactacgtgtaccaaattatgtacgtgcctcctggagcccctgaaccaactgcatgggacgattacacatggcaatcctctaccaatccatcagtattctacaccacaggcaatgctaatcccagaatgtctataccatttgtgggaataggggctgcatattcgcacttctacgatggtttcagcgttgtgcccttcaataaagttgatgcaggcgcttccaacaaatatggctactcatcaataaatgactttggcaccttagccgtgaggatagttaatgaacacgatccagtaactattgaggccaaagttagcgtctacatgaaaccaaaacatatcaaagtgtggtgtcctagaccaccaagggcagtcccatatcagaattccacagttgactttgcccagaactaccgccatggggcaagcatcaatcagaacatat"/>
+                                
+        <sequence id="seq_KJ857502_CHN_1990" spec="Sequence" taxon="KJ857502_CHN_1990" totalcount="4" value="ggcatcgaagatctgatccaacaggttgcgtccaatgccctccagatatcccaaccgtctcgcgtgccaacactcagcagtcagcacctgcccattctcaagaagttccagcgctgacagcagttgagacaggggcgacaaacccgttagaaccatccgacacagtacaaaccaggcatgtcatacaaaccaggtcacgatcggaatcgacggtggaatctttctttgcccgaggtgcatgtgttactataatgactgtggagaatttcaatgccaccaaatggcggataagaaaaagttatttgccacttggaatatcacatatacagacacagtacaactcagaaggaaactagagatgtttacatattctaggtttgacattgaattcacatttgtaaccacagagagatactacaccagtaattcgggtcatgctaggaaccaggtctaccaactcatgtacatcccaccaggggccccagtaccacaacaatgggacgattatacgtggcaaacctcatccaacccttcagtgttttacacctatggtgatgctcctgcccgtatttccattccatttgtggggattgcaaatgcttattcccacttctacgatggttacgcagtggtcccattgaaagactccacacaagattctggtgctgactacggggcgacctcaatcaatgactttggcatgttagctgtgagggttgtcaatgagtttaacccagctagaatcacctcaaaagtgagggtgtacatgaaaccaaagcatgttagagtgtggtgccccagaccacccagagtggtgccttattacgggcctggagtagattacaaaggtgagcactccactatcaacaaagaacctaaccacctat"/>
+                                
+        <sequence id="seq_KJ857503_CHN_1990" spec="Sequence" taxon="KJ857503_CHN_1990" totalcount="4" value="ggcatcgaagatctgatccaacaggttgcgtccaatgccctccagatatcccaaccgtctcgcgtgccaacactcagcagtcagcacctgcccattctcaagaagttccagcgctgacagcagttgagacaggggcgacaaacccgttagaaccatccgacacagtacaaaccaggcatgtcatacaaaccaggtcacgatcggaatcgacggtggaatctttctttgcccgaggtgcatgtgttactataatgactgtggagaatttcaatgccaccaaatggcggataagaaaaagttatttgccacttggaatatcacatatacagacacagtacaacttagaaggaaactagagatgtttacatattctaggtttgacattgaattcacatttgtaaccacagagagatactacaccagtaattcgggtcatgctaggaaccaggtctaccaactcatgtacatcccaccaggggccccagtaccacaacaatgggacgattatacgtggcaaacctcatccaacccttcagtgttttacacctatggtgatgctcctgcccgtatttccattccatttgtggggattgcaaatgcttattcccacttctacgatggttacgcagtggtcccattgaaagactccacacaagattctggtgctgactacggggcgacctcaatcaatgactttggcatgttagctgtgagggttgtcaatgagtttaacccagctagaatcacctcaaaagtgagggtgtacatgaaaccaaagcatgttagagtgtggtgccccagaccacccagagcggtgccttattacgggcctggagtagattacaaaggtgagcactccactatcaacaaagaacctaaccacctat"/>
+                                
+        <sequence id="seq_KJ933341_CHN_2013" spec="Sequence" taxon="KJ933341_CHN_2013" totalcount="4" value="ggtattgaagagaccattgacacagtcattagtaatgctctacaactatcccagcctaagccgcacaatctacaacatctactagtggggtgaactcccaagaagtaccagcactgactgctgttgaaaccggtgcgtcaggacaggctgtacccagtgatgtgatcgagactcgacatgtggttaattataaaactaggtcagaatccaccttggaatctttcttcggcagatccgcctgtgttacaatattggaggttgaaaactttaatgctactctgaagaagataagagaaagcagtttaccaggtggccaataacgtacaccaacactgtgcaactccgtaggaaacttgagttctttacatactccagattcgacttagaaatgacatttgtagtgactgaaaggtattacacatcaaatacaggacatgctagaaaccaggtataccaaataatgtacattccaccaggagccccccaacctacagcctgggatgattacacatggcaaagctcgtcaaacccatccgtgttttacacctatggtagcgcaccacccagaatgtcaatcccatacgtaggtattgctaacgcatactcacatttttatgatgggtttgcacgagtacccctaagagatgaagcaactgatagcggagacaattacggccttgtgactatcaatgatttcggcaccttagctgtaagggttgtgaatgagtttaatccagctagaatcacatcaaaaattagagtgtatatgaaaccaaaacacataaaatgctggtgccccagaccaccacgagcggtgccataccgcggcgacggagtggattttaaacaaacccacaccactaacggcggataccatcaacactttc"/>
+                                
+        <sequence id="seq_KJ933342_CHN_2013" spec="Sequence" taxon="KJ933342_CHN_2013" totalcount="4" value="ggaattgaagagattattcagcaagttgctggtaatgcactacaactgtctcaaccatcaagactgcaaacaccacacaatcctccccagagcactcgaaggaagtgccagcactcactgcagttgaaactggagccacaaacccgttggaacccagcgacactgttcaaaccagacacgttatccaaacacggtctagaagtgagtctacaatagagtctttctttgcacggggtgcatgtgtcaccattatgagtgtagacaattacaatgaaacctaactggaaaccagaacagtttgtttgccacctggaatatcacgtacactgatacagtgcagcttaggaggaagttggagatgttcacttattctagatttgacattgaattcacctttgtagtgactgagaggtactactcgtctaattctgggcatgccctaaatcaagtctatcagataatgtatgtaccacctggagccccagttccaaagaaatgggatgattatacatggcagacctcctctaatccatccatattctacacctatggcacagcaccaccaaggatttcaattccatacataggtattgccaatgcctattcccacttttacgacggatacgctgctgtcccactaaaaggatccacacaagaccctggcgctaattatggcgcagtctctatcaatgattttggactcctcgcaatacgggtggtcaatgagcacaatccagttagagtgtcctcaaaggtcagggtgtacatgaaacccaaacatgttagagtctggtgcccgcgtccaccacgcgcagtagagtactacggacccggggtggattataaggcaaattacaccattacccactaaaaacctcaccacttat"/>
+                                
+        <sequence id="seq_KP137044_THA_2014" spec="Sequence" taxon="KP137044_THA_2014" totalcount="4" value="-------aggagaccattgacactgttattaccaatgcattacagctttcacaacccaaaccgcacaatccacaccgctcactagtggagtcaactcacaggaagtgcccgcactaactgcagtagagactggtgcatctggccaggcggtgcccagtgatgtaattgagaccaggcatgttgtgaattacaagactaggtctgaatcaacactagagtccttctttggaagatctgcctgtgtcaccatactggaagtggagaattttaacgccacgctgacgctgataggaaaaagcagtttactacatgggctattacatacacagacacagtccagctgagaaggaaactggagtttttcacctactccagatttgacctagagatgacttttgtcataacggaaaggtactacgccagcaatacaggacatgccagaaaccaagtctaccagcttatgtacataccacctggtgctccgcgacctacggcttgggacgattatacctggcagagctcatcgaacccgtcagtgttttacacgtacggcagtgcaccacccagaatgtctatcccctacgttggcatagcaaacgcgtactcgcacttttacgacgggttcgcgcgtgttcctttgaaggatgagactgttgactctggagacaattatggactggttaccatcaatgactttgggaccttggcagtgagggtagtaaatgaatacaatcctgcccgcattacatctaagataagagtgtatatgaagcctaagcatgtaaggtgttggtgccccagaccacctcgtgcagttccgtaccgaggtgagggcgtcgatttcaaacaagactaccccactgacagccgaaaacattaatactttt"/>
+                                
+        <sequence id="seq_KP137045_THA_2014" spec="Sequence" taxon="KP137045_THA_2014" totalcount="4" value="ggcattgaggagaccattgacactgttattaccaatgcattacagctttcacaacccaaaccgcacaatccacaccgctcactagtggagttaactcacaggaggtgcccgcactaactgcagtagagactggtgcatctggtcaggcggtgcccagtgatgtaattgagaccaggcatgttgtgaattacaagactaggtctgaatcaacactagagtccttttttggaagatctgcctgtgtcaccatactggaggtggagaattttaacgccacgctgacgctgataggaaaaagcagtttactacatgggctattacatacacagacacagtccagctgagaaggaaactggagtttttcacctactccagatttgacctagagatgacttttgtcataacggaaaggtactacgccagcaatacaggacatgccagaaaccaagtctaccagcttatgtacataccacctggtgctccgcgacccacggcttgggacgattatacctggcagagctcatcgaacccgtcagtattttacacgtacggcagtgcaccacccagaatgtctatcccctatgttggcatagcaaacgcgtactcgcacttttacgacgggttcgcgcgtgttcctttgaaggatgagactgttgactctggagacaattatggactggttaccatcaatgactttggtaccttggcagtgagggtagtgaatgaatacaatcctgcccgcattacatctaagataagagtgtatatgaagcccaagcatgtaaggtgttggtgccccagaccacctcgtgcagttccgtaccgaggtgagggcgtcgattttaaacaagactaccccactgacagccgaaaacattaatactttt"/>
+                                
+        <sequence id="seq_KP861806_RUS_2012" spec="Sequence" taxon="KP861806_RUS_2012" totalcount="4" value="gggatagaggagaccattgacaccgtcatcagtaacgccctgcaactctcacaacctaagccacacaatcaacggcagcttctagtggggtcaatactcaggaagtaccagctttgactgcagtggagactggagcgtccggccagacagtacccagcgacgtgattgaaaccagacacgtcgtaaattacaaaaccagatcagagtcgaccattgaatccttcttcgggagatccgcctgcgtcaccattctagaagttgaaaacttcaacgcaacgaattaagagataaaaagaagctgttcacactttggcccatcacctacaccaacacagtccaactcagaagaaaacttgaattcttcacttattccaggtttgatttggaaatgacatttgttgtaactgaaagatactacaccagcaattctggccatgccagaaaccaagtctaccaaataatgtatattccacctggggcacccataccaacagcatgggatgattacacatggcagtcttcttcaaatccatccgtgttttatacttacggtagtgcaccacccagaatgtctataccatacgttggtattgctaatgcctactcccacttttatgatggattcgcacgagtgcccctgaaggatgaggacaccgactctggagatatttatggtttagttaccatcaatgacttcgggactttagcggtgagagtggttaatgagtttaaccctgcgagggtcacttcaaaagtcagagtatacatgaagcccaaacatgtgaggtgctggtgccctagaccaccacgagtagtgccctaccgcggggagggtgtggactttaaacaaggtaacaccactgacagctgatagcataaatactttt"/>
+                                
+        <sequence id="seq_KP861807_RUS_2010" spec="Sequence" taxon="KP861807_RUS_2010" totalcount="4" value="ggcattgacgacgtcattgacaaagttatcaacaatgcactacaactctcacagcctactcgtcatcagacacccccagcacaagtggtgtgaacagtcaagaggtaccagcattgacagctgttgagaccggggcctcaggacaggcagtgccatctgacgttattgagaccaggcatgtagtcaattacaagactaggtctgagagtaccctagagtccttctttggtagatcagcgtgtgttaccatattggaagtggaaaacttcaatgcagttagacaaaagacaaaaagaaacaattcactgtgtggccgatcacatacaccaatacagtccaattaaggagaaaattagagtttttcacctattctaggtttgatttagaaatgacttttgtagtgacagagagatattatactagcaactctgggcatgcaaagaattcagtttatcatattatgtacatacctccaggagcacctaggccaagtgcatgggacgattacacctggcaatcagcatctaatccctcaatcttttacacgtatggatgtgcaccagcacgcatttcaattccgtacgtgggcatagccaacgcatactcacatttttatgacggctttgcacgagtgccattgaaggatgaaaccgcagattccggtgacaattacggattagtctccatcaatgactttggagcattggcaattagagtagtgaatgagttcaaccctgctcgcattaccgcaaaggttcgagtgtacatgaaaccaaagcatatacgctgctggtgtcctcgaccgccgcgggcagtaccttacagaggagaaggagtggaccttaagcagggacacaccactaactccagctagcattacaacatat"/>
+                                
+        <sequence id="seq_KP861809_RUS_2013" spec="Sequence" taxon="KP861809_RUS_2013" totalcount="4" value="gggattgaagacctaatacaacaggttgcgtcaaatgctttgcaactttcacaaccgacacgcgtgcgaacacacaacaatcagcacctgcacactcacaagaagttccagcattgacggcagttgaaacgggggcgaccaaccccttggaaccatctgacaccgtccaaacaaggcacgtgatacaaaccagatcacgatcagaatcaactatagaatccttctttgcccgcggtgcttgtgttacaatcatgacagtagaaaactttaatgccaccaagcggtggataagaaaaagttatttgccacttggaacatcacttacacagataccgtccagctcaggagaaaattggaaatgttcacatactcccggtttgacattgagtttacatttgtcaccacagagagatattacaccagcaactcaggacatgcccgaaaccaggtttaccagctaatgtatgttcctccaggtgcaccagtgccacaacaatgggatgactacacctggcaaacgtccagcaacccatcggtgttttacacgtatggtgatgcgcctgcacgcatctccatcccgtttgtgggtatcgcaaacgcctactctcacttttacgatgggtatgcagtggtaccattaaaggattctaaccaagatgctggcgctgactatggagcaacttcaatcaatgattttggaatgttggcggtgagagttgttaacgaattcaacccagcaaggattacatctaaagtgagagtgtacatgaaaccaaagcatgttagagtgtggtgccctaggccaccaagagtggtaccatactatggacctggagtagactataaaggtgaacaccccattgtcaaccaaaaatctcacaacatat"/>
+                                
+        <sequence id="seq_KR185973_RUS_2014" spec="Sequence" taxon="KR185973_RUS_2014" totalcount="4" value="ggtattgatgacatcatagataaggtggtcaacaatgcattgcaactctcacaaccaactcgtcttcagacacacctagcacaagcggtgtaaacagccaggaagtgccagcgctaacagctgttgaaaccggagcctcaggacaagcagtaccatcagacgtcatcgaaaccagacacgtcgttaattacaagactaggtctgaaagtactctagagtctttctttggcaggtcagcgtgcgttaccatactggaagtagagaacttcaacgcgacaagatgagagacaaaaagaaacaattcactgtgtggcccattacatacaccgacacagtccagctgaggagaaaattggagtttttcacctattccagatttgatttggaaatgacattcgtggtgacagaaagatactacaccagtaactcaggacacgccaagaattcagtttaccaaatcatgtacgtacctccaggggcacccagaccaaatgcatgggatgattatacttggcaatcatcatctaacccctcaatattttatacgtatgggtgcgcaccagcgcgcatatcgatcccatacgtaggcattgccaatgcgtactcccacttttacgatggctttgcacgggtgccgttgaagggtgaagctgcagattctggtgataactatggtttagtctctattaatgattttggaactttggctatcagggttgtgaatgagttcaatcccgcacgcatcactgcaaaggtgcgagtgtacatgaagccaaaacatatacgctgttggtgccctcgaccaccacgggccgtgccctacagaggagagggggtagaccttaaacaagggtacaccgctcaccccagctagcattacaacatat"/>
+                                
+        <sequence id="seq_KR185974_RUS_2010" spec="Sequence" taxon="KR185974_RUS_2010" totalcount="4" value="ggcattgaggatatcatacaacaagtggcatcaaatgcgttgcagttgtctcaaccaatgagaccgctaacacccagcagagtacacctgcacattcccaggaagttcctgcattgacagccgtcgaaactggggctactaatccacttgaaccagcagacaccgttcaaactcgacatgtgatacaaaccagatcacgaagtgagagcaccattgagtctttctttgcacggggggcatgcgtcacaattatgtccgtggaaaattacaatgaaacaccgacactccttcaagcaaactatttgcaaaatggaacattacgtactgtgacacagtacaactgaggagaaagttagaaatgttcacttactcaagatttgacattgaattcacttttgtagttacagaaaggtattacaatgctaacgctggatatgcctcaaaccaagtttaccaaattatgtatgttccacctggtgctccagttcccaaaaagtgggatgattacacatggcaaacatcatcaaatccatcaatattttacacttatggcacggcaccagcacgcatctcgataccgttcgtaggaattgcaaatgcgtattcacacttttacgatggatacgcgacagtaccactcaaggattctacgtcagatgctggcgcagattacggagcagtgtctataaatgactttggattactagcagttagagtggtcaatgagcacaatccagtaagaatctcttcaaaagtgagagtgtacatgaaaccaaaacatgtgcgagtgtggtgtccaagaccgcctcgggctgtggaatactacggtagcggggtcgactacaaggccaactgatatcctgccagagaagacattgactacctat"/>
+                                
+        <sequence id="seq_KR185975_RUS_2013" spec="Sequence" taxon="KR185975_RUS_2013" totalcount="4" value="gggattgaagacctgatacaacaggttacgtcaaatgctttgcagctttcacaaccgacacgcgtgcaaacacacaacaatcagcacctgtacactcacaggaagttccagcattgacggcggttgaaacaggggcgaccaaccccttgggaccatctgacaccgtccaaacaagacatgtaatacaaaccagatcacgatcagaatcaactgtagaatccttctttgcccgcggtgcctgtgttacaatcatgacagtagagaactttaatgccactatatggcagacaagaaaaaattatttgccatctggaacattacttacacagatactgtccagcttagaagaaaattggaaatgtttacatactctcggtttgacatcgagtttacatttgttaccacagagagatattacaccagcaactcagggcacgcccgaaaccaggtttaccagctaatgtatatccctccaggtgcaccagtgccacagcaatgggatgattacacctggcaaacgtccagcaacccatcagtgttttacacgtatggtgatgcgcctgcacgcatctccatcccgtttgtgggtattgcaaatgcctattctcacttttatgatgggtatgcagtggtaccattaaaggattctgctcaggattcaggcgctgactatggagcaacctcaatcaatgattttggaatgttagcggtgagagttgttaacgaattcaacccagcaaggattacatctaaagtgagagtgtacatgaaaccaaaacatgttagagtgtggtgtcccaggccaccaagagcggtgccatattatggacctggagtagactataaaggtgatcaccccattatcaaccaaaaatctcacaacatat"/>
+                                
+        <sequence id="seq_KU531430_CHN_2011" spec="Sequence" taxon="KU531430_CHN_2011" totalcount="4" value="ggcttggaggacctcattgaatcagtagcccaaaatgctctccaaatttcacagcccaggccatcgcgaacactccagcatcgtccggggtgaactctcaggaagtgcctgcgctaaccgcggtggagacaggagccagtggacaggcggtgcctgcagatgtcatagagaccaggaaggtgattaactataaaactagaagtgagtcaaccattgagagcttctttgggcgatctgcctgcatcacaataatgtcagtggaaaatttcaatgccactatatgtcagacaagaagaaactgtttagcgtatgggaaatcaactacacagacaccgtccaactcagacggaaattggaaatgtttacatactcgcgcttcgacacggagttcaccctcgtgttgaccgagaggtacttcacccaaagctcaggacatgctcgcaaccaagtttaccaaattatgtacattcccccaggggcaccgagacctagtgcatgggatgactacacatggcaatcttcatcaaacccgtctatcttctacacgtatggttgtgcaccaccgagaatgtctgtgccattcgttggtatcgcaaatgcttatagccatttttacgatggttttgcacgcgtgcctatcaagggtgaatcagcagatagcggtgataattatggccaaacatcgatcaatgactttggagcgattgcccttagggtagtcaatgaacacaacccagcacgaattacatcacgcatgagggtgtatatgaagcccaaacacatcagagtgtggtgtccaagaccaccacgcgcagtaccatacaacggtaccggagtggatataaaggaaaacgactcccatcacaccagcatccatgaccacatac"/>
+                                
+        <sequence id="seq_KU531431_CHN_2011" spec="Sequence" taxon="KU531431_CHN_2011" totalcount="4" value="ggcattgatgacgtcattgacaaggtgattaacaatgcactgcagctttcacagcctacccgtcatcagatactcctagcacaagcggtgtgaacagtcaggaggtaccagcattaacagctgttgagaccggagcctcgggacaggcggtgccgtctgacgtcatcgagactagacatgtagtcaattataagactagatctgagagtaccctggagtccttctttggcagatcagcgtgtgtcactatattggaagtggaaaacttcaatgcaataaaacaaaagacaaaaagaagcaattcactgtgtggccaatcacatacaccaatacagtccaactaagaaggaaacttgaatttttcacctattccaggtttgatttagaaatgacctttgttgtaacagagagatactatactagcaactctgggcatgccaaaaattcagtctatcaaattatgtacatacctccaggagcacccagaccaaatgcgtgggacgattacacctggcaatcatcatccaacccctcaatcttttacacgtatggctgtgcaccagcacgtatttcaattccatacgtgggcatagccaatgcatactcacatttttatgatggctttgcgcgagtgccactgaaggatgaagccactgattccggcgataattacggactagtttcaatcaatgacttcggaaccttggcgattagagtggtgaatgagttcaaccccgcacgcattactgcaaaaataagagtgtatatgaaaccaaaacacattcgttgctggtgtccccgaccaccacgagcagtgccttacagaggagaaggagtggatttaaagcaaggacacaccactgaccccaagtagcatcactacatat"/>
+                                
+        <sequence id="seq_KY433692_NER_2013" spec="Sequence" taxon="KY433692_NER_2013" totalcount="4" value="gggattgaggacttaatttctgaggttgcaagtaacgcactgaagttgtcacaaccaaaaccccaccaaatactagcagctcagaaccaactcactcccaagaggttccagctctaactgctgttgagacaggggcaaccagcagtgtggtcccggctgatttagtacagacccggcacgtcattcaaacacgcagccgtagtgaatctacagtagaatcattctttgcgcgcggtgcgtgtgtaaccatcatgtctgtggaaaattacaatgaaacacgggtatcagcaagtccaagttgttcgccaaatggaacattacctacactgacacagtccagttgaggagaaaattggagatgtttacttactccaggtttgatattgagttcacatttgttgtcacagagcgatattacaccgcaaattcagggcacgctctaaatcaagtataccagatcatgtatgtcccccctggagcaccggtgccacagaagtgggatgattacacatggcaaacatcatcaaatccttctgtgttctacacgtatggtacagcaccagctagaatctctataccatatgtcggtatcgccaatgcctactcccacttctatgatggctttgctaaggtgccgattgagggtgagacctcagacacaggcgatgactatggtgctacttccatcaatgactttggtattctggcagtaagagtcgttaatgagcacaacccagtacgagtgtcatctaaaatcagagtatacatgaaaccaaaacacgtgcgcgtgtggtgccctagaccacctagggctgtcccttactttggaccaggggttgactacaagggggattacaccattgtcacgcaaagatttaacaacctat"/>
+                                
+        <sequence id="seq_KY433693_NER_2014" spec="Sequence" taxon="KY433693_NER_2014" totalcount="4" value="ggaattgaggacctgattgaaaaagccgcgaccagtgcactgcaactatcccaacctagaccccgcccaacaccaacagctcggaaccagtgcattcacaggaagtgccagcattgacggcagtggagacgggtgccacgagcagcgtggtccctgcagacttggtccagactcgccacgtcatcaaaacccgaagtaggagtgagtcaacagtggaatccttctttgcacggggggcgtgtgtcaccatcatgtccgtcgagaattacaatgaaa--ccaatgtgagtaaaagcaagttgtttgctaagtggaatattacatacacagatactgtacaactgagaagaaagttagagatgttcacatactcacgttttgacatagagttcacttttgtggtcacagaaagatactacactgctaactctggacatgcactaaatcaagtttatcaaataatgtatgtgccccccggagcaccagtaccacaaaaatgggatgactacacttggcagacttcctcaaacccatctgttttctatacgtatggaacagccccggcaagaatctccatcccatatgtagggattgccaatgcgtactctcacttttatgacggcttcgccaccgttcctatcgaaggggagacaacagacccaggtgcagactacggggcaacctctatcaatgattttggaattttggctgtgagggtggttaacgaacacaacccggtccaagtgtcatcgaaaatcagagtgtacatgaaacccaagcatgtgcgtgtgtggtgtccgagaccacctagggcggttccatatttcgggccaggcgtggattacaaaggagataactcccctttcaacaaagagcctgacaacctat"/>
+                                
+        <sequence id="seq_KY433694_SEN_2014" spec="Sequence" taxon="KY433694_SEN_2014" totalcount="4" value="gggatcgatgatgtcattgacaaggtaataaacaacgctctgcagctctcacaacccacccgacatcagatacacctagtacaagcggggtgaacagccaagaggtaccagccttaacagctgtcgaaactggagcgtcaggacaggcaataccgtcagatgttattgagactagacatgtaatcaactacaaaacaaggtctgaaagtaccctggaatctttctttggcagatcagcatgtgtcaccattctagaggtagaaaacttcaatgcaacgtagctagcgacaagaaaaagcaattcaccgtatggcctatcacatacaccaacacagttcagctgaggagaaaattggagttcttcacatattccaggtttgatttggagatgacttttgttgtgacagagagatactacgctagtaattcagggcatgctaaaaactccgtgtaccaaattatgtacattcccccaggtgcacccagaccaactgcgtgggacgactacacctggcagtcctcgtccaacccatcaatattttacacatacggaagtgctccagcacgcatttcaatcccgtatgtgggcatagccaatgcgtattcacacttttacgatggctttgctcgagtaccactgaaggatgaaagtacagattctggtgacaattacggattagtttccatcaacgactttggagccctagcaatcagagttgtgaatgaattcaatcccgcgcgcatcactgcaaaggtgcgagtgtacatgaaacccaaacacatacgctgttggtgccctcgaccaccaagagctgtgccatacagaggagaaggagttgatttgaaacagggaaaccccactcactccaaccagtataactacatat"/>
+                                
+        <sequence id="seq_LC201502_CHN_2016" spec="Sequence" taxon="LC201502_CHN_2016" totalcount="4" value="ggtattgaggaaaccatagacacagttattagtaacgcattacagctgtcacaacccaaaccacacaatccactgcgtcaactagtggagtgaattcccaggaagtgccagcattgaccgctgttgagactggcgcatcagggcaggctgtgcctagtgatgtaattgagacccgacatgtggttaattacaaaaccagatcagaatccaccttggagtccttctttggcagatcagcttgtgttacaatattagaagtagagaacttcaacgccattctgcagaagataagaagaaacaattcaccaggtggcctatcacatacaccaacactgtgcaactccgcaggaaacttgagttcttcacatactccagatttgacttggaaatgaccttcgtgataactgagagatattacacatctaacacaggccatgctagaaatcaagtgtaccaaataatgtatatcccaccaggtgcccctcaacccacagcctgggatgactacacgtggcagagttcatcaaatccatctgtgttttatacctacggtagtgcaccgcctagaatgtcaatcccatatgtaggtattgctaatgcatactcacatttctacgatgggtttgcgcgagtgcccctaaaagatgaagataccgatagtggggatatttacggcctcgtaaccatcaatgactttggcaccctagctataagggtcgtgaatgaattcagcccagccaggatcacatcaaaaattagagtgtacatgaaaccaaaacatataagatgttggtgccccagaccaccacgggcggtaccatatcgcggtgagggcgtggatttcaaaagtggtcacacctttgacagctgcagatatcaacactttt"/>
+                                
+        <sequence id="seq_LC201512_CHN_2016" spec="Sequence" taxon="LC201512_CHN_2016" totalcount="4" value="ggcattgatgaggttattgataaggtgatcaataacgcattacaagtctcacaacccacacgacatcatcaacacccagtacgagcggagtgaatagccaggaagtgccagcattgactgctgttgaaactggagcttcaggacaggcagtgccatcagatgttattgaaaccagacatgtagttaattacaagacaagatctgagagtaccctggagtctttctttggcaggtcagcatgtgtcaccattttggaagtagagaacttcaacgcaacaacgcgagcgacaagaaaaagcaatttactgtatggccaatcacatacactaacacagtgcagctgaggagaaagctggagttctttacgtactccaggtttgacttggaaatgacttttgttgtgacggagaggtactacaccagta---cagggcacgcaaaaaattcagtgtaccaaattatgtacatacccccgggagcacccagaccaagcgcgtgggatgactacacttggcaatcgtcgtctaacccttcaattttctacacttacggatgcgcaccagcacgcatctcaatcccgtatgtgggtatagccaatgcctattcacacttttatgacggctttgcacgagtaccactgaaggatgaagaagcagattccggtgacaactacggcctggtttccattaacgactttggaaatctagcagttagagtggtgaacgagttcaatcctgctcgtatcacagcaaaggtgagagtgtacatgaaacctaaacacatacggtgctggtgccctagaccaccacgggcagtaccatatagaggggaaggagtggacttgaaacaagggtacaccattgactccaacaagtataacgacatac"/>
+                                
+        <sequence id="seq_LC411979_CHN_2014" spec="Sequence" taxon="LC411979_CHN_2014" totalcount="4" value="ggcattgaagaaaccattgacacagtcattagtaatgctctacagctatcccagcccaagccacacaatctactgcatccactagtggggtaaactcccaagaagtaccagcattgaccgccgttgagactggtgcatcagggcaggctgtgcccagtgacgtgattgagactcgacacgtggtaaattacaaaaccagatcagaatccaccttggaatctttctttggcagatctgcctgtgttacaatattggaggttgaaaactttaatgctactctgtagcagataagagaaaacaattcaccagatggcctatcacgtacaccaacactgtgcaactccgtaggaaacttgaattctttacatattccaggtttgacttagaaatgacatttgtagtgactgaaaggtattacacatcaaacacaggacatgctagaaatcaagtgtaccaaataatgtacattccaccaggtgctccccaacccacggcctgggatgattacacatggcaaagctcatcaaacccatccgtattttacacctatggtagtgcgccacccagaatgtcaatcccatacgtgggcattgctaatgcatactcacatttttatgatggatttgcacgaatacccctaaaagatgagacaactgacagcggagacatctatggtcttgtaactatcaatgactttggtaccttagctgtgagggttgtgaatgagtttaacccagccaggatcacatcaaagattagagtgtacatgaaaccaaaacatataaaatgttggtgccccagaccaccacgtgcggtgccatatcgtggtgacggagtggatttcaaccacacccacaccactgacggcaacaagcattaacacattt"/>
+                                
+        <sequence id="seq_LC412982_CHN_2017" spec="Sequence" taxon="LC412982_CHN_2017" totalcount="4" value="ggtattgaagaaaccattgacacagttattagcaatgctctacagctatcccaacctaagccgcacaatccactgcatctactagtggggtgaattcccaagaagtaccagcattaactgccgttgagactggtgcgtcagggcaggccgtgcccagtgatgtgatcgagactcggcacgttgtaaattacaagaccaggtcagaatccaccttggagtctttcttcggcagatcagcttgtgttacaatattggaggttgagaacttcaatgccactctgaatcagacaagagaaaacagttcaccaggtggcctatcacgtacaccaacactgtacaactccgtaggaaacttgagttcttcacctactccagatttgacttagagatgacatttgtagtgactgaaaggtattacacatcaaatacaggacatgctagaaatcaagtgtaccaaataatgtacattccaccaggtgccccccaacccacagcctgggatgattacacgtggcaaagctcatcaaacccatctgtattctacacttatggtagtgcaccacccagaatgtcaatcccatatgtgggcattgctaacgcgtactcacatttttatgatggatttgcacgagtacccctagaaggtgaaaataccgatagtggggatatttatggcctcgtgaccatcaatgactttggtaccttggctgtaagggttgtgaacgagtttaacccggctagaattacatcaaaaattagagtatacatgaagccaaagcatataaaatgttggtgccccagaccaccacgggcggtaccataccgtggtgacggagtggattttgaacgaagccacaccactaacagcagaaaacattaacactttt"/>
+                                
+        <sequence id="seq_MG272373_NLD_1973" spec="Sequence" taxon="MG272373_NLD_1973" totalcount="4" value="ggtatagaagagaccattgacacagttataaacaacgctctgcagctatcccagcctaaaccacccaatcaacagcagctacaagtggagtgaactcacaggaggtacccgccctcacagcagtagagactggggcctcagggcaagcagtgcctagcgacgttattgaaactaggcatgtagtgaactacaaaacaagatcagagtcaaccctcgaatctttctttggcaggtctgcttgtgttaccattcttgaggtcgaaaattttaatgccatcaatctgcagataagaaaaaacggttcacaatttggcccattacatacactaacactgttcaactgagaagaaaattggaattcttcacctactccaggtttgatctggaaatgactttcgtcatcactgagagatattacaccagcaactcaggtcatgccagaaaccaagtctaccagattatgtacatcccaccaggagcaccccagcccacagcatgggatgattacacatggcagagctcatcaaacccgtcagtgttttatacttatggtagcgcaccacccagaatgtccatcccatacgtgggaatcgccaatgcatattcgcatttctacgatggatttgcacgagtccccctgaaggatgaaaccgctgattcgggggatatctacgggttagttaccattaatgactttggaactctggcggtgagagtggtaaacgagttcaaccccgctcgcataacatctaaggttagggtgtacatgaagcctaaacatgttaggtgctggtgcccaaggccacctcgtgcagtcccatatcgtggagagggagtggactttaaagaaggtcacaccactaacagcaatatcaattaacactttt"/>
+                                
+        <sequence id="seq_MK086167_FRA_2015" spec="Sequence" taxon="MK086167_FRA_2015" totalcount="4" value="ggcgtggacgataaaattgatgcactggtggacggtatggtcaatttagcaata------------aaaatacagcagccagcggtcccacgcactcgaaggaagtcccagcactaacagccgtggagaccggggcaactagtaaggtggttccatccgacctcattgagacccggcacgttataaacaagagacaaagatcagaatgcacggtggagtcttttctaggtagggcggcgctggtgaccatactcaaactgcaaaatgcggctcccact--agtagcaacgccaaggatctcttcgccacatggaagatatcttaccactacgcatatcagttgcgtaggaaattggaaatgtttacctactccagatttgacattgaactcacttttgtcatcactgagcgctttgcagctggtggtgatggttctagcaggcattacgtgtaccagatcatgtacataccaccaggtgcacctataccacaggcttgggacgattttacatggcaaacctcaaccaatccctcagtcttttacaccacgggtaacgcaccaccaagggtctcggtaccatttatgggcattagcggggcatattcgcacttttatgatggcttctccctggtaccacacaatcaaattgatgcaggggccaccaataaatacgggtacaacagcattaatgactttggcactgtggctgtgcgggttgtgaatgagcatgatccagttgatatccatgcaaaggttagagtgtactttaaacccaagcacataagggtgtggtgtcccaggccacctagagttgtggattacaccggtccgtcagtggattacaagcagacttagagtaatgacccaagcatccatacgaacctac"/>
+                                
+        <sequence id="seq_MK618766_MEX_2017" spec="Sequence" taxon="MK618766_MEX_2017" totalcount="4" value="ggcattgaagagaccattgacactgttattaccaatgcattacagctttcacagcctaaaccgctcaatccaccccgcttactagcggagtcaactcacaggaggtgcccgcactaactgcagtagagactggtgcatctggtcaggcagtgcccagtgatgtaattgaaaccagacatgttgtgaattacaagactaggtccgaatcaacgctagagtctttctttggaagatctgcctgtgtcaccatactggaagtggagaattttaatgccacgctgatgctgacaggaaaaagcagtttaccacatgggctattacatacacagacacagtccagctaagaaggaaactggagttttttacctactccaggtttgacctagagatgacttttgtcataacagaaaggtactacgctagtaacacaggacatgctaggaatcaagtttaccaacttatgtatataccacctggagctccgcgacccacggcgtgggacgactacacctggcagagctcatcaaacccgtcagtgttttacacgtacggtagtgcaccacccagaatgtccatcccctatgttggtatagcaaatgcatactcgcacttttacgacgggtttgcacgtgttcctctgaaggatgagactgttgactctggagacaattatggactagttaccatcaatgactttgggaccttagcagtgagggtggtgaacgaatacaatcctgctcgtattacatctaaaataagggtgtatatgaagcccaagcacgtaaggtgttggtgtcccagaccgcctcgtgcagttccgtaccgaggcgagggcgttgacttcaaacaagaccactccactgacagctgaaagcattaatactttt"/>
+                                
+        <sequence id="seq_MK618767_MEX_2017" spec="Sequence" taxon="MK618767_MEX_2017" totalcount="4" value="ggcattgaagagaccattgacactgttattaccaatgcattacagctttcacagcctaaaccgctcaatccaccccgcttactagcggagtcaactcacaggaggtgcccgcactaactgcagtagagactggtgcatctggtcaggcagtgcccagtgatgtaattgaaaccagacatgttgtgaattacaagactaggtccgaatcaacgctagaatctttctttggaagatctgcctgtgtcaccatactggaagtggagaattttaatgccacgctgatgctgacaggaaaaagcagtttaccacatgggctattacatacacagacacagtccagctaagaaggaaactggagttttttacctactccaggtttgacctagagatgacttttgtcataacagaaaggtactacgctagtaacacaggacatgctaggaatcaagtttaccagcttatgtatataccacctggagctccgcgacccacggcgtgggacgactacacctggcagagctcatcaaacccgtcagtgttttacacgtacggtagtgcaccacccagaatgtccatcccctatgttggtatagcaaatgcatactcgcacttttacgacgggtttgcacgtgttcctctgaaggatgagactgttgactctggagacaattatggactagttaccatcaatgactttgggaccttagcagtgagggtggtgaatgaatacaatcctgctcgtattacatctaaaataagggtgtatatgaagcccaagcacgtaaggtgttggtgtcccagaccgcctcgtgcagttccgtaccgaggcgagggcgttgacttcaaacaagaccactccactgacagctgaaagcattaatactttt"/>
+                                
+        <sequence id="seq_MN812182_GHA_2013" spec="Sequence" taxon="MN812182_GHA_2013" totalcount="4" value="ggaattgaggacctaatatctgaggttgcaagtaatgcactaaggttatcacagccaaaaccccaccaaataccaacagttcggaaccgacccattcacaagaagttccagctctaactgctgtcgagacaggggcgaccagtagcgtggtcccagctgacttagtacagactcggcacgtcatccagacacgtagccgtagcgagtcgacagtggagtcattctttgcccgtggtgcatgtgttactattatgtcagtagagaactataacgaaacacaggcagcggcaaatccaagttgttcgccaaatggaacatcacctatactgacacagtccagttaagaagaaaattggaaatgttcacatactccagatttgatattgaattcacatttgttgttactgaacgctactacactgcaaattcaggacatgctctaaaccaagtgtaccagatcatgtatgttcctcctggagcgccagtaccacaaaaatgggatgattacacgtggcaaacttcatcaaatccttctgttttctacacatatgggacagcaccagccagaatctccataccatatgttggcatcgctaatgcttattcccacttttatgacggctttgcaaaagtgccgattgagggtgagacttcagatccgggtgatgattatggtgccacctccatcaacgactttggcatactggctgtgagagtcgttaatgagcataacccggtacaagtatcatcaaaaawtagggtgtacatgaaaccaaaacatgtgcgtgtgtggtgccccagaccacctagggctgtcccttactttggaccaggagttgactacaagggagactacaccactatcaagaaaagatttg---------"/>
+                                
+        <sequence id="seq_MN812183_GHA_2012" spec="Sequence" taxon="MN812183_GHA_2012" totalcount="4" value="ggaattgaggatttgatatctgaggtcgctagtaacgcgctgaagttatcacaaccaaaaccccaccaaacactaacagctcagaaccaacccactcccaagaggttccggctttgaccgccgttgagacaggggcaaccagtagtgtggtcccggccgatttggtacagactcggcatgtcatccagacacgcagtcgcagtgaatctacagtggagtcattcttcgcgcgcggtgcgtgcgtcacaattatgtcagtggagaattacaacgagacacaggcatctccaaatccaagttatttgccaaatggaacatcacctacaccgacacggtccaactcaggagaaaattggaaatgttcacctactccagatttgacattgaattcacatttgttgtcactgaacggtactatactgcaaattcaggacatgctctaaatcaagtgtatcagatcatgtacgtcccccccggggcgccagtaccacaaaaatgggatgattacacgtggcaaacttcatcaaacccctctgttttctacacctacggcacagcaccagctagaatctccattccatatgtcggtattgctaatgcttactctcatttctacgatggttttgcaaaggtaccgattgagggtgagacctcagacccgggcgatgactatggtgccacttccatcaacgactttggcattctggcggtgagagttgtcaatgagcacaacccagtgcaggtgtcatccaaaatcagggtgtatatgaaaccaaagcacgtacgcgtgtggtgccccagaccacccagagccgtcccttactttggaccaggagttgattacaaaggggactacaccgttaacgcgcaaggatttaacaacttat"/>
+                                
+        <sequence id="seq_MN812184_GHA_2012" spec="Sequence" taxon="MN812184_GHA_2012" totalcount="4" value="ggaattgaggacctaataactgaggttgcgagcaacgcgctgaaattgtcgcaaccaaagccctaccaaatactaacagctcagaaccgactcattcccaagaagttccagctctaaccgctgttgagacaggggcgaccagtagtgtggtcccagctgatttggtacaaactcgacatgtcatccagacacgtagccgcagtgagtcgacggtggagtcgttctttgcccgcggtgcatgtgtcaccattatgtcagtggagaactacaatgaaacgcgagtgtcrgcaaatccaaattattcgccaagtggaacattacatacactgacacagtccaattgaggaggaaattggagatgttcacttactccagatttgacattgagttcacatttgttgtcactgaacgctactacactgcaaattcaggacatgctctaaaccaagtatatcagataatgtatgtacctcctggagctcctatacctcaaaagtgggacgactacacctggcagacctcctcaaacccatccgttttctacacgtatggaactgcgccagcaagaatctccatcccatatgtaggtattgctaatgcttactcacacttctatgacggttttgccgctgttcccattgaaggagagacaacagacccgggcgcagattacggagcaacctccatcaatgattttggtgttttagctgtgagagtagtcaatgaacacaacccagtccaggtgtcgtcaaagatcagagtgtatatgaaacccaagcacgtgcgcgtatggtgcccgagaccacttagggcagtcccatatttcggaccaggggtggactacaagggagataactcccctctcaacaaaagacctaacaacttat"/>
+                                
+        <sequence id="seq_MN812186_GHA_2012" spec="Sequence" taxon="MN812186_GHA_2012" totalcount="4" value="ggtattgaagacctgattgaaaaagttgcaagtaacgcattgcagctgtcacagcccaagccccgcccaatactagcagctcggaaccagtacactcacaagaagtaccggcattgacagcagtggagacaggtgcaacgagcagtgtggttcctgcagatttggtccagactcgtcatgttgtccaaacccgaagcaggagtgagtcaacagtagaatctttctttgcacgaggagcatgtgtcaccatcatgtccgttgaaaattacaatgaga--ctaatgtgagtagaagtaaactgtttgccaagtggaacatcacatacactgacactgtgcaattgaggagaaagttagagatgttcacatactcacgctttgatatagagttcacttttgtggtcacggagagatactacactgccaactctgggcacgcactaaaccaagtttaccaaataatgtatgtacctcctggagctccagtgccccaaaagtgggatgattacacttggcagacctcctcaaacccatctgttttctacacatatggaaccgctccagcaagaatctctatcccatatgtaggaatcgctaatgcttactcacacttctatgacggcttcgccaccgtccccattgaaggggagacaacagacccaggcgcagattatggggcgacttctatcaatgattttggcattttagctgtgagagtggtcaatgaacacaacccagtccaagtgtcatcgaagatcagagtttacatgaaacccaagcacgtgcgcgtatggtgcccaagaccacctagggcagttccgtatttcggaccaggggtggattacaagggggacaactcccctctcaacaaagagtttgacaacctat"/>
+                                
+        <sequence id="seq_MN812188_GHA_2012" spec="Sequence" taxon="MN812188_GHA_2012" totalcount="4" value="ggcattgaagatctgatacaacaagtagcttcaaacgcactgcaaatctcacagccttcacgtcaacagatactcaacaatccagcccagcacactcacaggaartcccagcactcactgctgtagagaccggagcaaccaacccattagaaccttcagatacamtgcaaaccaggcatgttgtccaraccaggtcgcggtctgagtccactgtggaatcattctttgccagaggggcttgtgttactatcatgactgtggaaaacttcaacgccactaartggctgacaggaagaagctatttgccacttggaacatcacatacactgacaccgttcaacttcggaggaagctggaaatgttcacatactccaggtttgatattgaatttacattcgtgaccaccgagagatactacacgtcaaattctggtcacgctcgcaatcaagtgtaccaactgatgtatgtaccacctggggcccctgtaccacaacaatgggatgattacacatggcaaacatcgtccaacccatcagtgttttacacctacggtgatgctcccgctcgcatatcaataccattcgtagggattgctaatgcatattcacacttctacgatggttattcggtggttccattgaaagactctaataaagattcaggagcagattacggagcaacatcaattaatgactttggacttctagcagtgagagtagtgaatgaatttaacccagcaaggattacatcaaaagttagagtgtacatgaaacccaaacacgttagagtatggtgccctagaccaccaagagtagtgccatactttggccccggggtcgattacaaggacgatgacaccactgtccacaaagccattgaccacttat"/>
+                                
+        <sequence id="seq_MT741566_CHN_1988" spec="Sequence" taxon="MT741566_CHN_1988" totalcount="4" value="ggtattgaggaaaccattgacaccgtcattaccaatgcactacagctttcacaacctaaaccgcccaatccacaccgcccaccagtggagtgaactcacaggaggtgcctgcactgactgcagtagagactggtgcatctggtcaggcagtacccagtgatgtaattgagaccagacacgttgtgaactataagaccagatccgagtcaacacttgagtccttctttggaaggtctgcttgcgtcaccatactggaagtggaaaattttaacgccacgctgaagctgataagaagaagcagtttaccacatgggccatcacatacacagacacagtccaattaagaaggaaattggaattctttacctactccagatttgatttagagatgacttttgtcataacagaaagatattatgccagcaacacagggcatgcgaggaatcaagtctaccagcttatgtatataccacctggcgctccgcgacccacagcttgggacgactacacctggcagagctcatcgaacccgtcagtgttttacacgtacggcagtgcgccacccagaatgtccattccctatgttggcattgcaaacgcgtactcacacttttatgacgggttcgcgcgagttcctttgaaagatgagactgttgactctggggataattatggactggtcaccattaatgattttgggaccttagcagtgagggtagtaaatgaatacaatcctgcccgcattacatccaaaataagagtatacatgaaacccaagcatgtgaggtgttggtgtcccagaccgcctcgcgcagttccgtaccgaggtgaaggtgtcgattttaagcaagactaccccactgacagctgaaaacattaacactttg"/>
+                                
+        <sequence id="seq_MT741582_CHN_2007" spec="Sequence" taxon="MT741582_CHN_2007" totalcount="4" value="ggcattgaggagaccattgacaccgttattaccaatgcattacagctttcacagcctaaaccactcaatccacgccgctcactagtggagtcaactcacaggaggtgcccgcactaactgcagtagagactggtgcatctggccaggcggtgcccagtgatgtaattgagaccagacatgttgtgaattacaagactaggtctgaatcaacactagagtccttctttggaagatctgcttgtgtcaccatactggaggtggagaattttaacgccacgctgatgctgataggaaaaagcagttcaccacatgggctatcacgtacacagacacagtccagctaagaaggaaactggagtttttcacctactccagatttgacctagaaatgacttttgtcataacggaaaggtactacgccagcaacacaggacatgccagaaatcaagtctaccagcttatgtacataccacctggtgctccacgacccacggcctgggacgactatacctggcagagctcatcgaacccgtcagtgttttacacgtatggcagtgcaccacccagaatgtccatcccctacgttggcatagcaaacgcgtactcgcacttctacgacgggttcgcgcgtgttcctttgaaagatgagaccgttgattctggcgacaattatggactggttaccatcaatgattttgggaccttagcagtaagggtagtgaatgagtacaaccctgcccgcattacatctaagataagagtgtatatgaagcccaagcatgtaaggtgttggtgtcccagaccgcctcgtgcagttccgtaccgaggtgagggcgtcgatttcaaacaagactaccccactgacagccgaaaacattaatactttg"/>
+                                
+        <sequence id="seq_OM386801_CHN_1988" spec="Sequence" taxon="OM386801_CHN_1988" totalcount="4" value="ggtattgaggaaaccattgacaccgtcattaccaatgcactacagctttcacaacctaaaccgcccaatccacaccgcccaccagtggagtgaactcacaggaggtgcctgcactgactgcagtagagactggtgcatctggtcaggcagtacccagtgatgtaattgagaccagacacgttgtgaactataagaccagatccgagtcaacacttgagtccttctttggaaggtctgcctgcgtcaccatactggaagtggaaaattttaacgccacgctgaagctgacaagaagaagcagtttaccacatgggctatcacatacacagacacagtccaattaagaaggaaattggaattttttacctactccagatttgatttagagatgacttttgtcataacagaaagatattatgccagcaacacagggcatgcgaggaatcaagtctaccagcttatgtatataccacctggcgctccgcgacccacagcttgggacgactacacctggcagagctcatcgaacccgtcagtgttttacacgtacggcagtgcgccacccagaatgtccattccctatgttggcattgcaaacgcgtactcacacttttatgacgggttcgcgcgagttcctttgaaagatgagactgttgactctggggacaattatggactggtcaccattaatgattttgggaccttagcagtgagggtagtaaatgaatacaatcctgcccgcattacatccaaaataagagtatacatgaaacccaagcatgtgaggtgttggtgtcccagaccgcctcgcgcagttccgtaccgaggtgaaggtgtcgattttaagcaagactaccccactgacagctgaagacattaacaccttt"/>
+                                
+        <sequence id="seq_OM386802_CHN_2003" spec="Sequence" taxon="OM386802_CHN_2003" totalcount="4" value="ggcattgaggagaccattgacaccgttattaccaacgcattacagctttcacagcctaaaccacccaatccacaccgctcactagtggagtcaactcacaggaggtgcccgcactaactgcagtagagactggtgcatctggccaggcggtgcccagtgatgtaattgagaccagacacgttgtgaactacaagactaggtctgaatcaacactagagtccttctttggaagatctgcttgtgtcaccatactggaagtggagaattttaacgccacgctgacgctgataggaaaaagcagtttactacatgggctatcacatacacagacacagtccagctaagaaggaaactggaattttttacctattccagatttgacctagagatgacttttgtcataacggaaaggtactataccagtaacacaggacatgccaggaatcaagtctaccagcttatgtacataccacctggcgctccgcgacccacggcctgggacgactacacctggcagagctcatcgaacccgtcagtgttttacacgtacggcagtgcaccacccaggatgtccatcccctacgttggcattgcaaatgcgtactcacacttctatgacgggttcgcgcgtgttcctttgaaagatgagaccgttgactctggagacaattatggattggtcaccatcaatgattttgggaccttagcagtgagggtagtgaatgaatacaatcctgcccgcattacatctaagataagagtgtacatgaagcccaagcatgtaaggtgttggtgtcctagaccgcctcgtgcagttccgtaccgaggtgagggtgtcgattttaagcaagactaccccactgacagccgaaaacattaatactttt"/>
+                                
+        <sequence id="seq_OM386803_CHN_2007" spec="Sequence" taxon="OM386803_CHN_2007" totalcount="4" value="ggcattgaggagaccattgacaccgttattaccaatgcattacagctttcacagcctaaaccactcaatccacgccgctcactagtggagtcaactcacaggaggtgcccgcactaactgcagtagagactggtgcatctggccaggcggtgcccagtgatgtaattgagaccagacatgttgtgaattacaagactaggtctgaatcaacactagagtccttctttggaagatctgcttgtgtcaccatactggaggtggagaattttaacgccacgctgatgctgataggaaaaagcagttcaccacatgggctatcacgtacacagacacagtccagctaagaaggaaactggagtttttcacctactccagatttgacctagaaatgacttttgtcataacggaaaggtactacgccagcaacacaggacatgccagaaatcaagtctaccagcttatgtacataccacctggtgctccacgacccacggcctgggacgactatacctggcagagctcatcgaacccgtcagtgttttacacgtatggcagtgcaccacccagaatgtccatcccctacgttggcatagcaaacgcgtactcgcacttctacgacgggtttgcgcgtgttcctttgaaagatgagaccgttgattctggcgacaattatggactggttaccatcaatgattttgggaccttagcagtaagggtagtgaatgagtacaatcctgcccgcattacatctaagataagagtgtatatgaagcccaagcatgtaaggtgttggtgtcccagaccgcctcgtgcagttccgtaccgaggtgagggcgtcgatttcaaacaagactaccccactgacagccgaaaacattaatactttt"/>
+                                
+        <sequence id="seq_OM386807_CHN_2010" spec="Sequence" taxon="OM386807_CHN_2010" totalcount="4" value="ggcattgaggagaccattgacactgttattaccaatgcattacagctttcacaacctaaaccgcacaatccacaccgctcactagtggagtcaactcacaggaggtgcccgcactaactgcagtagagactggtgcatctggccaggcggtgcccagtgatgtaattgagaccagacatgttgtgaattacaagactaggtctgaatcaacactagagtccttctttggaagatctgcttgtgtcaccatactggaggtggagaattttaacgccacgctgtcgctgataggaaaaagcagtttaccacatgggctatcacgtacacagacacagtccagctgagaaggaaactggagttctttacctactccagatttgacctagagatgacttttgtcataacggaaaggtactacgccagcaacacaggacatgccaggaatcaagtctaccagcttatgtacataccacctggtgctccgcgacccacggcttgggacgactatacctggcagagttcatcgaacccgtcagtgttttacacgtacggcagtgcaccacccagaatgtctatcccctatgttggcatagcaaacgcgtactcgcacttttacgacgggttcgcgcgtgttcctttgaaggatgagactgttgactctggagacaattatggactggttaccatcaatgactttgggaccttggcagtgagggtagtgaatgaatacaatcctgcccgcattacatctaagataagagtgtatatgaagcccaagcatgtaaggtgttggtgtcccagaccacctcgtgcagttccgtaccgaggtgagggcgtcgatttcaaacaagactaccccactgacagccgaaaacattaatactttt"/>
+                                
+        <sequence id="seq_OM386808_CHN_2010" spec="Sequence" taxon="OM386808_CHN_2010" totalcount="4" value="ggcattgaggagaccattgacactgttattaccaatgcattgcagctttcacaacctaaaccgcacaatccacaccgctcactagtggagtcaactcacaagaggtgcccgcactaactgcagtagagactggtgcatctggccaggcggtgcccagtgatgtaattgagaccagacatgttgtgaattacaagactaggtctgaatcaacactagagtccttctttggaagatctgcttgtgtcaccatactggaagtggagaattttaacgccacgctgacgctgataggaaaaagcagtttaccacatgggctatcacgtacacagacacagtccagctgagaaggaaactggagttctttacctactccagatttgacctagagatgacttttgtcataacggaaaggtactacgccagcaacacaggacatgccaggaatcaagtctaccagcttatgtacataccacctggtgctccgcgacccacggcttgggacgactatacctggcagagttcatcgaacccgtcagtgttttacacgtacggcagtgcaccacccagaatgtctatcccctatgttggcatagcaaacgcgtactcgcacttttacgacgggttcgcgcgtgttcctttgaaggatgagactgttgactctggagacaattatggactggttaccatcaatgactttgggaccttggcagtgagggtagtgaatgaatacaatcctgcccgcattacatctaagataagagtgtatatgaagcccaagcatgtaaggtgttggtgtcccagaccacctcgtgcagttccgtaccgaggtgagggcgtcgatttcaaacaagactaccccactgacagccgaagacattaatactttt"/>
+                                
+        <sequence id="seq_OM386809_CHN_1994" spec="Sequence" taxon="OM386809_CHN_1994" totalcount="4" value="ggtattgaagagaccattgacactgtcatcaccaatgcactacagctttcacaacctaaaccacccaatccacgccgcccaccagtggagtgaactcacaggaggtacccgcactgactgcggtagagactggtgcatctggtcaggcagtacccagtgatgtgattgagaccaggcacgttgtgaactataagaccaggtcagagtcaacactcgagtccttctttggaaggtctgcttgtgtcaccatactggaagtggagaattttaacgccacgctgaagctgataagaagaaacagttcaccacatgggccatcacatatacagacacagtccagttaagaaggaaattggaattctttacctactccagatttgatttagaaatgacttttgtcataacagaaaggtattatactagtaacacaggacatgccagaaatcaagtctaccaactcatgtacataccacctggtgctccgcgacccacagcttgggacgactacacctggcagagctcatcgaacccgtcagtgttttatacgtacggtagtgccccacccagaatgtccattccctatgtcggcattgcaaatgcgtactcacatttctatgacgggttcgcgcgagttcctttgaaagatgagactgttgactctggggataattatggactggtcaccattaatgatttcgggaccttggcagtgagggtagtaaatgaatacaatcctgcccgcattacatctaaaataagagtgtacatgaaacccaagcatgtaaggtgttggtgccccagaccgcctcgcgcagttccgtaccggggtgaaggtgtcgattttaaacaagactactccactgacagctgaaaacattaatactttt"/>
+                                
+        <sequence id="seq_OM386810_CHN_1994" spec="Sequence" taxon="OM386810_CHN_1994" totalcount="4" value="ggtattgaagagaccattgacactgtcatcaccaatgcactacagttttcacaacctaaaccacccaatccacgccgcccactagtggagtgaactcacaggaggtacccgcattgactgcggtagagactggtgcatctggtcaggcagtacccagtgatgtgattgagaccaggcacgttgtgaactataagaccaggtcagagtcaacacttgagtccttctttggaaggtctgcttgtgtcaccatactggaggtggagaattttaacgccacgctgaagctgataagaagaaacagttcaccacatgggccattacatatgcagacacagtccagttaagaaggaaattggaattctttacctactctagatttgatttagaaatgacttttgtcataacagaaaggtattatgctagcaacacaggacatgccagaaatcaagtttaccaactcatgtacataccacctggtgctccgcgacccacagcttgggacgactacacctggcagggctcatcgaacccgtcagtgttttatacgtacggtagtgccccacccagaatgtccattccctatgtcggcattgcaaatgcgtactcacatttctatgacgggttcgcgcgagttcctttgaaagatgagactgttgactctggggataattatggactggtcaccattaatgatttcgggaccttagcagtgagggtagtaaatgaatacaatcctgcccgcattacatctaaaataagagtgtacatgaaacccaagcatgtaaggtgttggtgccccagaccgcctcgcgcagttccgtaccggggtgaaggtgtcgattttaaacaagactactccactgacagctgaaaacattaatactttt"/>
+                                
+        <sequence id="seq_OM386811_CHN_1995" spec="Sequence" taxon="OM386811_CHN_1995" totalcount="4" value="ggtattgaagagaccattgacactgtcatcaccaatgcactacagctttcacaacctaaaccacccaatccacgccgcccaccagtggagtgaactcacaggaggtacccgcactgactgcggtagagactggtgcatctggtcaggcagtacccagtgatgtgattgagaccaggcacgttgtgaactataagaccaggtcagagtcaacactcgagtccttctttggaaggtctgcttgtgtcaccatactggaagtggagaattttaacgccacgctgaagctgataagaagaaacagttcaccacatgggccatcacatatacagacacagtccagttaagaaggaaattggaattctttacctactccagatttgatttagaaatgacttttgtcataacagaaaggtattatactagcaacacaggacatgccagaaatcaagtctaccaactcatgtacataccacctggtgctccgcgacccacagcttgggacgactacacctggcagagctcatcgaacccgtcagtgttttatacgtacggtagtgccccacccagaatgtccattccctatgtcggcattgcaaatgcgtactcacatttctatgacgggttcgcgcgagttcctttgaaagatgagactgttgactctggggataattatggactggtcaccattaatgatttcgggaccttagcagtgagggtagtaaatgaatacaatcctgcccgcattacatctaaaataagagtgtacatgaaacccaagcatgtaaggtgttggtgccccagaccgcctcgcgcagttccgtaccggggtgaaggtgtcgattttaaacaagactactccactgacagctgaaaacattaatactttt"/>
+                                
+        <sequence id="seq_OM386812_CHN_1997" spec="Sequence" taxon="OM386812_CHN_1997" totalcount="4" value="ggtattgaagagaccattgacactgtcatcaccaatgcactacagttttcacaacctaaaccacccaatccacgccgcccactagtggagtgaactcacaggaggtacccgcactgactgctgtagagactggtgcatctggccaggcagtacccagtgatgtgattgagaccaggcacgttgtgaactataagaccaggtcagagtcaacacttgagtccttctttggaaggtctgcttgtgtcaccatactggaggtggagaattttaacgccacgctgaagatgataagaagaaacagttcaccacatgggccatcacatatacagacacagtccagttaagaaggaaattggaattctttacctactctagatttgatttagaaatgacttttgtcataacagaaaggtattatactagcaacacaggacatgccagaaatcaagtttaccaactcatgtacataccacctggtgctccgcgacccacagcttgggacgacttcacctggcagagctcatcgaacccgtcagtgttttatacgtacggtagtgccccacccagaatgtccattccctatgtcggcattgcaaatgcatactcgcatttctatgacgggttcgcgcgagttcctttgaaagatgagactgttgactctggggataattatggactggtcaccattaatgatttcgggaccttagcagtgagggtagtaaatgaatacaatcctgcccgcattacatctaaaataagagtgtacatgaaacccaagcatgtaaggtgttggtgccccagaccgcctcgcgcagttccgtaccggggtgaaggtgtcgattctaaacaagactactccactgatagccgaaaacattaatactttt"/>
+                                
+        <sequence id="seq_OR352726_CHN_2023" spec="Sequence" taxon="OR352726_CHN_2023" totalcount="4" value="ggcattgaggagaccatcgacactgtcattaccaatgcattacagatttcacaacccaaaccgcacagtccacaccgctcactagtggagtcaactcacaggaggtgcccgctctaactgcggtagagactggtgcatctggccaggcggtgcccagtgatgtgattgagaccaggcatgttgtgaattacaagactaggtctgagtcaacactagagtccttctttggaaggtctgcctgtgtcaccatactagaagtggagaactttaatgccacgctgatgctgataggaagaagcagtttactacatgggccattacatacacagacacagtccagctgagaaggaaactggagttctttacctactccagattcgacctagagatgacttttgttattacagaaaggtactacgccagtaatacaggacatgccagaaatcaagtctaccagcttatgtatataccacctggtgctccgcgacctacggcttgggatgattacacctggcagagctcatcgaacccgtcagtattttacacgtacggcagtgcaccacccagaatgtctatcccctatgttggcatagcaaacgcgtactcacacttttatgacgggttcgcgcgtgtgcctttgaaggatgagactgttgactctggagacaattatggactggttaccattaatgattttgggaccttggcagtgagggtagtgaatgaatacaatcctgcccgcattacatctaagataagagtgtacatgaaacccaagcatgtaaggtgttggtgccccagaccacctcgtgcagttccgtaccgaggtgagggcgttgatttcaaacaagactaccccactaacagccgaggacattaatactttt"/>
+                                
+        <sequence id="seq_OR352727_CHN_2023" spec="Sequence" taxon="OR352727_CHN_2023" totalcount="4" value="ggcattgaggagaccatcgacactgtcattaccaatgcattacagatttcacaacccaaaccgcacagtccacaccgctcactagtggagtcaactcacaggaggtgcccgctctaactgcggtagagactggtgcatctggccaggcggtgcccagtgatgtgattgagaccaggcatgttgtgaattacaagactaggtctgagtcaacactagagtccttctttggaaggtctgcctgtgtcaccatactagaagtggagaactttaatgccacgctgatgctgataggaagaagcagtttactacatgggccattacatacacagacacagtccagctgagaaggaaactggagttctttacctactccagattcgacctagagatgacttttgttattacagaaaggtactacgccagtaatacaggacatgccagaaatcaagtctaccagcttatgtatataccacctggtgctccgcgacctacggcttgggatgattacacctggcagagctcatcgaacccgtcagtattttacacgtacggcagtgcaccacccagaatgtctatcccctatgttggcatagcaaacgcgtactcacacttttatgacgggttcgcgcgtgtgcctttgaaggatgagactgttgactctggagacaattatggactggttaccattaatgattttgggaccttggcagtgagggtagtgaatgaatacaatcctgcccgcattacatctaagataagagtgtacatgaaacccaagcatgtaaggtgttggtgccccagaccacctcgtgcagttccgtaccgaggtgagggcgttgatttcaaacaagactaccccactaacagccgaggacattaatactttt"/>
+                            
+    </data>
+        
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+    <map name="Uniform" >beast.base.inference.distribution.Uniform</map>
+
+    
+
+    <map name="Exponential" >beast.base.inference.distribution.Exponential</map>
+
+    
+
+    <map name="LogNormal" >beast.base.inference.distribution.LogNormalDistributionModel</map>
+
+    
+
+    <map name="Normal" >beast.base.inference.distribution.Normal</map>
+
+    
+
+    <map name="Beta" >beast.base.inference.distribution.Beta</map>
+
+    
+
+    <map name="Gamma" >beast.base.inference.distribution.Gamma</map>
+
+    
+
+    <map name="LaplaceDistribution" >beast.base.inference.distribution.LaplaceDistribution</map>
+
+    
+
+    <map name="prior" >beast.base.inference.distribution.Prior</map>
+
+    
+
+    <map name="InverseGamma" >beast.base.inference.distribution.InverseGamma</map>
+
+    
+
+    <map name="OneOnX" >beast.base.inference.distribution.OneOnX</map>
+
+    
+
+    <run id="mcmc" spec="MCMC" chainLength="50000000">
+            
+        <state id="state" spec="State" storeEvery="5000">
+                    
+            <tree id="Tree.t:NPEV_C_trim" spec="beast.base.evolution.tree.Tree" name="stateNode">
+                            
+                <trait id="dateTrait.t:NPEV_C_trim" spec="beast.base.evolution.tree.TraitSet" traitname="date" value="KY433694_SEN_2014=2014,KC787162_CMR_2009=2009,KC787154_CMR_2009=2009,KC787151_CMR_2009=2009,MN812188_GHA_2012=2012,MN812186_GHA_2012=2012,MN812184_GHA_2012=2012,MN812183_GHA_2012=2012,MN812182_GHA_2013=2013,KY433693_NER_2014=2014,KY433692_NER_2013=2013,FJ868371_AUS_2006=2006,GU983190_BRA_1987=1987,GU983189_BRA_2003=2003,GU983188_BRA_2003=2003,GU983197_BRA_2004=2004,GU983196_BRA_2004=2004,GU983203_BRA_2005=2005,GU983202_BRA_2005=2005,GU983206_BRA_2009=2009,GU983205_BRA_2009=2009,OM386801_CHN_1988=1988,MT741566_CHN_1988=1988,KJ857503_CHN_1990=1990,KJ857502_CHN_1990=1990,OM386810_CHN_1994=1994,OM386809_CHN_1994=1994,OM386811_CHN_1995=1995,OM386812_CHN_1997=1997,GQ329723_CHN_1997=1997,GQ329726_CHN_1999=1999,OM386802_CHN_2003=2003,GQ329725_CHN_2003=2003,OM386803_CHN_2007=2007,MT741582_CHN_2007=2007,OM386808_CHN_2010=2010,OM386807_CHN_2010=2010,KU531431_CHN_2011=2011,KU531430_CHN_2011=2011,KJ933342_CHN_2013=2013,KJ933341_CHN_2013=2013,LC411979_CHN_2014=2014,LC201512_CHN_2016=2016,LC201502_CHN_2016=2016,LC412982_CHN_2017=2017,OR352727_CHN_2023=2023,OR352726_CHN_2023=2023,MK086167_FRA_2015=2015,KF412907_IND_2004=2004,KF413028_IND_2006=2006,KF413027_IND_2006=2006,KF413033_IND_2007=2007,KF413034_IND_2007=2007,AB828288_JPN_2001=2001,MK618767_MEX_2017=2017,MK618766_MEX_2017=2017,MG272373_NLD_1973=1973,KP861807_RUS_2010=2010,KR185974_RUS_2010=2010,KP861806_RUS_2012=2012,KR185975_RUS_2013=2013,KP861809_RUS_2013=2013,KR185973_RUS_2014=2014,KP137045_THA_2014=2014,KP137044_THA_2014=2014,AB901474_TWN_1985=1985,AB901473_TWN_1985=1985,AB901478_TWN_1986=1986,AB901477_TWN_1986=1986,AB901479_TWN_2000=2000,AB901480_TWN_2001=2001,AB901485_TWN_2002=2002,AB901484_TWN_2002=2002,AB901486_TWN_2003=2003,AB901488_TWN_2007=2007,AB901487_TWN_2007=2007,AB901490_TWN_2008=2008,AB901489_TWN_2008=2008,AB901493_TWN_2010=2010,AB901492_TWN_2010=2010">
+                                    
+                    <taxa id="TaxonSet.NPEV_C_trim" spec="TaxonSet">
+                                            
+                        <alignment idref="NPEV_C_trim"/>
+                                        
+                    </taxa>
+                                
+                </trait>
+                            
+                <taxonset idref="TaxonSet.NPEV_C_trim"/>
+                        
+            </tree>
+                    
+            <parameter id="clockRate.c:NPEV_C_trim" spec="parameter.RealParameter" lower="0.0" name="stateNode">1.0</parameter>
+                    
+            <parameter id="kappa.s:NPEV_C_trim" spec="parameter.RealParameter" lower="0.0" name="stateNode">2.0</parameter>
+                    
+            <parameter id="freqParameter.s:NPEV_C_trim" spec="parameter.RealParameter" dimension="4" lower="0.0" name="stateNode" upper="1.0">0.25</parameter>
+                    
+            <parameter id="skygridPrecision" spec="parameter.RealParameter" lower="0.0" name="stateNode">1.0</parameter>
+                    
+            <parameter id="skygridLogPopSize" spec="parameter.RealParameter" dimension="5" name="stateNode">1.0</parameter>
+                    
+            <stateNode id="rateIndicator.s:location" spec="parameter.BooleanParameter" dimension="105">true</stateNode>
+                    
+            <parameter id="relativeGeoRates.s:location" spec="parameter.RealParameter" dimension="105" name="stateNode">1.0</parameter>
+                    
+            <parameter id="traitClockRate.c:location" spec="parameter.RealParameter" name="stateNode">1.0</parameter>
+                
+        </state>
+            
+        <init id="RandomTree.t:NPEV_C_trim" spec="RandomTree" estimate="false" initial="@Tree.t:NPEV_C_trim" taxa="@NPEV_C_trim">
+                    
+            <populationModel id="ConstantPopulation0.t:NPEV_C_trim" spec="ConstantPopulation">
+                            
+                <parameter id="randomPopSize.t:NPEV_C_trim" spec="parameter.RealParameter" name="popSize">1.0</parameter>
+                        
+            </populationModel>
+                
+        </init>
+            
+        <distribution id="posterior" spec="CompoundDistribution">
+                    
+            <distribution id="prior" spec="CompoundDistribution">
+                            
+                <distribution id="SkyGrid.t:NPEV_C_trim" spec="beastclassic.evolution.tree.coalescent.GMRFMultilocusSkyrideLikelihood" cutOff="40.0" numGridPoints="4" populationSizes="@skygridLogPopSize" precisionParameter="@skygridPrecision" tree="@Tree.t:NPEV_C_trim">
+                                    
+                    <trees id="alltrees" spec="beastclassic.evolution.tree.coalescent.TreeList">
+                                            
+                        <tree idref="Tree.t:NPEV_C_trim"/>
+                                        
+                    </trees>
+                                
+                </distribution>
+                            
+                <prior id="ClockPrior.c:NPEV_C_trim" name="distribution" x="@clockRate.c:NPEV_C_trim">
+                                    
+                    <Uniform id="Uniform.0" name="distr" upper="Infinity"/>
+                                
+                </prior>
+                            
+                <prior id="FrequenciesPrior.s:NPEV_C_trim" name="distribution" x="@freqParameter.s:NPEV_C_trim">
+                                    
+                    <distr id="Dirichlet.0" spec="distribution.Dirichlet">
+                                            
+                        <parameter id="RealParameter.7" spec="parameter.RealParameter" dimension="4" estimate="false" name="alpha">4.0 4.0 4.0 4.0</parameter>
+                                        
+                    </distr>
+                                
+                </prior>
+                            
+                <prior id="KappaPrior.s:NPEV_C_trim" name="distribution" x="@kappa.s:NPEV_C_trim">
+                                    
+                    <LogNormal id="LogNormalDistributionModel.1" name="distr">
+                                            
+                        <parameter id="RealParameter.5" spec="parameter.RealParameter" estimate="false" name="M">1.0</parameter>
+                                            
+                        <parameter id="RealParameter.6" spec="parameter.RealParameter" estimate="false" name="S">1.25</parameter>
+                                        
+                    </LogNormal>
+                                
+                </prior>
+                            
+                <prior id="nonZeroRatePrior.s:location" name="distribution">
+                                    
+                    <x id="nonZeroRates.s:location" spec="beast.base.evolution.Sum">
+                                            
+                        <arg idref="rateIndicator.s:location"/>
+                                        
+                    </x>
+                                    
+                    <distr id="Poisson.0" spec="distribution.Poisson" offset="14.0">
+                                            
+                        <parameter id="RealParameter.14" spec="parameter.RealParameter" estimate="false" name="lambda">0.693</parameter>
+                                        
+                    </distr>
+                                
+                </prior>
+                            
+                <prior id="relativeGeoRatesPrior.s:location" name="distribution" x="@relativeGeoRates.s:location">
+                                    
+                    <Gamma id="Gamma.4" name="distr">
+                                            
+                        <parameter id="RealParameter.12" spec="parameter.RealParameter" estimate="false" name="alpha">1.0</parameter>
+                                            
+                        <parameter id="RealParameter.13" spec="parameter.RealParameter" estimate="false" name="beta">1.0</parameter>
+                                        
+                    </Gamma>
+                                
+                </prior>
+                            
+                <prior id="SkyGridPrecisionPrior" name="distribution" x="@skygridPrecision">
+                                    
+                    <Gamma id="Gamma.2" name="distr">
+                                            
+                        <parameter id="RealParameter.8" spec="parameter.RealParameter" estimate="false" name="alpha">0.01</parameter>
+                                            
+                        <parameter id="RealParameter.9" spec="parameter.RealParameter" estimate="false" name="beta">100.0</parameter>
+                                        
+                    </Gamma>
+                                
+                </prior>
+                            
+                <prior id="geoclockPrior.c:location" name="distribution" x="@traitClockRate.c:location">
+                                    
+                    <Gamma id="Gamma.3" name="distr">
+                                            
+                        <parameter id="RealParameter.10" spec="parameter.RealParameter" estimate="false" name="alpha">0.001</parameter>
+                                            
+                        <parameter id="RealParameter.11" spec="parameter.RealParameter" estimate="false" name="beta">1000.0</parameter>
+                                        
+                    </Gamma>
+                                
+                </prior>
+                        
+            </distribution>
+                    
+            <distribution id="likelihood" spec="CompoundDistribution" useThreads="true">
+                            
+                <distribution id="treeLikelihood.NPEV_C_trim" spec="ThreadedTreeLikelihood" data="@NPEV_C_trim" tree="@Tree.t:NPEV_C_trim">
+                                    
+                    <siteModel id="SiteModel.s:NPEV_C_trim" spec="SiteModel">
+                                            
+                        <parameter id="mutationRate.s:NPEV_C_trim" spec="parameter.RealParameter" estimate="false" lower="0.0" name="mutationRate">1.0</parameter>
+                                            
+                        <parameter id="gammaShape.s:NPEV_C_trim" spec="parameter.RealParameter" estimate="false" lower="0.1" name="shape">1.0</parameter>
+                                            
+                        <parameter id="proportionInvariant.s:NPEV_C_trim" spec="parameter.RealParameter" estimate="false" lower="0.0" name="proportionInvariant" upper="1.0">0.0</parameter>
+                                            
+                        <substModel id="hky.s:NPEV_C_trim" spec="HKY" kappa="@kappa.s:NPEV_C_trim">
+                                                    
+                            <frequencies id="estimatedFreqs.s:NPEV_C_trim" spec="Frequencies" frequencies="@freqParameter.s:NPEV_C_trim"/>
+                                                
+                        </substModel>
+                                        
+                    </siteModel>
+                                    
+                    <branchRateModel id="StrictClock.c:NPEV_C_trim" spec="beast.base.evolution.branchratemodel.StrictClockModel" clock.rate="@clockRate.c:NPEV_C_trim"/>
+                                
+                </distribution>
+                            
+                <distribution id="traitedtreeLikelihood.location" spec="beastclassic.evolution.likelihood.AncestralStateTreeLikelihood" tag="location" tree="@Tree.t:NPEV_C_trim">
+                                    
+                    <data
+id="location"
+spec="beastclassic.evolution.alignment.AlignmentFromTrait">
+                                            
+                        <traitSet id="traitSet.location" spec="beast.base.evolution.tree.TraitSet" taxa="@TaxonSet.NPEV_C_trim" traitname="discrete">KY433694_SEN_2014=SEN,
+
+KC787162_CMR_2009=CMR,
+
+KC787154_CMR_2009=CMR,
+
+KC787151_CMR_2009=CMR,
+
+MN812188_GHA_2012=GHA,
+
+MN812186_GHA_2012=GHA,
+
+MN812184_GHA_2012=GHA,
+
+MN812183_GHA_2012=GHA,
+
+MN812182_GHA_2013=GHA,
+
+KY433693_NER_2014=NER,
+
+KY433692_NER_2013=NER,
+
+FJ868371_AUS_2006=AUS,
+
+GU983190_BRA_1987=BRA,
+
+GU983189_BRA_2003=BRA,
+
+GU983188_BRA_2003=BRA,
+
+GU983197_BRA_2004=BRA,
+
+GU983196_BRA_2004=BRA,
+
+GU983203_BRA_2005=BRA,
+
+GU983202_BRA_2005=BRA,
+
+GU983206_BRA_2009=BRA,
+
+GU983205_BRA_2009=BRA,
+
+OM386801_CHN_1988=CHN,
+
+MT741566_CHN_1988=CHN,
+
+KJ857503_CHN_1990=CHN,
+
+KJ857502_CHN_1990=CHN,
+
+OM386810_CHN_1994=CHN,
+
+OM386809_CHN_1994=CHN,
+
+OM386811_CHN_1995=CHN,
+
+OM386812_CHN_1997=CHN,
+
+GQ329723_CHN_1997=CHN,
+
+GQ329726_CHN_1999=CHN,
+
+OM386802_CHN_2003=CHN,
+
+GQ329725_CHN_2003=CHN,
+
+OM386803_CHN_2007=CHN,
+
+MT741582_CHN_2007=CHN,
+
+OM386808_CHN_2010=CHN,
+
+OM386807_CHN_2010=CHN,
+
+KU531431_CHN_2011=CHN,
+
+KU531430_CHN_2011=CHN,
+
+KJ933342_CHN_2013=CHN,
+
+KJ933341_CHN_2013=CHN,
+
+LC411979_CHN_2014=CHN,
+
+LC201512_CHN_2016=CHN,
+
+LC201502_CHN_2016=CHN,
+
+LC412982_CHN_2017=CHN,
+
+OR352727_CHN_2023=CHN,
+
+OR352726_CHN_2023=CHN,
+
+MK086167_FRA_2015=FRA,
+
+KF412907_IND_2004=IND,
+
+KF413028_IND_2006=IND,
+
+KF413027_IND_2006=IND,
+
+KF413033_IND_2007=IND,
+
+KF413034_IND_2007=IND,
+
+AB828288_JPN_2001=JPN,
+
+MK618767_MEX_2017=MEX,
+
+MK618766_MEX_2017=MEX,
+
+MG272373_NLD_1973=NLD,
+
+KP861807_RUS_2010=RUS,
+
+KR185974_RUS_2010=RUS,
+
+KP861806_RUS_2012=RUS,
+
+KR185975_RUS_2013=RUS,
+
+KP861809_RUS_2013=RUS,
+
+KR185973_RUS_2014=RUS,
+
+KP137045_THA_2014=THA,
+
+KP137044_THA_2014=THA,
+
+AB901474_TWN_1985=TWN,
+
+AB901473_TWN_1985=TWN,
+
+AB901478_TWN_1986=TWN,
+
+AB901477_TWN_1986=TWN,
+
+AB901479_TWN_2000=TWN,
+
+AB901480_TWN_2001=TWN,
+
+AB901485_TWN_2002=TWN,
+
+AB901484_TWN_2002=TWN,
+
+AB901486_TWN_2003=TWN,
+
+AB901488_TWN_2007=TWN,
+
+AB901487_TWN_2007=TWN,
+
+AB901490_TWN_2008=TWN,
+
+AB901489_TWN_2008=TWN,
+
+AB901493_TWN_2010=TWN,
+
+AB901492_TWN_2010=TWN</traitSet>
+                                            
+                        <userDataType id="traitDataType.location" spec="beast.base.evolution.datatype.UserDataType" codeMap="AUS=0,BRA=1,CHN=2,CMR=3,FRA=4,GHA=5,IND=6,JPN=7,MEX=8,NER=9,NLD=10,RUS=11,SEN=12,THA=13,TWN=14,? = 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 " codelength="-1" states="15"/>
+                                        
+                    </data>
+                                    
+                    <siteModel id="geoSiteModel.s:location" spec="SiteModel" gammaCategoryCount="1">
+                                            
+                        <parameter id="mutationRate.s:location" spec="parameter.RealParameter" estimate="false" name="mutationRate">1.0</parameter>
+                                            
+                        <parameter id="gammaShape.s:location" spec="parameter.RealParameter" estimate="false" name="shape">1.0</parameter>
+                                            
+                        <parameter id="proportionInvariant.s:location" spec="parameter.RealParameter" estimate="false" lower="0.0" name="proportionInvariant" upper="1.0">0.0</parameter>
+                                            
+                        <substModel id="svs.s:location" spec="beastclassic.evolution.substitutionmodel.SVSGeneralSubstitutionModel" rateIndicator="@rateIndicator.s:location" rates="@relativeGeoRates.s:location">
+                                                    
+                            <frequencies id="traitfreqs.s:location" spec="Frequencies">
+                                                            
+                                <parameter id="traitfrequencies.s:location" spec="parameter.RealParameter" dimension="15" name="frequencies">0.06666666666666667</parameter>
+                                                        
+                            </frequencies>
+                                                
+                        </substModel>
+                                        
+                    </siteModel>
+                                    
+                    <branchRateModel id="StrictClockModel.c:location" spec="beast.base.evolution.branchratemodel.StrictClockModel" clock.rate="@traitClockRate.c:location"/>
+                                
+                </distribution>
+                        
+            </distribution>
+                
+        </distribution>
+            
+        <operator id="StrictClockRateScaler.c:NPEV_C_trim" spec="AdaptableOperatorSampler" weight="1.5">
+                    
+            <parameter idref="clockRate.c:NPEV_C_trim"/>
+                    
+            <operator id="AVMNOperator.NPEV_C_trim" spec="kernel.AdaptableVarianceMultivariateNormalOperator" allowNonsense="true" beta="0.05" burnin="400" initial="800" weight="0.1">
+                            
+                <transformations id="AVMNSumTransform.NPEV_C_trim" spec="operator.kernel.Transform$LogConstrainedSumTransform">
+                                    
+                    <f idref="freqParameter.s:NPEV_C_trim"/>
+                                
+                </transformations>
+                            
+                <transformations id="AVMNLogTransform.NPEV_C_trim" spec="operator.kernel.Transform$LogTransform">
+                                    
+                    <f idref="clockRate.c:NPEV_C_trim"/>
+                                    
+                    <f idref="kappa.s:NPEV_C_trim"/>
+                                
+                </transformations>
+                            
+                <transformations id="AVMNNoTransform.NPEV_C_trim" spec="operator.kernel.Transform$NoTransform">
+                                    
+                    <f idref="Tree.t:NPEV_C_trim"/>
+                                
+                </transformations>
+                        
+            </operator>
+                    
+            <operator id="StrictClockRateScalerX.c:NPEV_C_trim" spec="kernel.BactrianScaleOperator" parameter="@clockRate.c:NPEV_C_trim" upper="10.0" weight="3.0"/>
+                
+        </operator>
+            
+        <operator id="strictClockUpDownOperator.c:NPEV_C_trim" spec="AdaptableOperatorSampler" weight="1.5">
+                    
+            <parameter idref="clockRate.c:NPEV_C_trim"/>
+                    
+            <tree idref="Tree.t:NPEV_C_trim"/>
+                    
+            <operator idref="AVMNOperator.NPEV_C_trim"/>
+                    
+            <operator id="strictClockUpDownOperatorX.c:NPEV_C_trim" spec="operator.kernel.BactrianUpDownOperator" scaleFactor="0.75" weight="3.0">
+                            
+                <up idref="clockRate.c:NPEV_C_trim"/>
+                            
+                <down idref="Tree.t:NPEV_C_trim"/>
+                        
+            </operator>
+                
+        </operator>
+            
+        <operator id="KappaScaler.s:NPEV_C_trim" spec="AdaptableOperatorSampler" weight="0.05">
+                    
+            <parameter idref="kappa.s:NPEV_C_trim"/>
+                    
+            <operator idref="AVMNOperator.NPEV_C_trim"/>
+                    
+            <operator id="KappaScalerX.s:NPEV_C_trim" spec="kernel.BactrianScaleOperator" parameter="@kappa.s:NPEV_C_trim" scaleFactor="0.1" upper="10.0" weight="0.1"/>
+                
+        </operator>
+            
+        <operator id="FrequenciesExchanger.s:NPEV_C_trim" spec="AdaptableOperatorSampler" weight="0.05">
+                    
+            <parameter idref="freqParameter.s:NPEV_C_trim"/>
+                    
+            <operator idref="AVMNOperator.NPEV_C_trim"/>
+                    
+            <operator id="FrequenciesExchangerX.s:NPEV_C_trim" spec="operator.kernel.BactrianDeltaExchangeOperator" delta="0.01" weight="0.1">
+                            
+                <parameter idref="freqParameter.s:NPEV_C_trim"/>
+                        
+            </operator>
+                
+        </operator>
+            
+        <operator id="SkyGridBICEPSEpochTop.t:NPEV_C_trim" spec="EpochFlexOperator" scaleFactor="0.1" tree="@Tree.t:NPEV_C_trim" weight="2.0"/>
+            
+        <operator id="SkyGridBICEPSEpochAll.t:NPEV_C_trim" spec="EpochFlexOperator" fromOldestTipOnly="false" scaleFactor="0.1" tree="@Tree.t:NPEV_C_trim" weight="2.0"/>
+            
+        <operator id="SkyGridBICEPSTreeFlex.t:NPEV_C_trim" spec="TreeStretchOperator" scaleFactor="0.01" tree="@Tree.t:NPEV_C_trim" weight="2.0"/>
+            
+        <operator id="SkyGridTreeRootScaler.t:NPEV_C_trim" spec="kernel.BactrianScaleOperator" rootOnly="true" scaleFactor="0.1" tree="@Tree.t:NPEV_C_trim" upper="10.0" weight="3.0"/>
+            
+        <operator id="SkyGridUniformOperator.t:NPEV_C_trim" spec="kernel.BactrianNodeOperator" tree="@Tree.t:NPEV_C_trim" weight="30.0"/>
+            
+        <operator id="SkyGridSubtreeSlide.t:NPEV_C_trim" spec="kernel.BactrianSubtreeSlide" tree="@Tree.t:NPEV_C_trim" weight="15.0"/>
+            
+        <operator id="SkyGridNarrow.t:NPEV_C_trim" spec="Exchange" tree="@Tree.t:NPEV_C_trim" weight="15.0"/>
+            
+        <operator id="SkyGridWide.t:NPEV_C_trim" spec="Exchange" isNarrow="false" tree="@Tree.t:NPEV_C_trim" weight="3.0"/>
+            
+        <operator id="SkyGridWilsonBalding.t:NPEV_C_trim" spec="WilsonBalding" tree="@Tree.t:NPEV_C_trim" weight="3.0"/>
+            
+        <operator id="SkyGridAdaptablePopSizeOperator" spec="AdaptableOperatorSampler" weight="10.0">
+                    
+            <parameter idref="skygridLogPopSize"/>
+                    
+            <operator id="GMRFMultilocusSkyrideBlockUpdateOperator" spec="beastclassic.evolution.operators.GMRFMultilocusSkyrideBlockUpdateOperator" likelihood="@SkyGrid.t:NPEV_C_trim" scaleFactor="2.0" weight="3.0"/>
+                    
+            <operator id="SkyGridPopSizeWalker" spec="operator.kernel.BactrianRandomWalkOperator" parameter="@skygridLogPopSize" scaleFactor="0.5" weight="3.0"/>
+                    
+            <operator id="SkyGridAVMNOperator" spec="kernel.AdaptableVarianceMultivariateNormalOperator" allowNonsense="true" beta="0.05" burnin="400" initial="800" weight="3.0">
+                            
+                <transformations id="SkyGridLogTransform" spec="operator.kernel.Transform$LogTransform">
+                                    
+                    <f idref="skygridPrecision"/>
+                                
+                </transformations>
+                            
+                <transformations id="SkyGridNoTransform" spec="operator.kernel.Transform$NoTransform">
+                                    
+                    <f idref="skygridLogPopSize"/>
+                                
+                </transformations>
+                        
+            </operator>
+                
+        </operator>
+            
+        <operator id="SkyGridPrecisionScaler" spec="kernel.BactrianScaleOperator" parameter="@skygridPrecision" scaleFactor="0.5" upper="10.0" weight="0.1"/>
+            
+        <operator id="georateScaler.s:location" spec="ScaleOperator" parameter="@relativeGeoRates.s:location" scaleAllIndependently="true" scaleFactor="0.99" weight="30.0"/>
+            
+        <operator id="indicatorFlip.s:location" spec="operator.BitFlipOperator" parameter="@rateIndicator.s:location" weight="30.0"/>
+            
+        <operator id="geoMuScaler.c:location" spec="ScaleOperator" parameter="@traitClockRate.c:location" scaleFactor="0.9" weight="3.0"/>
+            
+        <operator id="BSSVSoperator.c:location" spec="beastclassic.evolution.operators.BitFlipBSSVSOperator" indicator="@rateIndicator.s:location" mu="@traitClockRate.c:location" weight="30.0"/>
+            
+        <logger id="tracelog" spec="Logger" fileName="$(filebase).log" logEvery="1000" model="@posterior" sanitiseHeaders="true" sort="smart">
+                    
+            <log idref="posterior"/>
+                    
+            <log idref="likelihood"/>
+                    
+            <log idref="prior"/>
+                    
+            <log idref="treeLikelihood.NPEV_C_trim"/>
+                    
+            <log id="TreeHeight.t:NPEV_C_trim" spec="beast.base.evolution.tree.TreeStatLogger" tree="@Tree.t:NPEV_C_trim"/>
+                    
+            <log idref="clockRate.c:NPEV_C_trim"/>
+                    
+            <log idref="kappa.s:NPEV_C_trim"/>
+                    
+            <log idref="freqParameter.s:NPEV_C_trim"/>
+                    
+            <log idref="SkyGrid.t:NPEV_C_trim"/>
+                    
+            <log idref="skygridPrecision"/>
+                    
+            <log idref="skygridLogPopSize"/>
+                    
+            <log idref="rateIndicator.s:location"/>
+                    
+            <log idref="relativeGeoRates.s:location"/>
+                    
+            <log idref="traitClockRate.c:location"/>
+                    
+            <log id="geoSubstModelLogger.s:location" spec="beastclassic.evolution.substitutionmodel.SVSGeneralSubstitutionModelLogger" dataType="@traitDataType.location" model="@svs.s:location"/>
+                
+        </logger>
+            
+        <logger id="screenlog" spec="Logger" logEvery="1000">
+                    
+            <log idref="posterior"/>
+                    
+            <log idref="likelihood"/>
+                    
+            <log idref="prior"/>
+                
+        </logger>
+            
+        <logger id="treelog.t:NPEV_C_trim" spec="Logger" fileName="$(filebase)-$(tree).trees" logEvery="1000" mode="tree">
+                    
+            <log id="TreeWithMetaDataLogger.t:NPEV_C_trim" spec="beast.base.evolution.TreeWithMetaDataLogger" tree="@Tree.t:NPEV_C_trim"/>
+                
+        </logger>
+            
+        <logger id="treeWithTraitLogger.location" spec="Logger" fileName="location_tree_with_trait.trees" logEvery="10000" mode="tree">
+                    
+            <log id="treeWithTraitLoggerItem.t:NPEV_C_trim" spec="beastclassic.evolution.tree.TreeWithTraitLogger" tree="@Tree.t:NPEV_C_trim">
+                            
+                <metadata idref="posterior"/>
+                            
+                <metadata idref="traitedtreeLikelihood.location"/>
+                        
+            </log>
+                
+        </logger>
+            
+        <operatorschedule id="OperatorSchedule" spec="OperatorSchedule"/>
+        
+    </run>
+
+    
+
+</beast>
