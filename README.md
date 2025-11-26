@@ -157,11 +157,9 @@ Only **human NPEVs** included; polioviruses excluded.
 
 **Please cite this project as:**
 
-> * Serigne Fallou MBacke NGom , NDack Ndiaye , Ousmane K ´ eb´ e , ´
-NDongo Dia , Martin Faye , Molecular evolution and circulation dynamic of human non-polio enteroviruses across Africa, International Journal of Infectious Diseases (2025), doi: https://doi.org/10.
-1016/j.ijid.2025.108258*
+> * Serigne Fallou MBacke NGom , NDack Ndiaye , Ousmane Kebe , NDongo Dia , Martin Faye , Molecular evolution and circulation dynamic of human non-polio enteroviruses across Africa, International Journal of Infectious Diseases (2025), doi: https://doi.org/10.1016/j.ijid.2025.108258*
 
----
+---s
 
 # 📬 Contact
 
