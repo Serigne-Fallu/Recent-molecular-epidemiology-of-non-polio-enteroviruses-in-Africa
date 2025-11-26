@@ -23,10 +23,15 @@ Our findings highlight **Africa’s central role in the global circulation** of 
 # 🌟 Highlights
 
 • Circulation dynamics of human non-polio enteroviruses across Africa.
+
 • Clear discrepancy in NPEV sequence submissions between global regions and Africa.
+
 • EV-B exhibited a significantly higher substitution rate than other species.
+
 • EV-A displayed the highest root height; EV-D emerged as the most recent lineage.
+
 • The number of recombinant non-polio enterovirus sequences increased sharply after 1988.
+
 • All NPEVs show evidence of **interspecies recombination**; EV-B and EV-C show **high rates of intra-species recombination**.
 
 ---
